@@ -22,16 +22,17 @@ public class LogIn_Page {
 
 	NavigationHelper _nav
 	WebHelper _web
+	String userName=""
+	String password=""
+	Enum_Language lang
+	Enum_Role role
+
 	public LogIn_Page(){
 		_nav =AppManager.getInstance().getNavHelper()
 		_web=AppManager.getInstance().getWebHelper()
 		WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.STOP_ON_FAILURE)
 	}
 
-	String userName=""
-	String password=""
-	Enum_Language lang
-	Enum_Role role
 	public LogIn_Page authenticate_User(Enum_Language lang,Enum_Role role){
 
 		this.lang=lang
