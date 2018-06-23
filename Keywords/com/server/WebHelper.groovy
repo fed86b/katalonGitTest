@@ -29,9 +29,6 @@ import WebUiBuiltInKeywords as WebUI
 
 public class WebHelper {
 
-	public WebHelper(){
-	}
-
 	public void verify_text_visibility(TestObject element,String text="", boolean fail=false){
 		if(!text.isEmpty()){
 			WebUI.verifyElementText(

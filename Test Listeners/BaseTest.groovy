@@ -1,109 +1,83 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import java.text.BreakIterator
 
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testobject.TestObject as TestObject
-
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.annotation.AfterTestCase
+import com.kms.katalon.core.annotation.AfterTestSuite
+import com.kms.katalon.core.annotation.BeforeTestCase
+import com.kms.katalon.core.annotation.BeforeTestSuite
+import com.kms.katalon.core.context.TestCaseContext
+import com.kms.katalon.core.context.TestSuiteContext
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.server.AppManager
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.annotation.BeforeTestCase
-import com.kms.katalon.core.annotation.BeforeTestSuite
-import com.kms.katalon.core.annotation.AfterTestCase
-import com.kms.katalon.core.annotation.AfterTestSuite
-import com.kms.katalon.core.context.TestCaseContext
-import com.kms.katalon.core.context.TestSuiteContext
-
 class BaseTest {
-	/**
-	 * Executes before every test case starts.
-	 * @param testCaseContext related information of the executed test case.
-	 */
-	@BeforeTestCase
-	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		println testCaseContext.getTestCaseId()
-		println testCaseContext.getTestCaseVariables()
-		WebUI.waitForPageLoad(GlobalVariable.G_Wait)
-		
-	}
 
-	/**
-	 * Executes after every test case ends.
-	 * @param testCaseContext related information of the executed test case.
-	 */
-	@AfterTestCase
-	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		println testCaseContext.getTestCaseId()
-		println testCaseContext.getTestCaseStatus()
 
-	}
-
-	/**
-	 * Executes before every test suite starts.
-	 * @param testSuiteContext: related information of the executed test suite.
-	 */
 	@BeforeTestSuite
-	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		println testSuiteContext.getTestSuiteId()
-		
+	def beforeTestSuite(TestSuiteContext testSuite){
+		KeywordUtil.markWarning("Before Test Suite Listener : " + testSuite.getTestSuiteId())
 	}
 
-	/**
-	 * Executes after every test suite ends.
-	 * @param testSuiteContext: related information of the executed test suite.
-	 */
-	@AfterTestSuite
-	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		println testSuiteContext.getTestSuiteId()
-		
-		
+	@BeforeTestCase
+	def beforeTestCase(TestCaseContext testCase) {
+		AppManager.getInstance()
+		WebUI.navigateToUrl(GlobalVariable.G_Url)
+		KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId())
 	}
-//	
-//	
-//	@BeforeTestSuite
-//	public void beforeTestSuiteListener(TestSuiteContext testSuite){
-//		WebUI.openBrowser('https://www.w3schools.com/js/js_popup.asp')
-//		WebUI.waitForPageLoad(GlobalVariable.TimeOut)
-//		WebUI.maximizeWindow()
-//		KeywordUtil.markWarning("Before Test Suite Listener : " + testSuite.getTestSuiteId())
-//	}
-//	
-//	//@AfterTestCase
-//	public void afterTestCase(TestCaseContext testCase){
-//		WebUI.switchToDefaultContent()
-//		WebUI.closeWindowIndex(1)
-//		WebUI.switchToWindowIndex(0)
-//		/*KeywordUtil.markWarning("Test Case Name : " + testCase.getTestCaseId())
-//		KeywordUtil.markWarning("Test Case Status : " + testCase.getTestCaseStatus())
-//		*/
-//		
+
+
+	@AfterTestCase
+	def afterTestCase(TestCaseContext testCase){
+		
+		KeywordUtil.markWarning("After Test case : " + testCase.getTestCaseId())
+	}
+
+
+	@AfterTestSuite
+	def closeBrowser(TestSuiteContext testSuite) {
+		AppManager.getInstance().dismiss()
+		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
+	}
+}
+
+
+
+
+
+
+
+//
 //		if("PASSED".equalsIgnoreCase(testCase.getTestCaseStatus())){
 //			println WebUI.takeScreenshot()
 //		}
+
+//	private goToNewTab() {
+//		WebUI.executeJavaScript('window.open();', [])
+//		def tabs=(Map)GlobalVariable.G_Tabs
+//		int  currentWindow =  WebUI.getWindowIndex()
+//		int newTabIndex=currentWindow + 1
+//		WebUI.switchToWindowIndex(newTabIndex)
+//		tabs.put(newTabIndex, newTabIndex)
+//
+//		KeywordUtil.markWarning("Opened new tab with number "+newTabIndex+" with url : "+GlobalVariable.G_Url )
 //	}
-//	
-//	@AfterTestSuite
-//	public void afterTestSuite(TestSuiteContext testSuite){
-//		WebUI.closeBrowser()
-//		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
+
+//	private closeTab(int i) {
+//		def tabs=(Map)GlobalVariable.G_Tabs
+//		int  currentWindow =  WebUI.getWindowIndex()
+//		//close last opened tab and go to first tab
+//		if(tabs.size()>1){
+//			int index=tabs.indexOf(currentWindow)
+//			tabs.remove(currentWindow)
+//			int indexToMove=0;
+//			for(int i=0;i<tabs.size();i++)
+//				if(tabs.containsKey(i)){
+//					indexToMove=i
+//					break
+//				}
+//			WebUI.switchToWindowIndex(i)
+//			WebUI.closeWindowIndex(currentWindow)
+//		}
 //	}
-//	
-////	/@AfterTestCase
-//	public void closeBrowser(){
-//		WebUI.switchToDefaultContent()
-//		WebUI.closeBrowser()
-//	}
-//	
-//	
-	
-	
-}

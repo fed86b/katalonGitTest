@@ -18,21 +18,18 @@ class AppManager {
 			synchronized (AppManager.class){
 				if(app == null){
 					app=new AppManager()
-					app.init()
+					app.startBrowser()
 				}
 			}
 		}
 		return app
 	}
 
-
-	private void init(){
-
-		WebUI.openBrowser(GlobalVariable.G_Url)
+	private startBrowser() {
+		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 	}
-
 
 	public NavigationHelper getNavHelper(){
 		if(navigationHelper==null){

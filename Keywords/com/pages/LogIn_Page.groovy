@@ -37,8 +37,6 @@ public class LogIn_Page {
 		this.lang=lang
 		this.role=role
 
-		navigate_To_LoginPage()
-
 		check_Logos_Title()
 
 		fill_UserName_Password()
@@ -57,7 +55,7 @@ public class LogIn_Page {
 		check_Layout_Title()
 
 		click_Submit()
-		
+
 		return _nav.getKms()
 	}
 
@@ -78,11 +76,11 @@ public class LogIn_Page {
 		assert 'LOGIN'==WebUI.getWindowTitle()
 
 		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/Title_Login', 'LOGIN')
-		
+
 		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/Kms_logo'), FailureHandling.CONTINUE_ON_FAILURE)
-		
+
 		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/lang_Logo'), FailureHandling.CONTINUE_ON_FAILURE)
-		
+
 		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/kms_ltd', '© 2017 KMS lighthouse Ltd')
 	}
 
@@ -192,13 +190,7 @@ public class LogIn_Page {
 		}
 	}
 
-	private navigate_To_LoginPage() {
 
-		if(!GlobalVariable.G_Url.toString().equalsIgnoreCase( WebUI.getUrl()))
-			WebUI.navigateToUrl(GlobalVariable.G_Url)
-	}
-
-	
 	private fill_UserName_Password() {
 		visual_check_login_form()
 		GlobalVariable.G_Cur_User_Role=role
@@ -240,11 +232,9 @@ public class LogIn_Page {
 		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/userName_Logo')
 
 		_web.verify_text_clicability('Login_Page_OR/Shared/button_Login')
-		
+
 		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/span_Username', 'Username')
 
 		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/span_Password', 'Password')
-
-
 	}
 }

@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>30</initValue>
+      <initValue>10</initValue>
       <name>G_Wait</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -28,5 +28,10 @@
       <description></description>
       <initValue>''</initValue>
       <name>G_Language</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>open tabs for each test case</description>
+      <initValue>[(0) : 0]</initValue>
+      <name>G_Tabs</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
