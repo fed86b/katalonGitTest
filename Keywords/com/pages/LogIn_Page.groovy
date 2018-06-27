@@ -1,10 +1,7 @@
 package com.pages
 
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.google.common.base.CaseFormat
-import com.google.common.base.CharMatcher.BreakingWhitespace
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.server.AppManager
@@ -12,89 +9,63 @@ import com.server.Enum_Language
 import com.server.Enum_Role
 import com.server.NavigationHelper
 import com.server.WebHelper
-import com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach
-import com.sun.xml.internal.ws.addressing.policy.AddressingPolicyMapConfigurator.AddressingAssertion
-import com.sun.xml.internal.ws.policy.spi.AssertionCreationException
 
 import internal.GlobalVariable
 
 public class LogIn_Page {
 
 	NavigationHelper _nav
-	WebHelper _web
 	String userName=""
+	WebHelper _web
 	String password=""
 	Enum_Language lang
 	Enum_Role role
 
-	public LogIn_Page(){
-		_nav =AppManager.getInstance().getNavHelper()
+	public LogIn_Page(NavigationHelper nav){
+		_nav =nav
 		_web=AppManager.getInstance().getWebHelper()
-		WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.STOP_ON_FAILURE)
 	}
 
-	public LogIn_Page authenticate_User(Enum_Language lang,Enum_Role role){
-
-		this.lang=lang
-		this.role=role
-
-		check_Logos_Title()
-
-		fill_UserName_Password()
-
-		chooseLanguage()
-
-		click_LogIn_With_UserName_And_Password()
-
-		return this
-	}
-
-	public Kms_Page logIn_To_KMS() {
-
-		select_View()
-
-		check_Layout_Title()
-
-		click_Submit()
-
-		return _nav.getKms()
-	}
 
 	private check_Layout_Title() {
 
 		switch(lang){
 			case Enum_Language.RUSSIAN:
-				_web.verify_text_visibility('Login_Page_OR/Ru/Title_Choose_Layout_Ru', 'ВЫБРАТЬ МАКЕТ')
+				_web.verify_text_visibility(findTestObject('Login_Page_OR/Languages/Ru/Title_Choose_Layout_Ru'), 'ВЫБРАТЬ МАКЕТ')
 				break
 
 			default :
-				_web.verify_text_visibility('Login_Page_OR/En/Title_Choose_layout_En', 'CHOOSE A LAYOUT')
+				_web.verify_text_visibility(findTestObject('Login_Page_OR/Languages/En/Title_Choose_layout_En'), 'CHOOSE A LAYOUT')
 		}
 	}
 
-	private check_Logos_Title() {
+	public check_Logos_Title_Links() {
+		WebUI.waitForPageLoad(GlobalVariable.G_Wait)
+		WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
 
-		assert 'LOGIN'==WebUI.getWindowTitle()
+		WebUI.verifyEqual(WebUI.getWindowTitle(), 'KMS lighthouse', FailureHandling.CONTINUE_ON_FAILURE)
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/Title_Login', 'LOGIN')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/Title_Login'), 'LOGIN')
 
 		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/Kms_logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
 		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/lang_Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/kms_ltd', '© 2017 KMS lighthouse Ltd')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/kms_ltd'), '© 2017 KMS lighthouse Ltd')
 	}
 
-	private chooseLanguage() {
+	public chooseLanguage(Enum_Language language) {
 
-		_web.verify_text_clicability('Login_Page_OR/Shared/span_caret_Languages', 'Change Language')
+		lang=language
+		_web.verify_text_click(findTestObject('Login_Page_OR/Shared/a_Change Language'), 'Change Language')
+		_web.verify_text_click(findTestObject('Login_Page_OR/Shared/span_caret_Languages'))
 		GlobalVariable.G_Language=lang
 		switch(lang){
 			case Enum_Language.RUSSIAN:
-				WebUI.click(findTestObject('Login_Page_OR/Ru/span_Russian'))
+				_web.verify_text_click(findTestObject('Login_Page_OR/Languages/Ru/span_Russian'), 'Русский')
 				break
-			case Enum_Language.ENGLISH:WebUI.click(findTestObject('Login_Page_OR/En/span_English'))
-
+			case Enum_Language.ENGLISH:
+				_web.verify_text_click(findTestObject('Login_Page_OR/Languages/En/span_English'), 'English')
 				break
 			case Enum_Language.ARABIC:assert true==false
 				break
@@ -111,33 +82,27 @@ public class LogIn_Page {
 			case Enum_Language.ROMANIA:assert true==false
 				break
 			default :
-				WebUI.click(findTestObject('Login_Page_OR/En/span_English'))
+				WebUI.click(findTestObject('Login_Page_OR/Languages/En/span_English'))
 		}
 	}
 
-	private click_LogIn_With_UserName_And_Password() {
+	public click_LogIn_With_UserName_And_Password() {
 
-		_web.verify_text_clicability('Login_Page_OR/Shared/button_Login','LOGIN')
-
-		WebUI.click(findTestObject('Login_Page_OR/Shared/button_Login'))
+		_web.verify_text_click(findTestObject('Login_Page_OR/Shared/button_Login'),'LOGIN')
 	}
 
 	private click_Submit_En() {
 
-		_web.verify_text_clicability('Login_Page_OR/En/button_EnterKms_Login','LOGIN')
-
-		WebUI.click(findTestObject('Login_Page_OR/En/button_EnterKms_Login'))
+		_web.verify_text_click(findTestObject('Login_Page_OR/Languages/En/button_EnterKms_Login'),'LOGIN')
 	}
 
 	private click_Submit_Ru() {
 
-		_web.verify_text_clicability('Login_Page_OR/Ru/button_LogIn_Kms_Ru','ВОЙТИ')
-
-		WebUI.click(findTestObject('Login_Page_OR/Ru/button_LogIn_Kms_Ru'))
+		_web.verify_text_click(findTestObject('Login_Page_OR/Languages/Ru/button_LogIn_Kms_Ru'),'ВОЙТИ')
 	}
 
 
-	private click_Submit() {
+	public click_Submit() {
 
 		switch(lang){
 			case Enum_Language.RUSSIAN:
@@ -166,17 +131,15 @@ public class LogIn_Page {
 
 
 
-	private select_View() {
+	public select_View(Enum_Role defaultRole) {
 
-		_web.verify_text_clicability('Login_Page_OR/Shared/span_caret_View')
-
-		WebUI.click(findTestObject('Login_Page_OR/Shared/span_caret_View'))
+		GlobalVariable.G_Cur_User_Role =role=defaultRole
+		_web.verify_text_click(findTestObject('Login_Page_OR/Shared/span_caret_View'))
 
 		switch(role){
 
 			case Enum_Role.ADMINISTRATOR:
-				_web.verify_text_clicability('LoginPage_English_OR/Roles/Administrator/a_Administrator','ADMINISTRATOR')
-				WebUI.click(findTestObject('LoginPage_English_OR/Roles/Administrator/a_Administrator'))
+				_web.verify_text_click(findTestObject('Object Repository/Login_Page_OR/Shared/Roles_DropBox/a_Administrator'),'Administrator')
 				break
 			case Enum_Role.SCR:assert false==true
 				break
@@ -192,10 +155,10 @@ public class LogIn_Page {
 	}
 
 
-	private fill_UserName_Password() {
+	public fill_UserName_Password(Enum_Role defaultRole) {
 		visual_check_login_form()
-		GlobalVariable.G_Cur_User_Role=role
-		int row=0
+		GlobalVariable.G_Cur_User_Role=role=defaultRole
+		int row=-1
 		switch(role){
 			case Enum_Role.ADMINISTRATOR :
 				row=1
@@ -222,20 +185,21 @@ public class LogIn_Page {
 		WebUI.setText(findTestObject('Login_Page_OR/Shared/input_password'), password)
 	}
 
-	private visual_check_login_form() {
+	public visual_check_login_form() {
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/input_username',true)
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/input_password',true)
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/input_username'),"",true)
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/pass_Logo')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/input_password'),"",true)
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/userName_Logo')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/pass_Logo'))
 
-		_web.verify_text_clicability('Login_Page_OR/Shared/button_Login')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/userName_Logo'))
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/span_Username', 'Username')
+		_web.verify_text_clicability(findTestObject('Login_Page_OR/Shared/button_Login'),'LOGIN')
 
-		_web.verify_text_visibility('Login_Page_OR/Shared/Visual/span_Password', 'Password')
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/span_Username'), 'Username')
+
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/span_Password'), 'Password')
 	}
 }

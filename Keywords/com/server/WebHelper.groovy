@@ -30,16 +30,14 @@ import WebUiBuiltInKeywords as WebUI
 public class WebHelper {
 
 	public void verify_text_visibility(TestObject element,String text="", boolean fail=false){
-		if(!text.isEmpty()){
-			WebUI.verifyElementText(
-					findTestObject(element),text,FailureHandling.CONTINUE_ON_FAILURE)
-		}
+
 		if(fail)
-			WebUI.verifyElementVisible(
-					findTestObject(element),FailureHandling.STOP_ON_FAILURE)
+			WebUI.waitForElementVisible(element, GlobalVariable.G_Small_Wait, FailureHandling.STOP_ON_FAILURE)
 		else
-			WebUI.verifyElementVisible(
-					findTestObject(element),FailureHandling.CONTINUE_ON_FAILURE)
+			WebUI.waitForElementVisible(element, GlobalVariable.G_Small_Wait, FailureHandling.CONTINUE_ON_FAILURE)
+		if(!text.isEmpty()){
+			WebUI.verifyElementText(element,text,FailureHandling.CONTINUE_ON_FAILURE)
+		}
 	}
 
 	public void verify_text_clicability(TestObject element,String text=""){
@@ -48,6 +46,20 @@ public class WebHelper {
 
 		WebUI.verifyElementClickable(element, FailureHandling.STOP_ON_FAILURE)
 	}
+	public void verify_text_click(TestObject element,String text=""){
+
+		verify_text_clicability(element, text)
+		WebUI.click(element)
+
+	}
+	
+	public void verify_text_MouseOver(TestObject element,String text=""){
+		
+				verify_text_visibility(element, text,true)
+
+				WebUI.mouseOver(element)
+			}
+	
 
 	public String get_data(int col, int row){
 		return findTestData('Login_Data').getValue(col, row);

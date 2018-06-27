@@ -37,7 +37,7 @@ public class NavigationHelper {
 
 	public NavigationHelper(AppManager app){
 		this.app=app
-		kms=new Kms_Page()
-		login=new LogIn_Page()
+		kms=new Kms_Page(this)
+		login=new LogIn_Page(this)
 	}
 }

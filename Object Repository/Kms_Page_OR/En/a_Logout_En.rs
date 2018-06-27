@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Logout_En</name>
+   <tag></tag>
+   <elementGuidId>24450bd0-9f77-4f57-90e7-00d4ddf63e09</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>top-toolbar__section-action-button</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>http://kmsqa3:501/kms/lh/logout</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Logout</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;outer-layout&quot;)/div[@class=&quot;outer-layout-north&quot;]/div[@class=&quot;kms-header&quot;]/header[@class=&quot;top-toolbar&quot;]/div[@class=&quot;top-toolbar__sides&quot;]/div[@class=&quot;top-toolbar__side top-toolbar__side--tools&quot;]/ul[@class=&quot;top-toolbar__tools&quot;]/li[@class=&quot;top-toolbar__section top-toolbar__profile&quot;]/div[@class=&quot;top-toolbar__section-dropdown top-toolbar__section-dropdown--profile-info&quot;]/a[@class=&quot;top-toolbar__section-action-button&quot;]</value>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,7 +1,7 @@
 package com.server
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.server.WebHelper
+
 import internal.GlobalVariable
 
 
@@ -18,18 +18,20 @@ class AppManager {
 			synchronized (AppManager.class){
 				if(app == null){
 					app=new AppManager()
-					app.startBrowser()
+					try {
+						WebUI.getUrl().isEmpty()
+					} catch (Exception e) {
+						WebUI.openBrowser('')
+						WebUI.maximizeWindow()
+						WebUI.deleteAllCookies()
+					}
 				}
 			}
 		}
 		return app
 	}
 
-	private startBrowser() {
-		WebUI.openBrowser('')
-		WebUI.maximizeWindow()
-		WebUI.deleteAllCookies()
-	}
+
 
 	public NavigationHelper getNavHelper(){
 		if(navigationHelper==null){
@@ -44,7 +46,7 @@ class AppManager {
 
 	public WebHelper getWebHelper(){
 		if(webHelper==null){
-			synchronized (webHelper.class){
+			synchronized (WebHelper.class){
 				if(webHelper == null){
 					webHelper=new WebHelper()
 				}
@@ -59,6 +61,7 @@ class AppManager {
 
 		WebUI.closeBrowser()
 		navigationHelper=null
+		webHelper=null
 		app=null
 	}
 }
