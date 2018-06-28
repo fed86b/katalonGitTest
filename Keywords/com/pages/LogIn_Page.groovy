@@ -27,8 +27,9 @@ public class LogIn_Page {
 	}
 
 
-	private check_Layout_Title() {
-
+	private check_Layout_Title(Enum_Language language) {
+		lang=language
+		GlobalVariable.G_Language=lang
 		switch(lang){
 			case Enum_Language.RUSSIAN:
 				_web.verify_text_visibility(findTestObject('Login_Page_OR/Languages/Ru/Title_Choose_Layout_Ru'), 'ВЫБРАТЬ МАКЕТ')
@@ -43,13 +44,14 @@ public class LogIn_Page {
 		WebUI.waitForPageLoad(GlobalVariable.G_Wait)
 		WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
 
-		WebUI.verifyEqual(WebUI.getWindowTitle(), 'KMS lighthouse', FailureHandling.CONTINUE_ON_FAILURE)
+
+		_web.verify_texts(WebUI.getWindowTitle(), 'KMS lighthouse')
 
 		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/Title_Login'), 'LOGIN')
 
-		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/Kms_logo'), FailureHandling.CONTINUE_ON_FAILURE)
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/Kms_logo'))
 
-		WebUI.verifyElementVisible(findTestObject('Login_Page_OR/Shared/Visual/lang_Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/lang_Logo'))
 
 		_web.verify_text_visibility(findTestObject('Login_Page_OR/Shared/Visual/kms_ltd'), '© 2017 KMS lighthouse Ltd')
 	}
@@ -102,7 +104,9 @@ public class LogIn_Page {
 	}
 
 
-	public click_Submit() {
+	public click_Submit(Enum_Language language) {
+		lang=language
+		GlobalVariable.G_Language=lang
 
 		switch(lang){
 			case Enum_Language.RUSSIAN:
@@ -180,9 +184,9 @@ public class LogIn_Page {
 		userName=_web.get_data(1, row)
 		password=_web.get_data(2, row)
 
-		WebUI.setText(findTestObject('Login_Page_OR/Shared/input_username'), userName)
+		_web.verify_write(findTestObject('Login_Page_OR/Shared/input_username'), userName)
 
-		WebUI.setText(findTestObject('Login_Page_OR/Shared/input_password'), password)
+		_web.verify_write(findTestObject('Login_Page_OR/Shared/input_password'), password)
 	}
 
 	public visual_check_login_form() {

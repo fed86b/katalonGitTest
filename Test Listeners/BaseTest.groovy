@@ -19,19 +19,12 @@ class BaseTest {
 
 	@BeforeTestSuite
 	def beforeTestSuite(TestSuiteContext testSuite){
+		
 		KeywordUtil.markWarning("Before Test Suite Listener : " + testSuite.getTestSuiteId())
 	}
 
 	@BeforeTestCase
 	def beforeTestCase(TestCaseContext testCase) {
-		AppManager.getInstance()
-		
-		//for saving time load browser, only opening new tab
-		if(WebUI.getUrl().startsWith(GlobalVariable.G_Url))
-			goToNewTab(testCase)
-			//if browser opened, but not in the kms host, navigate there
-		else if(!WebUI.getUrl().contains('http'))
-			WebUI.navigateToUrl(GlobalVariable.G_Url)
 		KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId())
 	}
 
@@ -49,16 +42,7 @@ class BaseTest {
 		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
 	}
 
-	private goToNewTab(TestCaseContext testCase) {
-		WebUI.executeJavaScript('window.open();', [])
-		def tabs=(Map)GlobalVariable.G_Tabs
-		int  currentWindow =  WebUI.getWindowIndex()
-		int newTabIndex=currentWindow + 1
-		WebUI.switchToWindowIndex(newTabIndex)
-		tabs.put( testCase.getTestCaseId(), newTabIndex)
-		WebUI.navigateToUrl(GlobalVariable.G_Url)
-		KeywordUtil.markWarning("Opened new tab with number "+newTabIndex+" on case : "+testCase.getTestCaseId() )
-	}
+	
 }
 
 

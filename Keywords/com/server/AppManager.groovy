@@ -1,14 +1,17 @@
 package com.server
 
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import org.openqa.selenium.WebDriver as WebDriver
+import org.openqa.selenium.edge.EdgeDriver
 
+import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.server.WebHelper as WebHelper
 import internal.GlobalVariable
 
 
 class AppManager {
 
 	private static volatile AppManager app
-
 	private static volatile NavigationHelper navigationHelper
 	private static volatile WebHelper webHelper
 	private AppManager(){}
@@ -19,16 +22,27 @@ class AppManager {
 				if(app == null){
 					app=new AppManager()
 					try {
-						WebUI.getUrl().isEmpty()
+						WebUI.getUrl()
+						if(WebUI.getUrl().equalsIgnoreCase(GlobalVariable.G_Url))
+							goToNewTab()
 					} catch (Exception e) {
-						WebUI.openBrowser('')
-						WebUI.maximizeWindow()
-						WebUI.deleteAllCookies()
+						openBrowser()
 					}
 				}
 			}
 		}
+
+
 		return app
+	}
+
+	private static openBrowser() {
+		WebUI.openBrowser(GlobalVariable.G_Url)
+		WebUI.maximizeWindow()
+		WebDriver driver=DriverFactory.getWebDriver()
+		if(driver instanceof EdgeDriver){}
+		else
+			WebUI.deleteAllCookies()
 	}
 
 
@@ -63,5 +77,13 @@ class AppManager {
 		navigationHelper=null
 		webHelper=null
 		app=null
+	}
+
+	private static goToNewTab() {
+		WebUI.executeJavaScript('window.open();', [])
+		int  currentWindow =  WebUI.getWindowIndex()
+		int newTabIndex=currentWindow + 1
+		WebUI.switchToWindowIndex(newTabIndex)
+		WebUI.navigateToUrl(GlobalVariable.G_Url)
 	}
 }

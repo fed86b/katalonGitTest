@@ -35,27 +35,27 @@ public class Kms_Page {
 	public LogIn_Page logout(){
 		_web.verify_text_MouseOver(findTestObject('Kms_Page_OR/Shared/span__profile-avatar'))
 		switch(lang){
-			case Enum_Language.RUSSIAN.toString():
+			case Enum_Language.RUSSIAN:
 				_web.verify_text_click(findTestObject('Kms_Page_OR/Languages/Ru/a_Logout_Ru'),'Выход')
 				break
-			case Enum_Language.ENGLISH.toString():
+			case Enum_Language.ENGLISH:
 				_web.verify_text_click(findTestObject('Kms_Page_OR/Languages/En/a_Logout_En'),'Logout')
 
 
 				break
-			case Enum_Language.ARABIC.toString():assert true==false
+			case Enum_Language.ARABIC:assert true==false
 				break
-			case Enum_Language.BOLGARSKY.toString():assert true==false
+			case Enum_Language.BOLGARSKY:assert true==false
 				break
-			case Enum_Language.CHINESE.toString():assert true==false
+			case Enum_Language.CHINESE:assert true==false
 				break
-			case Enum_Language.DANSK.toString().toString():assert true==false
+			case Enum_Language.DANSK.toString():assert true==false
 				break
-			case Enum_Language.HEBREW.toString():assert true==false
+			case Enum_Language.HEBREW:assert true==false
 				break
-			case Enum_Language.ITALIANO.toString():assert true==false
+			case Enum_Language.ITALIANO:assert true==false
 				break
-			case Enum_Language.ROMANIA.toString():assert true==false
+			case Enum_Language.ROMANIA:assert true==false
 				break
 		}
 
@@ -63,34 +63,4 @@ public class Kms_Page {
 	}
 
 
-
-	private Check_Administrative_Tabs() {
-		if(!WebUI.verifyElementVisible
-		(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/span_glyphicon glyphicon-optio'))){
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Authorizations_tab'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('LoginPage_English_OR/Roles/adminisrtator_tabs/a_Code_Tables'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Feedback Assignment'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Forum'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Manage Homepages'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Utilities'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Wizard'))
-
-			WebUI.verifyElementVisible
-			(findTestObject('Kms_Page_OR/Languages/En/Roles/Administrator/tabs/a_Workflow'))
-		}
-	}
 }

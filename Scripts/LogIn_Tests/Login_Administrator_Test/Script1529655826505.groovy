@@ -20,10 +20,10 @@ AppManager.getInstance().getNavHelper().getLogin().click_LogIn_With_UserName_And
 AppManager.getInstance().getNavHelper().getLogin().select_View(Enum_Role.ADMINISTRATOR)
 
 'check layout title'
-AppManager.getInstance().getNavHelper().getLogin().check_Layout_Title()
+AppManager.getInstance().getNavHelper().getLogin().check_Layout_Title(Enum_Language.ENGLISH)
 
 'submit form and go to Kms page'
-AppManager.getInstance().getNavHelper().getLogin().click_Submit()
+AppManager.getInstance().getNavHelper().getLogin().click_Submit(Enum_Language.ENGLISH)
 
 'logout from system'
 AppManager.getInstance().getNavHelper().getKms().init_Kms_Page(Enum_Role.ADMINISTRATOR, Enum_Language.ENGLISH).logout()
