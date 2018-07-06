@@ -85,7 +85,6 @@ public class LogIn_Page {
 		catch (Exception e) {
 
 			WebHelper.screenShoot(e.getMessage())
-			throw e
 		}
 	}
 
@@ -247,7 +246,6 @@ public class LogIn_Page {
 		catch (Exception e) {
 
 			WebHelper.screenShoot(e.getMessage())
-			throw e
 		}
 	}
 }

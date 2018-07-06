@@ -30,7 +30,7 @@ public class Briefing_En extends Briefing_Page {
 
 	protected static verify_template_updateDate() {
 
-		verify_Template_Name_Update("Briefing")
+		verify_Template_Name_Update("Briefing","Template")
 	}
 
 	protected static click_save_and_check_if_number_of_items_incremented_in_lastFolder(){

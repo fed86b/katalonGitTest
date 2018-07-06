@@ -16,7 +16,7 @@ public class My_Template extends My_Item{
 	static protected def button_create_new_item=WebHelper.createElement("button_create_new_item","//div[@id='cm-tree-item-create-button']/span")
 	static protected def input_create_item_template=WebHelper.createElement("input_create_item_template","//input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']")
 	static protected def button_ok_create_template=WebHelper.createElement("button_ok_create_template","//button[ @id = 'cm-tree-item-create-dialog-button-create']")
-	static protected def last_folder_in_cm_tree=WebHelper.createElement("last_folder_in_cm_tree","id('cmTree')/ul[@class='dynatree-container']/li[@class='dynatree-lastsib']")
+	static protected def last_folder_in_cm_tree=WebHelper.createElement("last_folder_in_cm_tree","//li[@class='dynatree-lastsib']")
 	static protected def saveAndRelocate=WebHelper.createElement("saveAndRelocate","//span[@class = 'kms-icon kms-icon--SaveAndRelocate action-bar__button-icon']")
 	static protected def choose_lastFolder_in_modal=WebHelper.createElement("choose_lastFolder_in_modal","//span[@class = 'dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf']")
 	static protected def btn_save_in_last_folder
@@ -68,18 +68,18 @@ public class My_Template extends My_Item{
 
 
 
-	protected static verify_Template_Name_Update(String briefing){
+	protected static verify_Template_Name_Update(String briefing,String template){
 		try {
-			if(DriverFactory.getExecutedBrowser() != WebUIDriverType.IE_DRIVER){
+			WebHelper.modify_xpath(span_itemType, String.format("(//label[contains(text(),'%s')]/following::span)[1]",template))
+			//if(DriverFactory.getExecutedBrowser() != WebUIDriverType.IE_DRIVER){
 				String actual_template=WebHelper.generate_Name(span_itemType)
 				String actual_date=WebHelper.generate_Name(span_update_date)
 				WebHelper.verify_texts(actual_template, briefing)
 				WebHelper.verify_texts(WebHelper.get_date(actual_date), WebHelper.get_date())
-			}
+			//}
 		}
 		catch (Exception e) {
 			WebHelper.screenShoot(e.getMessage())
-			throw e
 		}
 	}
 

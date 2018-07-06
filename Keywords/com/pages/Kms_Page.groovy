@@ -59,7 +59,6 @@ public abstract  class Kms_Page {
 		}
 		catch (Exception e) {
 			WebHelper.screenShoot(e.getMessage())
-			throw e
 		}
 	}
 }
