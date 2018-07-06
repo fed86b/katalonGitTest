@@ -62,6 +62,7 @@ public  class WebHelper {
 		def folder_webDriver=DriverFactory.getExecutedBrowser().getName()
 		new File("\\Reports\\"+folder_webDriver).mkdir()
 		WebUI.takeScreenshot(String.format("Reports/%s/%s.png",folder_webDriver,error));
+		
 	}
 
 	public static boolean check_three_dots(){
