@@ -16,7 +16,7 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import internal.GlobalVariable as GlobalVariable
 
 'login as content manager'
-RolesHelper.getCm_En().Login_En()
+not_run: RolesHelper.getCm_En().Login_En()
 
 'create new item by clicking on CREATE NEW ITEM button'
 RolesHelper.getCm_En().briefing.click_upper_button_create_item()

@@ -1,5 +1,5 @@
 package com.server
-
+import java.io.File
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 
 import java.text.DateFormat
@@ -59,8 +59,9 @@ public  class WebHelper {
 		def error
 		if(withoutWords.length()>END)
 			error=withoutWords.substring(START, END)
-		String error_dest='Reports/'+error+'.png'
-		WebUI.takeScreenshot(error_dest);
+		def folder_webDriver=DriverFactory.getExecutedBrowser().getName()
+		new File("\\Reports\\"+folder_webDriver).mkdir()
+		WebUI.takeScreenshot(String.format("Reports/%s/%s.png",folder_webDriver,error));
 	}
 
 	public static boolean check_three_dots(){
