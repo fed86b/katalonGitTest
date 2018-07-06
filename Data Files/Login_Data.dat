@@ -10,15 +10,16 @@
    <driver>InternalData</driver>
    <data>admin admin</data>
    <data>csr csr</data>
+   <data>null null</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
       <name>userName</name>
-      <size>2</size>
+      <size>3</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>1</columnIndex>
       <name>password</name>
-      <size>2</size>
+      <size>3</size>
    </internalDataColumns>
    <isInternalPath>false</isInternalPath>
    <query></query>

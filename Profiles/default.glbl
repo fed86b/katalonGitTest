@@ -11,32 +11,32 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>30</initValue>
+      <initValue>15</initValue>
       <name>G_Wait</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>0</initValue>
-      <name>G_Cur_User_ID</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>G_Cur_User_Role</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>G_Language</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>open tabs for each test case</description>
-      <initValue>[(0) : 0]</initValue>
-      <name>G_Tabs</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>4</initValue>
+      <initValue>1</initValue>
       <name>G_Small_Wait</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>3</initValue>
+      <name>G_Middle_Wait</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>2</initValue>
+      <name>G_DAYS_Add_From</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>3</initValue>
+      <name>G_DAYS_Add_To</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>2</initValue>
+      <name>G_Run_On_Fail</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,19 +1,15 @@
 package com.server
 
-import org.openqa.selenium.WebDriver as WebDriver
-import org.openqa.selenium.edge.EdgeDriver
-
 import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.server.WebHelper as WebHelper
+
 import internal.GlobalVariable
 
 
 class AppManager {
 
 	private static volatile AppManager app
-	private static volatile NavigationHelper navigationHelper
-	private static volatile WebHelper webHelper
 	private AppManager(){}
 
 	public static AppManager getInstance(){
@@ -22,9 +18,10 @@ class AppManager {
 				if(app == null){
 					app=new AppManager()
 					try {
-						WebUI.getUrl()
 						if(WebUI.getUrl().equalsIgnoreCase(GlobalVariable.G_Url))
 							goToNewTab()
+						else
+							return app
 					} catch (Exception e) {
 						openBrowser()
 					}
@@ -36,46 +33,19 @@ class AppManager {
 		return app
 	}
 
+
 	private static openBrowser() {
 		WebUI.openBrowser(GlobalVariable.G_Url)
 		WebUI.maximizeWindow()
-		WebDriver driver=DriverFactory.getWebDriver()
-		if(driver instanceof EdgeDriver){}
-		else
+		if (!DriverFactory.getExecutedBrowser() == WebUIDriverType.EDGE_DRIVER) {
 			WebUI.deleteAllCookies()
-	}
-
-
-
-	public NavigationHelper getNavHelper(){
-		if(navigationHelper==null){
-			synchronized (NavigationHelper.class){
-				if(navigationHelper == null){
-					navigationHelper=new NavigationHelper(this)
-				}
-			}
 		}
-		return navigationHelper
 	}
-
-	public WebHelper getWebHelper(){
-		if(webHelper==null){
-			synchronized (WebHelper.class){
-				if(webHelper == null){
-					webHelper=new WebHelper()
-				}
-			}
-		}
-		return webHelper
-	}
-
 
 
 	public void dismiss(){
 
 		WebUI.closeBrowser()
-		navigationHelper=null
-		webHelper=null
 		app=null
 	}
 

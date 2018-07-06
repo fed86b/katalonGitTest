@@ -2,65 +2,64 @@ package com.pages
 
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.server.AppManager
-import com.server.Enum_Language
-import com.server.Enum_Role
-import com.server.NavigationHelper
 import com.server.WebHelper
+import com.server.enums.Enum_Language
 
-import internal.GlobalVariable
+public abstract  class Kms_Page {
 
-public class Kms_Page {
-
-	NavigationHelper _nav
-	WebHelper _web
-	Enum_Language lang
-	Enum_Role role
-
-	public Kms_Page(NavigationHelper nav){
-		this._nav =nav
-		this._web =AppManager.getInstance().getWebHelper()
-	}
+	static Enum_Language lang
+	static protected def logout_button=WebHelper.createElement("logout_button","//a[@href = 'http://kmsqa3:501/kms/lh/logout']")
+	static protected def kms_home_icon=WebHelper.createElement("kms_home_icon","//*[@class = 'kms-icon kms-icon--home']")
+	static protected def profile_avatar=WebHelper.createElement("profile-avatar","//*[@class = 'top-toolbar__section top-toolbar__profile']")
 
 
-	public Kms_Page init_Kms_Page(Enum_Role role, Enum_Language lang){
-		//WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
-		WebUI.waitForPageLoad(GlobalVariable.G_Wait)
+
+	protected Kms_Page(Enum_Language lang){
 		this.lang=lang
-		this.role=role
-		return this
 	}
-	public LogIn_Page logout(){
-		_web.verify_text_MouseOver(findTestObject('Kms_Page_OR/Shared/span__profile-avatar'))
-		switch(lang){
-			case Enum_Language.RUSSIAN:
-				_web.verify_text_click(findTestObject('Kms_Page_OR/Languages/Ru/a_Logout_Ru'),'Выход')
-				break
-			case Enum_Language.ENGLISH:
-				_web.verify_text_click(findTestObject('Kms_Page_OR/Languages/En/a_Logout_En'),'Logout')
+
+	protected static  logout(){
+		try {
+			WebHelper.verify_text_MouseOver(profile_avatar)
+			String logout=""
+			switch(this.lang){
+				case Enum_Language.RUSSIAN:logout='Выход'
+					break
+				case Enum_Language.ENGLISH:logout='Logout'
+					break
+				case Enum_Language.ARABIC:assert true==false
+					break
+				case Enum_Language.BOLGARSKY:assert true==false
+					break
+				case Enum_Language.CHINESE:assert true==false
+					break
+				case Enum_Language.DANSK.toString():assert true==false
+					break
+				case Enum_Language.HEBREW:assert true==false
+					break
+				case Enum_Language.ITALIANO:assert true==false
+					break
+				case Enum_Language.ROMANIA:assert true==false
+					break
+			}
 
 
-				break
-			case Enum_Language.ARABIC:assert true==false
-				break
-			case Enum_Language.BOLGARSKY:assert true==false
-				break
-			case Enum_Language.CHINESE:assert true==false
-				break
-			case Enum_Language.DANSK.toString():assert true==false
-				break
-			case Enum_Language.HEBREW:assert true==false
-				break
-			case Enum_Language.ITALIANO:assert true==false
-				break
-			case Enum_Language.ROMANIA:assert true==false
-				break
+			WebHelper.verify_text_click_with_Delay(logout_button,logout)
 		}
-
-		return _nav.getLogin()
+		catch (Exception e) {
+			WebHelper.screenShoot(e.getMessage())
+			throw e
+		}
 	}
 
 
+	protected static  click_Home_Button(){
+		try {
+			WebHelper.verify_text_click_with_Delay(kms_home_icon)
+		}
+		catch (Exception e) {
+			WebHelper.screenShoot(e.getMessage())
+			throw e
+		}
+	}
 }

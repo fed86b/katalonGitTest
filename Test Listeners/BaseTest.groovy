@@ -1,6 +1,4 @@
-import java.text.BreakIterator
-
-import org.eclipse.persistence.jpa.jpql.parser.ElseExpressionBNF
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 
 import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
@@ -8,41 +6,46 @@ import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
+import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.server.AppManager
-
-import internal.GlobalVariable as GlobalVariable
+import com.server.RolesHelper
 
 class BaseTest {
 
 
 	@BeforeTestSuite
 	def beforeTestSuite(TestSuiteContext testSuite){
-		
+
 		KeywordUtil.markWarning("Before Test Suite Listener : " + testSuite.getTestSuiteId())
 	}
 
 	@BeforeTestCase
 	def beforeTestCase(TestCaseContext testCase) {
 		KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId())
+		AppManager.instance
 	}
 
 
 	@AfterTestCase
 	def afterTestCase(TestCaseContext testCase){
+		//		'login as content manager'
+		//		RolesHelper.getCm_En().Login()
+		//		if(testCase.getTestCaseId().contains("Item_Creation"))
+		//			WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Running_After_Tests'), [:], FailureHandling.STOP_ON_FAILURE)
 
-		KeywordUtil.markWarning("After Test case : " + testCase.getTestCaseId())
 	}
 
 
 	@AfterTestSuite
 	def closeBrowser(TestSuiteContext testSuite) {
+		//WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Delete_Items_Test_En'), [:], FailureHandling.STOP_ON_FAILURE)
+		if("FAILED".equalsIgnoreCase(testSuite.getStatus()))
+			WebUI.takeScreenshot()
 		AppManager.getInstance().dismiss()
 		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
 	}
-
-	
 }
 
 
