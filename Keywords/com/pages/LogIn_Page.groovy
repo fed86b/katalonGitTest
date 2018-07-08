@@ -4,8 +4,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.server.Login_Element
 import com.server.WebHelper
-import com.server.enums.Enum_Create_Item
 import com.server.enums.Enum_Language
 import com.server.enums.Enum_Login_Data
 import com.server.enums.Enum_Role
@@ -13,34 +13,30 @@ import com.server.enums.Enum_Tables
 
 import internal.GlobalVariable
 
-public class LogIn_Page {
-	static def link_change_lang=WebHelper.createElement("link_change_lang","//a[@href='#login-change-language']")
-	static def caret_lang=WebHelper.createElement("caret_lang","//span[@class='caret']")
-	static def en_lang=WebHelper.createElement("en_lang","//span[(text() = 'English' or . = 'English')]")
-	static def ru_lang=WebHelper.createElement("ru_lang","//span[@class = 'text' and (text() = 'Русский' or . = 'Русский')]")
-	static def auth_Login_button=WebHelper.createElement("auth_Login_button","//button[@type = 'submit']")
-	static def login_Kms_button=WebHelper.createElement("login_Kms_button","//button[@class = 'kms-login__form-submit ladda-button']")
-	static def password_txt=WebHelper.createElement("password_txt","//input[@id = 'login-password']")
-	static def userName_txt=WebHelper.createElement("userName_txt","//input[@id = 'login-username']")
-	static def forgot_password=WebHelper.createElement("forgot_password","//a[@data-target = '#forgot-password-modal']")
-	static def dropDown_roles=WebHelper.createElement("dropDown_roles","//button[@class = 'btn dropdown-toggle btn-default']")
-	static def administative_role=WebHelper.createElement("administative_role","//a[@role = 'option' and (contains(text(), 'Administrator') or contains(., 'Administrator'))]")
-	static def cm_role=WebHelper.createElement("cm_role","//a[@role = 'option' and (contains(., 'Content Manager'))]")
-	static  def title_layout=WebHelper.createElement("title_layout","//h1[@class = 'kms-login__header']")
-	static  def loginForm=WebHelper.createElement("loginForm","//form[@name = 'loginForm']")
+public abstract class LogIn_Page {
+
+	/*
+	 * for future 
+	 def forgot_password=new Login_Element("forgot_password","//a[@data-target = '#forgot-password-modal']")
+	 def loginForm=new Login_Element("loginForm","//form[@name = 'loginForm']")
+	 */
+	static isBacked=false
+	static protected Enum_Language language
+	static protected Enum_Role role
+	static protected boolean fail=false
+	static protected Exception my_exeption
+	protected LogIn_Page( Enum_Role role,Enum_Language language){
+		this.language=language
+		this.role=role
+	}
 
 
-
-
-	static String userName=""
-	static String password=""
-
-	public static check_Layout_Title(Enum_Language language) {
+	private static check_Layout_Title() {
+		def text=""
 		switch(language){
-			case Enum_Language.RUSSIAN:
-				WebHelper.verify_text_visibility(title_layout, 'ВЫБРАТЬ МАКЕТ')
+			case Enum_Language.RUSSIAN:text="ВЫБРАТЬ МАКЕТ"
 				break
-			case Enum_Language.ENGLISH:WebHelper.verify_text_visibility(title_layout, 'CHOOSE A LAYOUT')
+			case Enum_Language.ENGLISH:text="CHOOSE A LAYOUT"
 				break
 			case Enum_Language.ARABIC:assert true==false
 				break
@@ -56,48 +52,16 @@ public class LogIn_Page {
 				break
 			case Enum_Language.ROMANIA:assert true==false
 				break
-			default :
-				WebHelper.verify_text_visibility(title_layout, 'CHOOSE A LAYOUT')
 		}
+		(new Login_Element("title_layout","//h1[@class = 'kms-login__header']")).verifyText(text)
 	}
 
-	public static check_Login_Title(Enum_Language language) {
-		check_Layout_Title( language)
-	}
+	private static check_login_Title() {
+		def text="LOGIN"
 
-	public static check_Logos_Title_Links() {
-		try{
-			WebUI.waitForPageLoad(GlobalVariable.G_Wait)
-
-			WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
-
-
-			WebHelper.verify_texts(WebUI.getWindowTitle(), 'KMS lighthouse')
-
-			check_Login_Title()
-
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Visual/Kms_logo'))
-
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Visual/lang_Logo'))
-
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Visual/kms_ltd'), '© 2017 KMS lighthouse Ltd')
-		}
-		catch (Exception e) {
-
-			WebHelper.screenShoot(e.getMessage())
-		}
-	}
-
-	public static chooseLanguage(Enum_Language language) {
-		try {
-			WebHelper.verify_text_click(link_change_lang, 'Change Language')
-			WebHelper.verify_text_click(caret_lang)
+		if(isBacked)
 			switch(language){
-				case Enum_Language.RUSSIAN:
-					WebHelper.verify_text_click_with_hover(ru_lang, 'Русский')
-					break
-				case Enum_Language.ENGLISH:
-					WebHelper.verify_text_click_with_hover(en_lang, 'English')
+				case Enum_Language.RUSSIAN:text= "ВХОД"
 					break
 				case Enum_Language.ARABIC:assert true==false
 					break
@@ -113,68 +77,133 @@ public class LogIn_Page {
 					break
 				case Enum_Language.ROMANIA:assert true==false
 					break
-				default :
-					WebUI.click(en_lang)
 			}
+		(new Login_Element("title","//h1[@class = 'kms-login__header']")).verifyText(text)
+	}
+
+	protected static _check_Logos_Title_Links() {
+		try{
+			WebUI.waitForPageLoad(GlobalVariable.G_Wait)
+
+			WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
+
+			check_login_Title()
+
+			WebHelper.verify_texts(WebUI.getWindowTitle(), 'KMS lighthouse')
+
+			(new Login_Element(findTestObject('Login_Page_OR/Visual/Kms_logo'))).isVisible(false)
+			(new Login_Element(findTestObject('Login_Page_OR/Visual/lang_Logo'))).isVisible(false)
+			(new Login_Element(findTestObject('Login_Page_OR/Visual/kms_ltd'))).verifyText('© 2017 KMS lighthouse Ltd')
 		}
 		catch (Exception e) {
+
 			WebHelper.screenShoot(e.getMessage())
-			throw e
 		}
 	}
 
-	public static click_LogIn_With_UserName_And_Password() {
+	protected static _Back(){
+		WebUI.back()
+		if(WebUI.getUrl().equalsIgnoreCase(GlobalVariable.G_Url))
+			isBacked=true;
+	}
+
+	protected static _click_chooseLanguage() {
+		def chooseLang="Change Language"
+		def link_change_lang=new Login_Element("link_change_lang","//a[@href='#login-change-language']")
+		def caret_lang=new Login_Element("caret_lang","//span[@class='caret']")
+
 		try {
-			WebHelper.verify_text_click(auth_Login_button)
+			if(isBacked)
+				switch(language){
+					case Enum_Language.RUSSIAN:chooseLang='Выбери Язык'
+						break
+					case Enum_Language.ARABIC:assert true==false
+						break
+					case Enum_Language.BOLGARSKY:assert true==false
+						break
+					case Enum_Language.CHINESE:assert true==false
+						break
+					case Enum_Language.DANSK:assert true==false
+						break
+					case Enum_Language.HEBREW:assert true==false
+						break
+					case Enum_Language.ITALIANO:assert true==false
+						break
+					case Enum_Language.ROMANIA:assert true==false
+						break
+				}
+			link_change_lang.verifyText( chooseLang)
+			link_change_lang.click()
+			caret_lang.click()
+			select_language()
+		}
+		catch (Exception e) {
+			link_change_lang.click_with_delay()
+			caret_lang.click()
+			select_language()
+		}
+	}
+
+	private static select_language() {
+		def str_lang=""
+		switch(language){
+			case Enum_Language.RUSSIAN:str_lang='Русский'
+				break
+			case Enum_Language.ENGLISH:str_lang='English'
+				break
+			case Enum_Language.ARABIC:assert true==false
+				break
+			case Enum_Language.BOLGARSKY:assert true==false
+				break
+			case Enum_Language.CHINESE:assert true==false
+				break
+			case Enum_Language.DANSK:assert true==false
+				break
+			case Enum_Language.HEBREW:assert true==false
+				break
+			case Enum_Language.ITALIANO:assert true==false
+				break
+			case Enum_Language.ROMANIA:assert true==false
+				break
+		}
+		def xpath=String.format("//span[(contains(., '%s'))]", str_lang)
+		(new Login_Element("link_lang",xpath)).click()
+	}
+
+	protected static _click_LogIn_With_UserName_And_Password() {
+		def auth_Login_button=new Login_Element("auth_Login_button","//button[@type = 'submit']")
+		try {
+			auth_Login_button.click()
+			WebHelper.wait_for_Edge_ie()
 		}catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
-			throw e
+			auth_Login_button.click_with_delay()
 		}
 	}
 
 
 
-	public static click_Submit(Enum_Language language) {
+	protected static _Enter_to_Kms() {
+		def login_Kms_button=new Login_Element("login_Kms_button","//button[@class = 'kms-login__form-submit ladda-button']")
 		try {
-			WebHelper.press_Enter(login_Kms_button)
-			//WebHelper.submit(this.loginForm)
-			//			switch(language){
-			//				case Enum_Language.RUSSIAN:WebHelper.verify_text_click_with_hover(login_Kms_button,'ВОЙТИ')
-			//					break
-			//				case Enum_Language.ENGLISH:WebHelper.verify_text_click_with_hover(login_Kms_button,'LOGIN')
-			//					break
-			//				case Enum_Language.ARABIC:assert true==false
-			//					break
-			//				case Enum_Language.BOLGARSKY:assert true==false
-			//					break
-			//				case Enum_Language.CHINESE:assert true==false
-			//					break
-			//				case Enum_Language.DANSK:assert true==false
-			//					break
-			//				case Enum_Language.HEBREW:assert true==false
-			//					break
-			//				case Enum_Language.ITALIANO:assert true==false
-			//					break
-			//				case Enum_Language.ROMANIA:assert true==false
-			//					break
-			//			}
+			login_Kms_button.press_Enter()
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
-			throw e
+			login_Kms_button.click_with_delay()
 		}
 	}
 
 
 
-	public static select_View(Enum_Role role) {
+	protected static _select_View() {
+		def dropDown_roles=new Login_Element("dropDown_roles","//button[@class = 'btn dropdown-toggle btn-default']")
+		def link_role
 		try {
-			WebHelper.verify_text_click(dropDown_roles)
-
+			check_Layout_Title()
+			dropDown_roles.click()
+			def str_role=""
 			switch(role){
 
-				case Enum_Role.ADMINISTRATOR:
-					WebHelper.verify_text_click(administative_role,'Administrator')
+				case Enum_Role.ADMINISTRATOR:str_role="Administrator"
 					break
 				case Enum_Role.SCR:assert false==true
 					break
@@ -184,20 +213,27 @@ public class LogIn_Page {
 					break
 				case Enum_Role.CONTENT_CONTRIBUTOR:assert false==true
 					break
-				case Enum_Role.CONTENT_MANAGER:
-					WebHelper.verify_text_click_with_hover(cm_role,'Content Manager')
-
+				case Enum_Role.CONTENT_MANAGER:str_role="Content Manager"
 					break
 			}
+			def xpath=String.format("//span[ (contains(., '%s'))]", str_role)
+			link_role=new Login_Element("link_role",xpath)
+			link_role.click()
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
-			throw e
+			WebHelper.delay_medium()
+			check_Layout_Title()
+			dropDown_roles.click()
+			link_role.click()
 		}
 	}
 
 
-	public static fill_UserName_Password(Enum_Role role) {
+	protected static _fill_UserName_Password() {
+		def userName=""
+		def password=""
+		def password_txt=new Login_Element("password_txt","//input[@id = 'login-password']")
+		def userName_txt=new Login_Element("userName_txt","//input[@id = 'login-username']")
 		try {
 			visual_check_login_form()
 			int row=-1
@@ -218,30 +254,33 @@ public class LogIn_Page {
 					row=1
 					break
 			}
-			userName=WebHelper.get_auth(Enum_Tables.Login_Data,Enum_Login_Data.userName, row)
-			password=WebHelper.get_auth(Enum_Tables.Login_Data,Enum_Login_Data.password, row)
+			userName=WebHelper.get_auth(Enum_Login_Data.userName, row)
+			password=WebHelper.get_auth(Enum_Login_Data.password, row)
 
-			WebHelper.write_text(userName_txt, userName)
+			userName_txt.write_text(userName)
 
-			WebHelper.write_text(password_txt, password)
+			password_txt.write_text(password)
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
-			throw e
+			userName_txt.write_text(userName)
+
+			password_txt.write_text(password)
 		}
 	}
 
 	private static visual_check_login_form() {
+		def span_password=new Login_Element("span_password","//span[@class='kms-login__label-text'  and contains(text(),'Password')]")
+		def span_userName=new Login_Element("span_userName","//span[@class='kms-login__label-text'  and contains(text(),'Username')]")
+
 		try {
 
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Visual/pass_Logo'))
+			(new Login_Element(findTestObject('Login_Page_OR/Visual/pass_Logo'))).isVisible(false)
 
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Visual/userName_Logo'))
+			(new Login_Element(findTestObject('Login_Page_OR/Visual/userName_Logo'))).isVisible(false)
 
+			span_userName.isVisible(false)
 
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Languages/En/span_Username'), 'Username')
-
-			WebHelper.verify_text_visibility(findTestObject('Login_Page_OR/Languages/En/span_Password'), 'Password')
+			span_password.isVisible(false)
 		}
 		catch (Exception e) {
 

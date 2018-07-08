@@ -12,7 +12,8 @@ public abstract  class CM extends User{
 	}
 
 	protected static delete_all_created_items(String yes){
-		tempHelper.getTemplate().open_lastFolder()
-		tempHelper.getTemplate().delete_items(yes)
+			tempHelper.getTemplate()._open_lastFolder()
+			tempHelper.getTemplate().delete_items(yes)
+		
 	}
 }

@@ -1,27 +1,29 @@
 package com.pages
 
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
+import com.server.MyElement
 import com.server.WebHelper
 import com.server.enums.Enum_Language
+import com.server.enums.Enum_Role
 
-public abstract  class Kms_Page {
+public abstract  class Kms_Page extends LogIn_Page {
 
 	static Enum_Language lang
-	static protected def logout_button=WebHelper.createElement("logout_button","//a[@href = 'http://kmsqa3:501/kms/lh/logout']")
-	static protected def kms_home_icon=WebHelper.createElement("kms_home_icon","//*[@class = 'kms-icon kms-icon--home']")
-	static protected def profile_avatar=WebHelper.createElement("profile-avatar","//*[@class = 'top-toolbar__section top-toolbar__profile']")
+	static MyElement logout_button=new MyElement("logout_button","//a[@href = 'http://kmsqa3:501/kms/lh/logout']")
+	static MyElement kms_home_icon=new MyElement("kms_home_icon","//*[@class = 'kms-icon kms-icon--home']")
+	static MyElement profile_avatar=new MyElement("profile-avatar","//*[@class = 'top-toolbar__section top-toolbar__profile']")
 
 
 
-	protected Kms_Page(Enum_Language lang){
+	protected Kms_Page( Enum_Role role,Enum_Language language){
+		super(role,language)
 		this.lang=lang
 	}
 
-	protected static  logout(){
+	protected static  _logout(){
+		String logout=""
 		try {
-			WebHelper.verify_text_MouseOver(profile_avatar)
-			String logout=""
+			profile_avatar.MouseOver()
+
 			switch(this.lang){
 				case Enum_Language.RUSSIAN:logout='Выход'
 					break
@@ -44,21 +46,37 @@ public abstract  class Kms_Page {
 			}
 
 
-			WebHelper.verify_text_click_with_Delay(logout_button,logout)
+			logout_button.verifyText(logout)
+			logout_button.click_with_delay()
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
-			throw e
+			my_exeption=e
+			fail=true
+			profile_avatar.MouseOver()
+			logout_button.verifyText(logout)
+			logout_button.click_with_delay()
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
 		}
 	}
 
 
-	protected static  click_Home_Button(){
+	protected static  _click_Home_Button(){
 		try {
-			WebHelper.verify_text_click_with_Delay(kms_home_icon)
+			kms_home_icon.click()
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
+			my_exeption=e
+			fail=true
+			kms_home_icon.click_with_delay()
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
 		}
 	}
 }

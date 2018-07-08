@@ -45,7 +45,7 @@ class AppManager {
 
 	public void dismiss(){
 
-		WebUI.closeBrowser()
+	//	WebUI.closeBrowser()
 		app=null
 	}
 

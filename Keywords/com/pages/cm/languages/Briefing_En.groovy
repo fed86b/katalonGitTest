@@ -1,43 +1,133 @@
 package com.pages.cm.languages
 
 import com.pages.cm.Briefing_Page
+import com.server.WebHelper
 import com.server.enums.Enum_Template
 public class Briefing_En extends Briefing_Page {
-
+	
 	protected Briefing_En( ) {
-		super(Enum_Template.BRIEFING)
+		super()
 	}
 
-	protected static click_upper_button_create_item(){
-
-		from_Upper_Button('Create New Item')
+	protected static _click_upper_button_create_item(){
+		try {
+			from_Upper_Button('Create New Item')
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			from_Upper_Button('Create New Item')
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 
-	protected static choose_Briefing_Template_By_Typing() {
+	protected static _choose_Briefing_Template_By_Typing() {
 
-		choose_template_by_Typing('Briefing','Ok')
+		try {
+			choose_template_by_Typing('Briefing','Ok')
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			choose_template_by_Typing('Briefing','Ok')
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
+	}
+	
+	protected static _choose_Date_Edit_Item() {
+		
+				try {
+					choose_Date_Edit_Item("Today")
+				} catch (Exception e) {
+					my_exeption=e
+					fail=true
+					choose_Date_Edit_Item("Today")
+				}
+				finally{
+					if(fail)
+						WebHelper.screenShoot(my_exeption.getMessage())
+					fail=false
+				}
+			}
+
+	protected static _click_edit_tab() {
+		try{
+			click_Edit('Edit Item')
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			click_Edit('Edit Item')
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 
-	protected static click_edit_tab() {
-
-		click_Edit('Edit Item')
+	protected static _click_item_properties_tab() {
+		try{
+			click_item_Properties('Item Properties')
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			click_item_Properties('Item Properties')
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 
-	protected static click_item_properties_tab() {
-
-		click_item_Properties('Item Properties')
+	protected static _verify_template_updateDate() {
+		try{
+			verify_Template_Name_Update("Briefing")
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			verify_Template_Name_Update("Briefing")
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 
-	protected static verify_template_updateDate() {
-
-		verify_Template_Name_Update("Briefing","Template")
+	protected static _click_save_and_check_if_number_of_items_incremented_in_lastFolder(){
+		try{
+			save_check_if_number_of_items_incremented_in_lastFolder('Save')
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			save_check_if_number_of_items_incremented_in_lastFolder('Save')
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 
-	protected static click_save_and_check_if_number_of_items_incremented_in_lastFolder(){
-		save_check_if_number_of_items_incremented_in_lastFolder('Save')
-	}
-
-	protected static DeleteAll(){
-		delete_items("Yes")
+	protected static _DeleteAll(){
+		try{
+			delete_items("Yes")
+		} catch (Exception e) {
+			my_exeption=e
+			fail=true
+			delete_items("Yes")
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+			fail=false
+		}
 	}
 }

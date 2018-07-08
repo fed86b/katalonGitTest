@@ -1,25 +1,22 @@
-import com.pages.LogIn_Page as LogIn_Page
-import com.server.enums.Enum_Language as Enum_Language
-import com.server.enums.Enum_Role as Enum_Role
+import com.server.RolesHelper
 
 'check if all logos, titles, links and pictures on the page are correct '
-LogIn_Page.check_Logos_Title_Links()
+
+RolesHelper.getCm_En()._check_Logos_Title_Links()
 
 'set username and password, predifined in internal data by roles'
-LogIn_Page.fill_UserName_Password(Enum_Role.CONTENT_MANAGER)
+RolesHelper.getCm_En()._fill_UserName_Password()
 
 'set language to english'
-LogIn_Page.chooseLanguage(Enum_Language.ENGLISH)
+RolesHelper.getCm_En()._click_chooseLanguage()
 
 'click on login button, authenticate'
-LogIn_Page.click_LogIn_With_UserName_And_Password()
+RolesHelper.getCm_En()._click_LogIn_With_UserName_And_Password()
 
 'set role to content manager'
-LogIn_Page.select_View(Enum_Role.CONTENT_MANAGER)
+RolesHelper.getCm_En()._select_View()
 
-'check layout title'
-LogIn_Page.check_Layout_Title(Enum_Language.ENGLISH)
 
 'submit form and go to Kms page'
-LogIn_Page.click_Submit(Enum_Language.ENGLISH)
+RolesHelper.getCm_En()._Enter_to_Kms()
 

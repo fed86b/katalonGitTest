@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//label[contains(text(),'Template')]/following::span)[1][count(. | //*[@ref_element = 'Object Repository/Kms_Page_OR/Roles/Content_Manager/iframe_itemscope']) = count(//*[@ref_element = 'Object Repository/Kms_Page_OR/Roles/Content_Manager/iframe_itemscope'])]</value>
+         <value>//*[@id=&quot;itemType&quot;][count(. | //*[@ref_element = 'Object Repository/Kms_Page_OR/Roles/Content_Manager/Shared_CM/create_item/iframe_itemscope']) = count(//*[@ref_element = 'Object Repository/Kms_Page_OR/Roles/Content_Manager/Shared_CM/create_item/iframe_itemscope'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -38,7 +38,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//label[contains(text(),'Template')]/following::span)[1]</value>
+      <value>//*[@id=&quot;itemType&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
