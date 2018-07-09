@@ -16,7 +16,7 @@ public class TemplateHelper {
 	public static My_Template getTemplate() {
 		return template=new My_Template();
 	}
-	
+
 	public static Briefing_Page getBriefing_Page() {
 		return briefing_Page=new Briefing_Page();
 	}

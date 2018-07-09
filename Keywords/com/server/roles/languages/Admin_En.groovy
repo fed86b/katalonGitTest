@@ -16,7 +16,6 @@ public  class Admin_En extends Admin {
 	}
 
 	static protected  Login_En(){
-		Login(findTestCase('Test Cases/LogIn_Tests/Languages/En/Login_Administrator_En_Test'))
-		
+		Run_Test(findTestCase('Test Cases/LogIn_Tests/Languages/En/Login_Administrator_En_Test'))
 	}
 }

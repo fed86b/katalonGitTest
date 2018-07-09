@@ -64,12 +64,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			set_description()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -81,12 +82,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			set_date(days,GlobalVariable.G_DAYS_Add_To,input_STATUS_DATE_TO)
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -96,12 +98,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			set_date(days,GlobalVariable.G_DAYS_Add_From,input_ST_DATE_FROM)
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -112,12 +115,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			set_status(status,select_status_from)
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -132,12 +136,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			saveAndRelocate.click_with_hover()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -147,12 +152,13 @@ public class My_Template extends My_Item{
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			set_item_name()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -182,38 +188,38 @@ public class My_Template extends My_Item{
 			fail=true
 			WebHelper.delay()
 			get_items_in_last_folder()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 	protected static  _open_lastFolder(){
 		try {
+			if(!last_folder_in_cm_tree.for_Ie(item_in_last_folder))
 			last_folder_in_cm_tree.click_with_hover()
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			last_folder_in_cm_tree.click_with_delay()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
 	protected static from_Upper_Button(String title ){
-		button_create_new_item.click_with_delay()
-		button_create_new_item.verifyText(title)
+		button_create_new_item.click_with_hover(title)
 	}
 
 	protected static choose_template_by_Typing(String briefing, String ok) {
 		input_create_item_template.click_with_delay()
 		input_create_item_template.write_text( briefing)
-		button_ok_create_template.click()
-		button_ok_create_template.verifyText(ok)
+		button_ok_create_template.click(ok)
 	}
 
 
@@ -229,6 +235,7 @@ public class My_Template extends My_Item{
 
 	protected static delete_items(int count=ALL,String yes){
 		if(count==ALL){
+			
 			while (item_in_last_folder.isVisible(false)) {
 				delete_first_item_(yes)
 			}
@@ -241,7 +248,8 @@ public class My_Template extends My_Item{
 	}
 
 	protected static delete_first_item_(String yes){
-		item_in_last_folder.click_with_delay()
+
+		item_in_last_folder.findElement().click_with_delay()
 		verify_delete(yes)
 	}
 
@@ -262,15 +270,13 @@ public class My_Template extends My_Item{
 	protected static click_Edit(String edit) {
 		//def xpath=String.format("//a[@href = '#item-update-tab-edit' and (. = '%s')",edit)
 		//a_Edit_Tab.modify(xpath)
-		a_Edit_Tab.double_click()
-		a_Edit_Tab.verifyText(edit)
+		a_Edit_Tab.double_click(edit)
 	}
 
 	protected static click_item_Properties(String itemProperties) {
-//		def xpath=String.format("//a[@href = '#item-update-tab-main' and (. = '%s')",itemProperties)
-//		a_Item_Properties.modify(xpath)
-		a_Item_Properties.double_click()
-		a_Item_Properties.verifyText(itemProperties)
+		//		def xpath=String.format("//a[@href = '#item-update-tab-main' and (. = '%s')",itemProperties)
+		//		a_Item_Properties.modify(xpath)
+		a_Item_Properties.double_click(itemProperties)
 	}
 	private static set_item_name() {
 		String id=span_itemId.generate_Name()

@@ -16,11 +16,11 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			from_Upper_Button('Create New Item')
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -32,11 +32,11 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			choose_template_by_Typing('Briefing','Ok')
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 	
@@ -48,11 +48,11 @@ public class Briefing_En extends Briefing_Page {
 					my_exeption=e
 					fail=true
 					choose_Date_Edit_Item("Today")
+					fail=false
 				}
 				finally{
 					if(fail)
 						WebHelper.screenShoot(my_exeption.getMessage())
-					fail=false
 				}
 			}
 
@@ -63,11 +63,11 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			click_Edit('Edit Item')
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -78,11 +78,12 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			click_item_Properties('Item Properties')
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
+			
 		}
 	}
 
@@ -93,11 +94,12 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			verify_Template_Name_Update("Briefing")
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
+			
 		}
 	}
 
@@ -108,11 +110,11 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			save_check_if_number_of_items_incremented_in_lastFolder('Save')
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -123,11 +125,11 @@ public class Briefing_En extends Briefing_Page {
 			my_exeption=e
 			fail=true
 			delete_items("Yes")
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 }

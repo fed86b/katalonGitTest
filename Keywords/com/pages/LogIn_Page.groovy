@@ -24,12 +24,12 @@ public abstract class LogIn_Page {
 	static protected Enum_Language language
 	static protected Enum_Role role
 	static protected boolean fail=false
+	static protected int interations=0
 	static protected Exception my_exeption
 	protected LogIn_Page( Enum_Role role,Enum_Language language){
 		this.language=language
 		this.role=role
 	}
-
 
 	private static check_Layout_Title() {
 		def text=""
@@ -85,7 +85,7 @@ public abstract class LogIn_Page {
 		try{
 			WebUI.waitForPageLoad(GlobalVariable.G_Wait)
 
-			WebUI.verifyAllLinksOnCurrentPageAccessible(true, [],FailureHandling.CONTINUE_ON_FAILURE)
+			WebUI.verifyAllLinksOnCurrentPageAccessible(true, [])
 
 			check_login_Title()
 
@@ -96,7 +96,6 @@ public abstract class LogIn_Page {
 			(new Login_Element(findTestObject('Login_Page_OR/Visual/kms_ltd'))).verifyText('© 2017 KMS lighthouse Ltd')
 		}
 		catch (Exception e) {
-
 			WebHelper.screenShoot(e.getMessage())
 		}
 	}
@@ -132,15 +131,22 @@ public abstract class LogIn_Page {
 					case Enum_Language.ROMANIA:assert true==false
 						break
 				}
-			link_change_lang.verifyText( chooseLang)
-			link_change_lang.click()
+			link_change_lang.click().verifyText( chooseLang)
 			caret_lang.click()
 			select_language()
 		}
 		catch (Exception e) {
+			my_exeption=e
+			fail=true
+			WebHelper.delay_medium()
 			link_change_lang.click_with_delay()
 			caret_lang.click()
 			select_language()
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
 		}
 	}
 
@@ -176,7 +182,15 @@ public abstract class LogIn_Page {
 			auth_Login_button.click()
 			WebHelper.wait_for_Edge_ie()
 		}catch (Exception e) {
+			fail=true
+			my_exeption=e
+			WebHelper.delay_medium()
 			auth_Login_button.click_with_delay()
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
 		}
 	}
 
@@ -188,7 +202,15 @@ public abstract class LogIn_Page {
 			login_Kms_button.press_Enter()
 		}
 		catch (Exception e) {
+			fail=true
+			my_exeption=e
+			WebHelper.delay_medium()
 			login_Kms_button.click_with_delay()
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
 		}
 	}
 
@@ -221,10 +243,17 @@ public abstract class LogIn_Page {
 			link_role.click()
 		}
 		catch (Exception e) {
+			fail=true
+			my_exeption=e
 			WebHelper.delay_medium()
 			check_Layout_Title()
 			dropDown_roles.click()
 			link_role.click()
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
 		}
 	}
 
@@ -262,9 +291,16 @@ public abstract class LogIn_Page {
 			password_txt.write_text(password)
 		}
 		catch (Exception e) {
+			fail=true
+			my_exeption=e
+			WebHelper.delay_medium()
 			userName_txt.write_text(userName)
-
 			password_txt.write_text(password)
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
 		}
 	}
 

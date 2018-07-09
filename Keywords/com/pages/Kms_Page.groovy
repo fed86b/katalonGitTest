@@ -44,22 +44,19 @@ public abstract  class Kms_Page extends LogIn_Page {
 				case Enum_Language.ROMANIA:assert true==false
 					break
 			}
-
-
-			logout_button.verifyText(logout)
-			logout_button.click_with_delay()
+			logout_button.click_with_delay().verifyText(logout)
 		}
 		catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			profile_avatar.MouseOver()
-			logout_button.verifyText(logout)
-			logout_button.click_with_delay()
+			logout_button.click_with_delay().verifyText(logout)
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 
@@ -71,12 +68,13 @@ public abstract  class Kms_Page extends LogIn_Page {
 		catch (Exception e) {
 			my_exeption=e
 			fail=true
+			WebHelper.delay_medium()
 			kms_home_icon.click_with_delay()
+			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
-			fail=false
 		}
 	}
 }

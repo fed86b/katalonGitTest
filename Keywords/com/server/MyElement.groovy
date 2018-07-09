@@ -40,113 +40,137 @@ public  class MyElement extends TestObject {
 		this.isLogin=isLogin
 	}
 
-	public void verifyText(String text) {
+	public boolean verifyText(String text) {
 		if(!text.isEmpty()&&!DriverFactory.getExecutedBrowser() == WebUIDriverType.EDGE_DRIVER)
-			WebUI.verifyElementText(element,text,FailureHandling.OPTIONAL)
+			return WebUI.verifyElementText(element,text,FailureHandling.OPTIONAL)
+		return false
+	}
+
+	public boolean for_Ie(MyElement folder){
+		if(DriverFactory.getExecutedBrowser() == WebUIDriverType.IE_DRIVER){
+			for(def i=0;i<2;i++){
+				if(!folder.isVisible(false))
+					click_with_hover()
+			}
+			return true
+		}
+		return false
+	}
+
+	public MyElement  submit(def text=""){
+		isVisible(true,text)
+		WebUI.submit(element,FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
+
+	public MyElement  press_Enter(def text=""){
+		isVisible(true,text)
+		WebUI.sendKeys(element,Keys.chord(Keys.ENTER),FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
+
+	public MyElement  press_Del(def text=""){
+		isVisible(true,text)
+		WebUI.sendKeys(element,Keys.chord(Keys.DELETE),FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
+
+	public MyElement  press_Esc(def text=""){
+		isVisible(true,text)
+		WebUI.sendKeys(element,Keys.chord(Keys.ESCAPE),FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
+	public MyElement  press_tab(def text=""){
+		isVisible(true,text)
+		WebUI.sendKeys(element,Keys.chord(Keys.TAB),FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
 
-	public  submit(){
+	public MyElement  select_by_index(int index){
 		isVisible()
-		WebUI.submit(element)
-	}
-
-	public  press_Enter(){
-		isVisible()
-		WebUI.sendKeys(element,Keys.chord(Keys.ENTER))
-	}
-
-	public  press_Del(){
-		isVisible()
-		WebUI.sendKeys(element,Keys.chord(Keys.DELETE))
-	}
-
-	public  press_Esc(){
-		isVisible()
-		WebUI.sendKeys(element,Keys.chord(Keys.ESCAPE))
-	}
-	public  press_tab(){
-		isVisible()
-		WebUI.sendKeys(element,Keys.chord(Keys.TAB))
+		WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
 
-	public  select_by_index(int index){
-		isVisible()
-		WebUI.selectOptionByIndex(element,index)
+	public MyElement  click_with_hover(String text=""){
+		MouseOver(text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
-
-	public  click_with_hover(){
-		MouseOver()
-		WebUI.click(element)
+	public MyElement  click(def text=""){
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
-
-	public  click(){
-		isVisible()
-		WebUI.click(element)
-	}
-	public modify(def xpath){
+	public MyElement modify(def xpath){
 		WebUI.modifyObjectProperty(element, 'xpath', 'equals', xpath, false)
+		return this
 	}
 
 
-
-
-
-	public  image_click(String text=""){
-		isVisible()
-		WebUI.clickImage(element)
+	public MyElement  image_click(String text=""){
+		isVisible(true,text)
+		WebUI.clickImage(element,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
-	public  click_with_delay(){
+	public MyElement  click_with_delay(def text=""){
 		delay()
-		isVisible()
-		WebUI.click(element)
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		delay()
+		return this
 	}
 
-	public   double_click(){
-		isVisible()
-		WebUI.click(element)
+	public MyElement   double_click(def text=""){
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		delay()
-		WebUI.click(element)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
-	public  String generate_Name(){
+	public String generate_Name(){
 		isVisible()
-		return WebUI.getText(element)
+		return WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
 	}
 
-	public  write_text(String text){
+	public MyElement  write_text(String str){
 		isVisible()
-		WebUI.clearText(element)
-		WebUI.setText(element, text)
+		WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
+		WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
 	//for ie and firefox
-	public write_key_chord(String text){
-		CharSequence cs = text
+	public MyElement write_key_chord(String str){
+		CharSequence cs = str
 		isVisible()
-		WebUI.sendKeys(element,Keys.chord(cs) )
+		WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
 
 
-	public MouseOver(){
-		isVisible()
-		WebUI.mouseOver(element)
+	public MyElement MouseOver(def text=""){
+		isVisible(true,text)
+		WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
-	public boolean isVisible(boolean fail=true){
+	public boolean isVisible(boolean fail=true,def text=""){
 		WebUI.scrollToPosition(WebUI.getViewportLeftPosition(),WebUI.getViewportTopPosition())
 		boolean visible=false
 		if(!isLogin)
 			verify_process_wait()
 		try{
+			verifyText(text)
 			if(fail){
 				if(!WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait))
-					throw new Exception()
+					findElement()
 
 			}
 			else
@@ -172,15 +196,17 @@ public  class MyElement extends TestObject {
 		} catch (Exception e) {	}
 	}
 
-	private  findElement() {
-		try {
-			WebUI.scrollToElement(element, GlobalVariable.G_Middle_Wait,FailureHandling.OPTIONAL)
-		} catch (Exception ex) {
-			WebUI.scrollToPosition(WebUI.getElementLeftPosition(element), WebUI.getPageHeight()*0.8)
-		}
+	public MyElement findElement() {
+		WebUI.scrollToElement(element, GlobalVariable.G_Middle_Wait,FailureHandling.OPTIONAL)
+		if(WebUI.waitForElementNotVisible(element, GlobalVariable.G_Small_Wait))
+			WebUI.scrollToPosition(WebUI.getElementLeftPosition(element), WebUI.getPageHeight()*0.8,FailureHandling.STOP_ON_FAILURE)
+		return this
 	}
 
+
+
 	private  delay(){
+		//Thread.sleep(GlobalVariable.G_Millisec)
 		WebUI.delay(GlobalVariable.G_Small_Wait)
 	}
 

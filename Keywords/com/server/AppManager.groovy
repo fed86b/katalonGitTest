@@ -1,5 +1,6 @@
 package com.server
 
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -35,6 +36,8 @@ class AppManager {
 
 
 	private static openBrowser() {
+
+		//RunConfiguration.setExecutionSettingFile(WebHelper.getLocation())
 		WebUI.openBrowser(GlobalVariable.G_Url)
 		WebUI.maximizeWindow()
 		if (!DriverFactory.getExecutedBrowser() == WebUIDriverType.EDGE_DRIVER) {
@@ -43,9 +46,9 @@ class AppManager {
 	}
 
 
-	public void dismiss(){
+	public static void dismiss(){
 
-	//	WebUI.closeBrowser()
+		WebUI.closeBrowser()
 		app=null
 	}
 

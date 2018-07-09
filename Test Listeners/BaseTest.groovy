@@ -41,8 +41,8 @@ class BaseTest {
 	@AfterTestSuite
 	def closeBrowser(TestSuiteContext testSuite) {
 		//WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Delete_Items_Test_En'), [:], FailureHandling.STOP_ON_FAILURE)
-		if("FAILED".equalsIgnoreCase(testSuite.getStatus()))
-			WebUI.takeScreenshot()
+//		if("FAILED".equalsIgnoreCase(testSuite.getStatus()))
+//			WebUI.takeScreenshot()
 		AppManager.getInstance().dismiss()
 		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
 	}

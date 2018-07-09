@@ -11,10 +11,9 @@ public class Admin_Ru extends Admin{
 
 	protected Admin_Ru(){
 		super(Enum_Language.RUSSIAN)
-
 	}
 
 	static protected  Login_Ru(){
-		Login(findTestCase('Test Cases/LogIn_Tests/Languages/Ru/LogIn_Administrator_Ru_Test'))
+		this.Run_Test(findTestCase('Test Cases/LogIn_Tests/Languages/Ru/LogIn_Administrator_Ru_Test'))
 	}
 }

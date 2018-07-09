@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat
 import org.openqa.selenium.Keys as Keys
 
 import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -51,14 +52,22 @@ public  class WebHelper {
 
 	public static screenShoot(String error_Destination){
 		String fixed_error=error_Destination.replaceAll("[\\<\\>\\:\\/\\|\\?\\*\" ]", " ")
-		String withoutWords=fixed_error.replaceAll("\n|(Root|cause|org.openqa.selenium.WebDriverException|TypeError|rect is undefined Build info|version", " ")
+		String withoutWords=fixed_error.replace("\n"," ")
 		def error
 		if(withoutWords.length()>END)
 			error=withoutWords.substring(START, END)
-		def folder=DriverFactory.getExecutedBrowser().getName()
-		def location=String.format('Reports/%s/%s.png', folder,error)
+		WebUI.takeScreenshot(getLocation(error+'.png'));
+		WebUI.closeBrowser()
+	}
 
-		WebUI.takeScreenshot(location);
+	public static Run_Test(TestCase test){
+		WebUI.callTestCase(test, [:],FailureHandling.STOP_ON_FAILURE)
+	}
+
+	public static getLocation(def file){
+		def folder=DriverFactory.getExecutedBrowser().getName()
+		//new File('Reports/'+folder).mkdirs();
+		return String.format('Reports/%s/%s', folder,file)
 	}
 
 	public static  wait_for_Edge_ie() {
@@ -78,20 +87,14 @@ public  class WebHelper {
 	}
 
 	public static String get_date(String d){
-
 		return dateFormat_simple.format(dateFormat_simple.parse(d))
 	}
 
 	public static String add_to_dateNow_day(int days){
 		Date now=new Date()
-
 		now.setDate(now.getDay()+days)
 		return dateFormat_h_m_s.format(now)
 	}
-
-
-
-
 
 	public static String get_auth(Enum_Login_Data col_name, int row){
 		return findTestData(Enum_Tables.Login_Data.toString()).getValue(col_name.toString(), row)
