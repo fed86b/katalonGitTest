@@ -64,8 +64,8 @@ RolesHelper.getCm_En()._click_Home_Button()
 RolesHelper.getCm_En()._delete_all_created_items_en()
 
 'logout from system'
-not_run: RolesHelper.getCm_En()._logout()
+RolesHelper.getCm_En()._logout()
 
 'close browser'
-not_run: WebUI.closeBrowser()
+WebUI.closeBrowser()
 
