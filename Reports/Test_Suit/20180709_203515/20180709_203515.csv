@@ -1,0 +1,11 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test_Suit,Chrome 67.0.3396.99,,2018-07-09 20:39:27,2018-07-09 20:40:11,"44,028s",FAILED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En,Chrome 67.0.3396.99,,2018-07-09 20:39:27,2018-07-09 20:40:11,"43,806s",FAILED
+Start listener action : beforeTestCase,Chrome 67.0.3396.99,,2018-07-09 20:39:27,2018-07-09 20:39:35,"7,487s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._Login_En(),Chrome 67.0.3396.99,login as content manager,2018-07-09 20:39:35,2018-07-09 20:39:52,"17,533s",PASSED
+Statement - briefing._click_upper_button_create_item(),Chrome 67.0.3396.99,create new item by clicking on CREATE NEW ITEM button,2018-07-09 20:39:52,2018-07-09 20:39:54,"1,237s",PASSED
+Statement - briefing._choose_Briefing_Template_By_Typing(),Chrome 67.0.3396.99,choose template  ,2018-07-09 20:39:54,2018-07-09 20:39:56,"2,379s",PASSED
+Statement - briefing._verify_template_updateDate(),Chrome 67.0.3396.99,verify template and updated time,2018-07-09 20:39:56,2018-07-09 20:40:05,"8,523s",PASSED
+Statement - briefing._set_Item_Name(),Chrome 67.0.3396.99,set name for Item  ,2018-07-09 20:40:05,2018-07-09 20:40:11,"6,554s",PASSED
+Start listener action : afterTestCase,Chrome 67.0.3396.99,,2018-07-09 20:40:11,2018-07-09 20:40:11,"0,000s",PASSED

@@ -1,0 +1,24 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test_Suit,Edge 17,,2018-07-09 20:35:17,2018-07-09 20:35:54,"36,397s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En,Edge 17,,2018-07-09 20:35:18,2018-07-09 20:35:53,"35,214s",PASSED
+Start listener action : beforeTestCase,Edge 17,,2018-07-09 20:35:18,2018-07-09 20:35:21,"3,877s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._Login_En(),Edge 17,login as content manager,2018-07-09 20:35:22,2018-07-09 20:35:30,"8,732s",PASSED
+Statement - briefing._click_upper_button_create_item(),Edge 17,create new item by clicking on CREATE NEW ITEM button,2018-07-09 20:35:30,2018-07-09 20:35:33,"2,628s",PASSED
+Statement - briefing._choose_Briefing_Template_By_Typing(),Edge 17,choose template  ,2018-07-09 20:35:33,2018-07-09 20:35:35,"2,230s",PASSED
+Statement - briefing._verify_template_updateDate(),Edge 17,verify template and updated time,2018-07-09 20:35:35,2018-07-09 20:35:40,"4,801s",PASSED
+Statement - briefing._set_Item_Name(),Edge 17,set name for Item  ,2018-07-09 20:35:40,2018-07-09 20:35:42,"2,248s",PASSED
+Statement - briefing._write_short_description(),Edge 17,write short description,2018-07-09 20:35:42,2018-07-09 20:35:43,"1,213s",PASSED
+Statement - briefing._choose_Status(ONLINE),Edge 17,choose status  ,2018-07-09 20:35:43,2018-07-09 20:35:44,"0,124s",PASSED
+Statement - briefing._set_date_valid_from_status(),Edge 17,set date from when item status will be valid,2018-07-09 20:35:44,2018-07-09 20:35:44,"0,494s",PASSED
+Statement - briefing._choose_status_after(HIDDEN),Edge 17,choose status after,2018-07-09 20:35:44,2018-07-09 20:35:44,"0,074s",PASSED
+Statement - briefing._set_date_valid_to_status(),Edge 17,set date when item status will be valid to status after,2018-07-09 20:35:44,2018-07-09 20:35:45,"0,456s",PASSED
+Statement - briefing._click_edit_tab(),Edge 17,go to Edit tab ,2018-07-09 20:35:45,2018-07-09 20:35:46,"1,143s",PASSED
+Statement - briefing._choose_Date_Edit_Item(),Edge 17,choose  date time in edit tab ,2018-07-09 20:35:46,2018-07-09 20:35:46,"0,190s",PASSED
+Statement - briefing._click_save_and_relocate_to_lastFolder(),Edge 17,save to last folder,2018-07-09 20:35:46,2018-07-09 20:35:46,"0,076s",PASSED
+Statement - briefing._click_save_and_check_if_number_of_items_incremented_in_lastFolder(),Edge 17,check if number of items was incremented in last folder,2018-07-09 20:35:46,2018-07-09 20:35:50,"3,657s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._click_Home_Button(),Edge 17,click home page,2018-07-09 20:35:50,2018-07-09 20:35:50,"0,047s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._delete_all_created_items_en(),Edge 17,delete all items,2018-07-09 20:35:50,2018-07-09 20:35:53,"3,120s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._logout(),Edge 17,logout from system,2018-07-09 20:35:53,2018-07-09 20:35:53,"0,003s",NOT_RUN
+closeBrowser,Edge 17,close browser,2018-07-09 20:35:53,2018-07-09 20:35:53,"0,000s",NOT_RUN
+Start listener action : afterTestCase,Edge 17,,2018-07-09 20:35:53,2018-07-09 20:35:53,"0,000s",PASSED

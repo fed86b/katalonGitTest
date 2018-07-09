@@ -1,0 +1,24 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test_Suit,Chrome 67.0.3396.99,,2018-07-09 21:01:57,2018-07-09 21:02:49,"51,980s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En,Chrome 67.0.3396.99,,2018-07-09 21:01:57,2018-07-09 21:02:49,"51,074s",PASSED
+Start listener action : beforeTestCase,Chrome 67.0.3396.99,,2018-07-09 21:01:57,2018-07-09 21:02:05,"7,263s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._Login_En(),Chrome 67.0.3396.99,login as content manager,2018-07-09 21:02:05,2018-07-09 21:02:22,"17,678s",PASSED
+Statement - briefing._click_upper_button_create_item(),Chrome 67.0.3396.99,create new item by clicking on CREATE NEW ITEM button,2018-07-09 21:02:22,2018-07-09 21:02:24,"1,219s",PASSED
+Statement - briefing._choose_Briefing_Template_By_Typing(),Chrome 67.0.3396.99,choose template  ,2018-07-09 21:02:24,2018-07-09 21:02:26,"2,381s",PASSED
+Statement - briefing._verify_template_updateDate(),Chrome 67.0.3396.99,verify template and updated time,2018-07-09 21:02:26,2018-07-09 21:02:34,"7,674s",PASSED
+Statement - briefing._set_Item_Name(),Chrome 67.0.3396.99,set name for Item  ,2018-07-09 21:02:34,2018-07-09 21:02:36,"2,547s",PASSED
+Statement - briefing._write_short_description(),Chrome 67.0.3396.99,write short description,2018-07-09 21:02:36,2018-07-09 21:02:38,"1,554s",PASSED
+Statement - briefing._choose_Status(ONLINE),Chrome 67.0.3396.99,choose status  ,2018-07-09 21:02:38,2018-07-09 21:02:38,"0,227s",PASSED
+Statement - briefing._set_date_valid_from_status(),Chrome 67.0.3396.99,set date from when item status will be valid,2018-07-09 21:02:38,2018-07-09 21:02:39,"0,666s",PASSED
+Statement - briefing._choose_status_after(HIDDEN),Chrome 67.0.3396.99,choose status after,2018-07-09 21:02:39,2018-07-09 21:02:39,"0,189s",PASSED
+Statement - briefing._set_date_valid_to_status(),Chrome 67.0.3396.99,set date when item status will be valid to status after,2018-07-09 21:02:39,2018-07-09 21:02:40,"0,627s",PASSED
+Statement - briefing._click_edit_tab(),Chrome 67.0.3396.99,go to Edit tab ,2018-07-09 21:02:40,2018-07-09 21:02:41,"1,264s",PASSED
+Statement - briefing._choose_Date_Edit_Item(),Chrome 67.0.3396.99,choose  date time in edit tab ,2018-07-09 21:02:41,2018-07-09 21:02:41,"0,529s",PASSED
+Statement - briefing._click_save_and_relocate_to_lastFolder(),Chrome 67.0.3396.99,save to last folder,2018-07-09 21:02:41,2018-07-09 21:02:42,"0,166s",PASSED
+Statement - briefing._click_save_and_check_if_number_of_items_incremented_in_lastFolder(),Chrome 67.0.3396.99,check if number of items was incremented in last folder,2018-07-09 21:02:42,2018-07-09 21:02:45,"3,802s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._click_Home_Button(),Chrome 67.0.3396.99,click home page,2018-07-09 21:02:45,2018-07-09 21:02:45,"0,101s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._delete_all_created_items_en(),Chrome 67.0.3396.99,delete all items,2018-07-09 21:02:45,2018-07-09 21:02:49,"3,089s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._logout(),Chrome 67.0.3396.99,logout from system,2018-07-09 21:02:49,2018-07-09 21:02:49,"0,003s",NOT_RUN
+closeBrowser,Chrome 67.0.3396.99,close browser,2018-07-09 21:02:49,2018-07-09 21:02:49,"0,002s",NOT_RUN
+Start listener action : afterTestCase,Chrome 67.0.3396.99,,2018-07-09 21:02:49,2018-07-09 21:02:49,"0,001s",PASSED

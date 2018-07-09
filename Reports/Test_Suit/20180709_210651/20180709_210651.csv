@@ -1,0 +1,24 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test_Suit,Firefox 61.0,,2018-07-09 21:07:44,2018-07-09 21:08:59,"1m - 15,107s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En,Firefox 61.0,,2018-07-09 21:07:44,2018-07-09 21:08:58,"1m - 14,407s",PASSED
+Start listener action : beforeTestCase,Firefox 61.0,,2018-07-09 21:07:44,2018-07-09 21:07:51,"6,623s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._Login_En(),Firefox 61.0,login as content manager,2018-07-09 21:07:51,2018-07-09 21:07:59,"7,982s",PASSED
+Statement - briefing._click_upper_button_create_item(),Firefox 61.0,create new item by clicking on CREATE NEW ITEM button,2018-07-09 21:07:59,2018-07-09 21:08:17,"17,921s",PASSED
+Statement - briefing._choose_Briefing_Template_By_Typing(),Firefox 61.0,choose template  ,2018-07-09 21:08:17,2018-07-09 21:08:19,"2,703s",PASSED
+Statement - briefing._verify_template_updateDate(),Firefox 61.0,verify template and updated time,2018-07-09 21:08:19,2018-07-09 21:08:28,"8,518s",PASSED
+Statement - briefing._set_Item_Name(),Firefox 61.0,set name for Item  ,2018-07-09 21:08:28,2018-07-09 21:08:30,"2,521s",PASSED
+Statement - briefing._write_short_description(),Firefox 61.0,write short description,2018-07-09 21:08:30,2018-07-09 21:08:32,"1,700s",PASSED
+Statement - briefing._choose_Status(ONLINE),Firefox 61.0,choose status  ,2018-07-09 21:08:32,2018-07-09 21:08:32,"0,401s",PASSED
+Statement - briefing._set_date_valid_from_status(),Firefox 61.0,set date from when item status will be valid,2018-07-09 21:08:32,2018-07-09 21:08:33,"0,464s",PASSED
+Statement - briefing._choose_status_after(HIDDEN),Firefox 61.0,choose status after,2018-07-09 21:08:33,2018-07-09 21:08:33,"0,320s",PASSED
+Statement - briefing._set_date_valid_to_status(),Firefox 61.0,set date when item status will be valid to status after,2018-07-09 21:08:33,2018-07-09 21:08:34,"0,389s",PASSED
+Statement - briefing._click_edit_tab(),Firefox 61.0,go to Edit tab ,2018-07-09 21:08:34,2018-07-09 21:08:35,"1,568s",PASSED
+Statement - briefing._choose_Date_Edit_Item(),Firefox 61.0,choose  date time in edit tab ,2018-07-09 21:08:35,2018-07-09 21:08:36,"0,917s",PASSED
+Statement - briefing._click_save_and_relocate_to_lastFolder(),Firefox 61.0,save to last folder,2018-07-09 21:08:36,2018-07-09 21:08:37,"0,418s",PASSED
+Statement - briefing._click_save_and_check_if_number_of_items_incremented_in_lastFolder(),Firefox 61.0,check if number of items was incremented in last folder,2018-07-09 21:08:37,2018-07-09 21:08:40,"3,860s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._click_Home_Button(),Firefox 61.0,click home page,2018-07-09 21:08:40,2018-07-09 21:08:41,"0,275s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._delete_all_created_items_en(),Firefox 61.0,delete all items,2018-07-09 21:08:41,2018-07-09 21:08:58,"17,726s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._logout(),Firefox 61.0,logout from system,2018-07-09 21:08:58,2018-07-09 21:08:58,"0,002s",NOT_RUN
+closeBrowser,Firefox 61.0,close browser,2018-07-09 21:08:58,2018-07-09 21:08:58,"0,000s",NOT_RUN
+Start listener action : afterTestCase,Firefox 61.0,,2018-07-09 21:08:58,2018-07-09 21:08:58,"0,000s",PASSED

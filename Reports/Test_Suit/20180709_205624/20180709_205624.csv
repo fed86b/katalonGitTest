@@ -1,0 +1,11 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test_Suit,Edge 17,,2018-07-09 20:56:30,2018-07-09 20:57:03,"32,790s",FAILED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En,Edge 17,,2018-07-09 20:56:30,2018-07-09 20:57:03,"32,537s",FAILED
+Start listener action : beforeTestCase,Edge 17,,2018-07-09 20:56:30,2018-07-09 20:56:33,"3,225s",PASSED
+Statement - com.server.RolesHelper.getCm_En()._Login_En(),Edge 17,login as content manager,2018-07-09 20:56:34,2018-07-09 20:56:43,"9,026s",PASSED
+Statement - briefing._click_upper_button_create_item(),Edge 17,create new item by clicking on CREATE NEW ITEM button,2018-07-09 20:56:43,2018-07-09 20:56:45,"2,692s",PASSED
+Statement - briefing._choose_Briefing_Template_By_Typing(),Edge 17,choose template  ,2018-07-09 20:56:45,2018-07-09 20:56:47,"2,241s",PASSED
+Statement - briefing._verify_template_updateDate(),Edge 17,verify template and updated time,2018-07-09 20:56:47,2018-07-09 20:56:56,"8,877s",PASSED
+Statement - briefing._set_Item_Name(),Edge 17,set name for Item  ,2018-07-09 20:56:56,2018-07-09 20:57:03,"6,340s",PASSED
+Start listener action : afterTestCase,Edge 17,,2018-07-09 20:57:03,2018-07-09 20:57:03,"0,000s",PASSED

@@ -39,4 +39,9 @@
       <initValue>2</initValue>
       <name>G_Run_On_Fail</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>500</initValue>
+      <name>G_Millisec</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
