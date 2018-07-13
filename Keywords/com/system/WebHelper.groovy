@@ -31,11 +31,6 @@ public  class WebHelper {
 		WebUI.delay(GlobalVariable.G_Small_Wait)
 	}
 
-
-
-
-
-
 	public  static scroll(Enum_Position pos=Enum_Position.TOP){
 		if(position==pos)
 			return
