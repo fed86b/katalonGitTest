@@ -2,14 +2,13 @@ package com.pages
 
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.server.Login_Element
-import com.server.WebHelper
-import com.server.enums.Enum_Language
-import com.server.enums.Enum_Login_Data
-import com.server.enums.Enum_Role
-import com.server.enums.Enum_Tables
+import com.system.LanguageHelper
+import com.system.Login_Element
+import com.system.WebHelper
+import com.system.enums.Enum_Language
+import com.system.enums.Enum_Login_Data
+import com.system.enums.Enum_Role
 
 import internal.GlobalVariable
 
@@ -21,63 +20,27 @@ public abstract class LogIn_Page {
 	 def loginForm=new Login_Element("loginForm","//form[@name = 'loginForm']")
 	 */
 	static isBacked=false
-	static protected Enum_Language language
+	static protected Enum_Language lang
 	static protected Enum_Role role
 	static protected boolean fail=false
 	static protected int interations=0
 	static protected Exception my_exeption
+	static protected LanguageHelper langHelper
 	protected LogIn_Page( Enum_Role role,Enum_Language language){
-		this.language=language
+		this.lang=language
 		this.role=role
+		langHelper=new LanguageHelper(lang)
 	}
 
 	private static check_Layout_Title() {
-		def text=""
-		switch(language){
-			case Enum_Language.RUSSIAN:text="ВЫБРАТЬ МАКЕТ"
-				break
-			case Enum_Language.ENGLISH:text="CHOOSE A LAYOUT"
-				break
-			case Enum_Language.ARABIC:assert true==false
-				break
-			case Enum_Language.BOLGARSKY:assert true==false
-				break
-			case Enum_Language.CHINESE:assert true==false
-				break
-			case Enum_Language.DANSK:assert true==false
-				break
-			case Enum_Language.HEBREW:assert true==false
-				break
-			case Enum_Language.ITALIANO:assert true==false
-				break
-			case Enum_Language.ROMANIA:assert true==false
-				break
-		}
-		(new Login_Element("title_layout","//h1[@class = 'kms-login__header']")).verifyText(text)
+		def layout=LanguageHelper.getText('CHOOSE A LAYOUT')
+		(new Login_Element("title_layout","//h1[@class = 'kms-login__header']")).verifyText(layout)
 	}
 
 	private static check_login_Title() {
 		def text="LOGIN"
-
 		if(isBacked)
-			switch(language){
-				case Enum_Language.RUSSIAN:text= "ВХОД"
-					break
-				case Enum_Language.ARABIC:assert true==false
-					break
-				case Enum_Language.BOLGARSKY:assert true==false
-					break
-				case Enum_Language.CHINESE:assert true==false
-					break
-				case Enum_Language.DANSK:assert true==false
-					break
-				case Enum_Language.HEBREW:assert true==false
-					break
-				case Enum_Language.ITALIANO:assert true==false
-					break
-				case Enum_Language.ROMANIA:assert true==false
-					break
-			}
+			text=LanguageHelper.getText('LOGIN')
 		(new Login_Element("title","//h1[@class = 'kms-login__header']")).verifyText(text)
 	}
 
@@ -113,25 +76,8 @@ public abstract class LogIn_Page {
 
 		try {
 			if(isBacked)
-				switch(language){
-					case Enum_Language.RUSSIAN:chooseLang='Выбери Язык'
-						break
-					case Enum_Language.ARABIC:assert true==false
-						break
-					case Enum_Language.BOLGARSKY:assert true==false
-						break
-					case Enum_Language.CHINESE:assert true==false
-						break
-					case Enum_Language.DANSK:assert true==false
-						break
-					case Enum_Language.HEBREW:assert true==false
-						break
-					case Enum_Language.ITALIANO:assert true==false
-						break
-					case Enum_Language.ROMANIA:assert true==false
-						break
-				}
-			link_change_lang.click().verifyText( chooseLang)
+				chooseLang=LanguageHelper.getText('Change Language')
+			link_change_lang.click(chooseLang)
 			caret_lang.click()
 			select_language()
 		}
@@ -139,7 +85,7 @@ public abstract class LogIn_Page {
 			my_exeption=e
 			fail=true
 			WebHelper.delay_medium()
-			link_change_lang.click_with_delay()
+			link_change_lang.click_with_delay(chooseLang)
 			caret_lang.click()
 			select_language()
 			fail=false
@@ -151,41 +97,23 @@ public abstract class LogIn_Page {
 	}
 
 	private static select_language() {
-		def str_lang=""
-		switch(language){
-			case Enum_Language.RUSSIAN:str_lang='Русский'
-				break
-			case Enum_Language.ENGLISH:str_lang='English'
-				break
-			case Enum_Language.ARABIC:assert true==false
-				break
-			case Enum_Language.BOLGARSKY:assert true==false
-				break
-			case Enum_Language.CHINESE:assert true==false
-				break
-			case Enum_Language.DANSK:assert true==false
-				break
-			case Enum_Language.HEBREW:assert true==false
-				break
-			case Enum_Language.ITALIANO:assert true==false
-				break
-			case Enum_Language.ROMANIA:assert true==false
-				break
-		}
+		def str_lang=LanguageHelper.getText(lang.toString())
+
 		def xpath=String.format("//span[(contains(., '%s'))]", str_lang)
-		(new Login_Element("link_lang",xpath)).click()
+		(new Login_Element("link_lang",xpath)).click(str_lang)
 	}
 
 	protected static _click_LogIn_With_UserName_And_Password() {
 		def auth_Login_button=new Login_Element("auth_Login_button","//button[@type = 'submit']")
+		def LOGIN=LanguageHelper.getText("LOGIN")
 		try {
-			auth_Login_button.click()
+			auth_Login_button.click(LOGIN)
 			WebHelper.wait_for_Edge_ie()
 		}catch (Exception e) {
 			fail=true
 			my_exeption=e
 			WebHelper.delay_medium()
-			auth_Login_button.click_with_delay()
+			auth_Login_button.click_with_delay(LOGIN)
 			fail=false
 		}
 		finally{
@@ -198,14 +126,15 @@ public abstract class LogIn_Page {
 
 	protected static _Enter_to_Kms() {
 		def login_Kms_button=new Login_Element("login_Kms_button","//button[@class = 'kms-login__form-submit ladda-button']")
+		def LOGIN=LanguageHelper.getText("LOGIN")
 		try {
-			login_Kms_button.press_Enter()
+			login_Kms_button.press_Enter(LOGIN)
 		}
 		catch (Exception e) {
 			fail=true
 			my_exeption=e
 			WebHelper.delay_medium()
-			login_Kms_button.click_with_delay()
+			login_Kms_button.click_with_delay(LOGIN)
 			fail=false
 		}
 		finally{
@@ -219,15 +148,16 @@ public abstract class LogIn_Page {
 	protected static _select_View() {
 		def dropDown_roles=new Login_Element("dropDown_roles","//button[@class = 'btn dropdown-toggle btn-default']")
 		def link_role
+		def str_role=""
 		try {
 			check_Layout_Title()
 			dropDown_roles.click()
-			def str_role=""
+
 			switch(role){
 
 				case Enum_Role.ADMINISTRATOR:str_role="Administrator"
 					break
-				case Enum_Role.SCR:assert false==true
+				case Enum_Role.SCR:str_role="SCR"
 					break
 				case Enum_Role.MANAGER:assert false==true
 					break
@@ -240,14 +170,14 @@ public abstract class LogIn_Page {
 			}
 			def xpath=String.format("//span[ (contains(., '%s'))]", str_role)
 			link_role=new Login_Element("link_role",xpath)
-			link_role.click()
+			link_role.click(str_role)
 		}
 		catch (Exception e) {
 			fail=true
 			my_exeption=e
 			WebHelper.delay_medium()
 			check_Layout_Title()
-			dropDown_roles.click()
+			dropDown_roles.click(str_role)
 			link_role.click()
 			fail=false
 		}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>D%%katalonGitTest%katalonGitTest.prj</name>
+	<name>D%%kms_katalon%kms_katalon_tests%katalonGitTest%katalonGitTest.prj</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -17,7 +17,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1530099021076</id>
+			<id>1531304923146</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -26,7 +26,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530099021091</id>
+			<id>1531304923162</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -35,7 +35,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530170015376</id>
+			<id>1531380205728</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -44,7 +44,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530170015376</id>
+			<id>1531380205743</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -53,7 +53,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530904598125</id>
+			<id>1531441266282</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -62,7 +62,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530904598131</id>
+			<id>1531441266282</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -71,7 +71,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530907474555</id>
+			<id>1531448140389</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -80,25 +80,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1530907474565</id>
-			<name></name>
-			<type>6</type>
-			<matcher>
-				<id>org.eclipse.core.resources.regexFilterMatcher</id>
-				<arguments>(.*\.svn-base$)|(.*\.png$)|(.*\.log$)|(.*\.xlsx$)|(.*\.xls$)|(.*\.csv$)|(.*\.txt$)</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1531080217813</id>
-			<name></name>
-			<type>10</type>
-			<matcher>
-				<id>org.eclipse.core.resources.regexFilterMatcher</id>
-				<arguments>.*\.svn$</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1531080217821</id>
+			<id>1531448140397</id>
 			<name></name>
 			<type>6</type>
 			<matcher>

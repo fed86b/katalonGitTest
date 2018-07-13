@@ -9,8 +9,8 @@ import com.kms.katalon.core.context.TestSuiteContext
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.server.AppManager
-import com.server.RolesHelper
+import com.system.AppManager
+import com.system.RolesHelper
 
 class BaseTest {
 

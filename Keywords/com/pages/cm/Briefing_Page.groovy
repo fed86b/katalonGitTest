@@ -1,27 +1,38 @@
 package com.pages.cm
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+
 import com.pages.My_Template
-import com.server.MyElement
-import com.server.WebHelper
-import com.server.enums.Enum_Template
+import com.system.LanguageHelper
+import com.system.MyElement
+import com.system.WebHelper
+import com.system.enums.Enum_Language
+import com.system.enums.Enum_Position
+import com.system.enums.Enum_Template
 public  class Briefing_Page extends My_Template {
 
-	static MyElement input_DATE_Edit_item= new MyElement( findTestObject('Kms_Page_OR/Roles/Content_Manager/Edit_tab/input_DATE_Edit_item'))
-	static MyElement  button_Today=new MyElement(findTestObject('Kms_Page_OR/Roles/Content_Manager/Edit_tab/button_Today'))
+	static MyElement txt_DATE_Edit_item= new MyElement( findTestObject('Kms_Page_OR/Roles/Content_Manager/Edit_tab/txt_DATE_Edit_item'))
 
-	protected Briefing_Page() {
-		super(Enum_Template.BRIEFING)
+	static MyElement  btn_Today=new MyElement(findTestObject('Kms_Page_OR/Roles/Content_Manager/Edit_tab/btn_Today'))
+
+	static MyElement rbtn_signature_yes=new MyElement(findTestObject('Kms_Page_OR/Roles/Content_Manager/Item_Properties_tab/rbtn_signature_yes'))
+	static MyElement rbtn_signature_no=new MyElement(findTestObject('Kms_Page_OR/Roles/Content_Manager/Item_Properties_tab/rbtn_signature_no'))
+
+
+	protected Briefing_Page(Enum_Language lang) {
+		super(Enum_Template.Briefing,lang)
 	}
 
-	protected static choose_Date_Edit_Item(String today){
+
+	protected static _choose_Date_Edit_Item() {
+		def Today=LanguageHelper.getText('Today')
 		try {
-			choose_date_edit_tab(today)
-		}
-		catch (Exception e) {
+			WebHelper.scroll(Enum_Position.TOP)
+			choose_date_edit_tab()
+		} catch (Exception e) {
+			my_exeption=e
 			fail=true
-			WebHelper.delay_medium()
-			choose_date_edit_tab(today)
+			choose_date_edit_tab()
 			fail=false
 		}
 		finally{
@@ -30,8 +41,23 @@ public  class Briefing_Page extends My_Template {
 		}
 	}
 
+	protected static _click_edit_tab() {
+		WebHelper.scroll(Enum_Position.TOP)
+		def edit=LanguageHelper.getText('Edit Item')
+		double_click(a_Edit_Tab,  edit)
+	}
+
+
+	protected static  _click_signature_yes(boolean check=true){
+		WebHelper.scroll(Enum_Position.BOTTOM)
+		if(check)
+			click_button(rbtn_signature_yes)
+		else
+			click_button(rbtn_signature_no)
+	}
+
 	private static choose_date_edit_tab(String today) {
-		input_DATE_Edit_item.click_with_hover()
-		button_Today.click_with_hover(today)
+		txt_DATE_Edit_item.click_with_hover()
+		btn_Today.click_with_hover(today)
 	}
 }

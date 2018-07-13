@@ -41,7 +41,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>500</initValue>
+      <initValue>150</initValue>
       <name>G_Millisec</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
