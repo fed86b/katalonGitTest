@@ -4,7 +4,7 @@
    <name>img_uploaded</name>
    <tag></tag>
    <elementGuidId>58a6c532-5da7-49fc-aee5-54f0bc300005</elementGuidId>
-   <imagePath>img/download.jpg</imagePath>
+   <imagePath>D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\download.jpg</imagePath>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -12,7 +12,7 @@
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
-   <useRalativeImagePath>true</useRalativeImagePath>
+   <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>

@@ -1,11 +1,13 @@
 package com.system
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import java.awt.image.BufferedImage
 
 import javax.imageio.ImageIO
 
+import org.apache.commons.io.FileUtils
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.OutputType
+import org.openqa.selenium.Point
+import org.openqa.selenium.TakesScreenshot
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
@@ -18,12 +20,11 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.system.enums.Enum_Position
+import com.system.enums.Enum_Role
+import com.system.roles.SCR
 
 import internal.GlobalVariable
-import ru.yandex.qatools.ashot.AShot
-import ru.yandex.qatools.ashot.Screenshot
-import ru.yandex.qatools.ashot.comparison.ImageDiff
-import ru.yandex.qatools.ashot.comparison.ImageDiffer
+
 
 public  class Login_Element extends MyElement {
 	public Login_Element(String element_name,String xpath,boolean isLogin=true){
@@ -41,7 +42,8 @@ public  class MyElement extends TestObject {
 	boolean isLogin
 	TestObject element
 	Enum_Position position=Enum_Position.NONE
-
+	def fail=false
+	Exception my_exception
 	public MyElement (String element_name,String xpath,boolean isLogin=false){
 		super(element_name)
 		element=this
@@ -83,7 +85,7 @@ public  class MyElement extends TestObject {
 		WebUI.submit(element,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
-	
+
 	public MyElement  press_Enter(def text=""){
 		isVisible(true,text)
 		WebUI.sendKeys(element,Keys.chord(Keys.ENTER),FailureHandling.STOP_ON_FAILURE)
@@ -101,6 +103,7 @@ public  class MyElement extends TestObject {
 		WebUI.sendKeys(element,Keys.chord(Keys.ESCAPE),FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
+
 	public MyElement  press_tab(def text=""){
 		isVisible(true,text)
 		WebUI.sendKeys(element,Keys.chord(Keys.TAB),FailureHandling.STOP_ON_FAILURE)
@@ -127,6 +130,7 @@ public  class MyElement extends TestObject {
 		}catch(Exception e){
 			findElement()
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+
 		}
 		return this
 	}
@@ -139,6 +143,7 @@ public  class MyElement extends TestObject {
 		}catch(Exception e){
 			findElement()
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+
 		}
 		return this
 	}
@@ -149,9 +154,17 @@ public  class MyElement extends TestObject {
 			if(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
+			fail=true
+			my_exception=e
 			findElement()
 			if(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
+			WebHelper.screenShoot(e.getMessage())
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exception.getMessage())
 		}
 		return this
 	}
@@ -162,9 +175,17 @@ public  class MyElement extends TestObject {
 			if(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
+			fail=true
+			my_exception=e
 			findElement()
 			if(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
+			fail=false
+
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exception.getMessage())
 		}
 		return this
 	}
@@ -175,24 +196,12 @@ public  class MyElement extends TestObject {
 	}
 
 
-	public MyElement compareImages(def name, MyElement iframe=null){
-		if(iframe!=null)
-			WebUI.switchToFrame(iframe, GlobalVariable.G_Middle_Wait)
-		WebUI.switchToFrame(findTestObject('Object Repository/Kms_Page_OR/Roles/Content_Manager/iframe_itemscope'), GlobalVariable.G_Middle_Wait)
-		WebElement webEl=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
-		WebDriver  driver =DriverFactory.getWebDriver()
-		def path=String.format("%s\\img\\%s", System.getProperty("user.dir"),name)
-
-		BufferedImage expectedImage=ImageIO.read(new File(path))
-		Screenshot img=new AShot().takeScreenshot(driver,webEl)
-		BufferedImage actualImage=img.getImage();
-		ImageDiffer imgDiff=new ImageDiffer();
-		ImageDiff diff=imgDiff.makeDiff(expectedImage,actualImage)
-		def flag=WebUI.verifyEqual(true, diff.hasDiff(), FailureHandling.OPTIONAL)
-		KeywordUtil.markWarning(String.format("Comparing %s images : %s",name,flag))
-		WebUI.switchToDefaultContent()
+	public MyElement compareImages(def name="download.jpg",Enum_Role role=Enum_Role.CONTENT_MANAGER){
+		Compare_Images.compare_webElement_pic(element,role, name)
 		return this
 	}
+
+
 
 	public MyElement  click_with_delay(def text=""){
 		try{
@@ -250,6 +259,7 @@ public  class MyElement extends TestObject {
 		CharSequence cs = str
 		try{
 			isVisible()
+			WebUI.clearText(element)
 			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
 			findElement()
@@ -308,8 +318,6 @@ public  class MyElement extends TestObject {
 		WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
-
-
 
 	private  delay(){
 		//Thread.sleep(GlobalVariable.G_Millisec)

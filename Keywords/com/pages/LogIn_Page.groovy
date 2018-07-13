@@ -3,6 +3,7 @@ package com.pages
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.system.Compare_Images
 import com.system.LanguageHelper
 import com.system.Login_Element
 import com.system.WebHelper
@@ -12,7 +13,7 @@ import com.system.enums.Enum_Role
 
 import internal.GlobalVariable
 
-public abstract class LogIn_Page {
+public  class LogIn_Page {
 
 	/*
 	 * for future 
@@ -217,7 +218,6 @@ public abstract class LogIn_Page {
 			password=WebHelper.get_auth(Enum_Login_Data.password, row)
 
 			userName_txt.write_text(userName)
-
 			password_txt.write_text(password)
 		}
 		catch (Exception e) {

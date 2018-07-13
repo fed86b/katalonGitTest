@@ -11,15 +11,35 @@ public class My_Item  {
 
 
 	static MyElement txt_search=new MyElement("txt_search","//input[@id='search-input']")
-
-
+	static MyElement a_kms_home_icon=new MyElement("a_kms_home_icon","//*[@class = 'kms-icon kms-icon--home']")
 
 	static protected boolean fail=false
 	static protected Exception my_exeption
 	static protected LanguageHelper langHelper
+	static protected Enum_Language lang
 	protected My_Item(Enum_Language lang) {
 		langHelper=new LanguageHelper(lang)
+		this.lang=lang
 	}
+
+
+	protected static  _click_Home_Button(){
+		try {
+			a_kms_home_icon.click()
+		}
+		catch (Exception e) {
+			my_exeption=e
+			fail=true
+			WebHelper.delay_medium()
+			a_kms_home_icon.click_with_delay()
+			fail=false
+		}
+		finally{
+			if(fail)
+				WebHelper.screenShoot(my_exeption.getMessage())
+		}
+	}
+
 
 	protected static  _search_by_first_description_word(def template=""){
 		try {

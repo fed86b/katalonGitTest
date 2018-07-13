@@ -18,7 +18,7 @@ public class CM_En extends CM  {
 		WebHelper.Run_Test(findTestCase('LogIn_Tests/Languages/En/Login_Content_Manager_En_Test'))
 	}
 
-	static protected  _Create_Briefing_Online_Test_En(){
-		WebHelper.Run_Test(findTestCase('Kms_Tests/Languages/En/Item_Creation/Create_Briefing_Online_Test_En'))
+	static protected  _Create_General_Online_Test_En(){
+		WebHelper.Run_Test(findTestCase('Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Online_Test_En'))
 	}
 }

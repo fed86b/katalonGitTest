@@ -2,9 +2,10 @@ package com.system
 
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 
+import java.nio.file.Paths;
 import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.nio.file.Paths;
+
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -14,7 +15,7 @@ import com.system.enums.Enum_Create_Item
 import com.system.enums.Enum_Login_Data
 import com.system.enums.Enum_Position
 import com.system.enums.Enum_Tables
-import java.io.IOException;
+
 import internal.GlobalVariable
 
 public  class WebHelper {

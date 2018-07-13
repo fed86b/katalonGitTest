@@ -1,31 +1,89 @@
 package com.system
 import java.awt.*;
 import java.awt.image.*;
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.OutputType
+import org.openqa.selenium.Point
+import org.openqa.selenium.TakesScreenshot
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.sun.image.codec.jpeg.*;
+import com.system.enums.Enum_Role
 
+import internal.GlobalVariable
 import net.coobird.thumbnailator.Thumbnails;
-
-
 
 
 public class Compare_Images {
 
 	public Compare_Images(){
 	}
+	static ImageComparison  imageComparison
 
-
-	private static boolean img_compare(def imgOriginal,def imgToCompareWithOriginal,def imgOutputDifferences, int size=20, int threshhold=0.05) {
-		ImageComparison imageComparison = new ImageComparison(size,size,threshhold)
-		return imageComparison.fuzzyEqual(imgOriginal,imgToCompareWithOriginal,imgOutputDifferences)
+	public static boolean img_compare(def imgOriginal,def imgToCompareWithOriginal,String imgOutputDifferences="", int size=20, int threshhold=0.05) {
+		imageComparison = new ImageComparison(size,size,threshhold)
+		def flag= imageComparison.fuzzyEqual(imgOriginal,imgToCompareWithOriginal,imgOutputDifferences)
+		WebUI.verifyEqual(flag, true, FailureHandling.CONTINUE_ON_FAILURE)
+		KeywordUtil.markWarning(String.format("Comparing  %s image : %s",imgOriginal,flag))
 	}
+
+	public static compare_webElement_pic(TestObject element,Enum_Role role,def name="download.jpg",def pic_center=true) {
+		WebUiCommonHelper.switchToParentFrame(element)
+		WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+
+		WebDriver  driver =DriverFactory.getWebDriver()
+		def desired=String.format("%s\\img\\%s", System.getProperty("user.dir"),name)
+		def actual=String.format("%s\\img\\actual\\%s", System.getProperty("user.dir"),name)
+
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		BufferedImage  fullImg = ImageIO.read(screenshot);
+
+		// Get the location of element on the page
+		Point point = ele.getLocation();
+
+		// Get width and height of the element
+
+		int eleWidth = ele.getSize().getWidth();
+		int eleHeight = ele.getSize().getHeight();
+		def y=point.getY()
+		def x=point.getX()
+		//if login than not need to pass
+		if(role==Enum_Role.CONTENT_MANAGER&&!pic_center){
+			x+=301
+			y+=140
+		}
+
+		if(point.getY()>800){
+			y-=546
+		}
+
+		// Crop the entire page screenshot to get only element screenshot
+		BufferedImage eleScreenshot= fullImg.getSubimage(x, y,
+				eleWidth, eleHeight);
+		ImageIO.write(eleScreenshot, "png", screenshot);
+
+		// Copy the element screenshot to disk
+		File screenshotLocation = new File(actual);
+		FileUtils.copyFile(screenshot, screenshotLocation);
+
+		Compare_Images.img_compare(desired, actual,WebHelper.getLocation("difference"))
+		WebUI.switchToDefaultContent()
+	}
+
 
 
 	public static detailed_comparison(def stage="",def isLogin=false){
@@ -38,18 +96,15 @@ public class Compare_Images {
 		if(name.length()>WebHelper.END)
 			name=name.substring(WebHelper.START,(WebHelper.END-8))
 		def differences_loc=WebHelper.getLocation(name)
-
-
 		def location=String.format("%s\\img\\%s\\%s\\",curDir,driver_folder,stage)
 		def desired_loc=String.format("%sdesired.png",location)
-		if (!(new File(desired_loc)).exists()) {
+		Path p=Paths.get(desired_loc)
+		if (!Files.exists(p)||GlobalVariable.G_Take_Pic) {
 			WebUI.takeScreenshot(desired_loc)
 		}
 		def actual_loc=String.format("%sactual.png",location)
 		WebUI.takeScreenshot(actual_loc)
-		def img_comp= img_compare(desired_loc, actual_loc,differences_loc)
-		def flag=WebUI.verifyEqual(img_comp, true, FailureHandling.OPTIONAL)
-		KeywordUtil.markWarning(String.format("Comparing  %s images : %s",location,flag))
+		img_compare(desired_loc, actual_loc,differences_loc)
 	}
 }
 
@@ -90,6 +145,7 @@ public class ImageComparison {
 	public boolean fuzzyEqual(Image img1, Image img2, String pathOut) throws IOException {
 		return fuzzyEqual(imageToBufferedImage(img1), imageToBufferedImage(img2), pathOut);
 	}
+
 
 	public boolean fuzzyEqual(BufferedImage img1, BufferedImage img2, String pathOut) throws IOException {
 		boolean fuzzyEqual = true;
@@ -209,8 +265,7 @@ public class ImageComparison {
 		return bi;
 	}
 
-	private void saveImage(Image img, String filename) {
-		BufferedImage bi = imageToBufferedImage(img);
+	public void saveImage(BufferedImage bi, String filename){
 		FileOutputStream out = null;
 		try {
 			out = new FileOutputStream(filename);
@@ -227,6 +282,11 @@ public class ImageComparison {
 		} catch (java.io.IOException io) {
 			System.out.println("IOException");
 		}
+	}
+
+	public void saveImage(Image img, String filename) {
+		BufferedImage bi = imageToBufferedImage(img);
+		saveImage( bi,  filename)
 	}
 }
 
