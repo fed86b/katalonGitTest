@@ -19,6 +19,6 @@ public class CM_En extends CM  {
 	}
 
 	static protected  _Create_General_Online_Test_En(){
-		WebHelper.Run_Test(findTestCase('Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Online_Test_En'))
+		WebHelper.Run_Test(findTestCase('Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En'))
 	}
 }

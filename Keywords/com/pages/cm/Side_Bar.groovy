@@ -6,7 +6,7 @@ import com.system.MyElement
 import com.system.WebHelper
 import com.system.enums.Enum_Language
 public class Side_Bar  extends My_Item {
-	static MyElement a_item_in_last_folder=new MyElement("a_item_in_last_folder","//a[starts-with(text(), 'item_')]")
+	static MyElement a_item_in_last_folder=new MyElement("a_item_in_last_folder","//a[contains(., 'New Item')]")
 	static MyElement a_last_folder_in_cm_tree=new MyElement("a_last_folder_in_cm_tree","id('cmTree')/ul[@class='dynatree-container']/li[@class='dynatree-lastsib']")
 	static MyElement btn_create_new_item=new MyElement("btn_create_new_item","//div[@id='cm-tree-item-create-button']")
 

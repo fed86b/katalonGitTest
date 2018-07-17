@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+briefing,IE 11,,2018-07-17 16:38:59,2018-07-17 16:42:08,"3m - 8,276s",FAILED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_briefing_Test_En,IE 11,,2018-07-17 16:39:00,2018-07-17 16:42:07,"3m - 7,487s",FAILED
+Start listener action : beforeTestCase,IE 11,,2018-07-17 16:39:00,2018-07-17 16:39:02,"2,604s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._Login_En(),IE 11,login as content manager,2018-07-17 16:39:02,2018-07-17 16:39:13,"10,216s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getSide_Bar()._click_upper_button_create_item(),IE 11,create new item by clicking on CREATE NEW ITEM button,2018-07-17 16:39:13,2018-07-17 16:39:17,"4,074s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getBriefing()._choose_Template_By_Typing(),IE 11,choose template  ,2018-07-17 16:39:17,2018-07-17 16:39:22,"5,727s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getBriefing().getItem_property_tab_Briefing()._fill_property_tab(),IE 11,fill property tab,2018-07-17 16:39:22,2018-07-17 16:41:10,"1m - 47,814s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getBriefing().getEdit_Tab()._choose_Date_Edit_Item(),IE 11,sed updated date,2018-07-17 16:41:10,2018-07-17 16:41:24,"13,658s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getBottom_Bar()._click_save_and_relocate_to_lastFolder(),IE 11,save to last folder,2018-07-17 16:41:24,2018-07-17 16:41:25,"1,539s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._click_save_and_check_if_number_of_items_incremented_in_lastFolder(),IE 11,verify if number of items was incremented in last folder,2018-07-17 16:41:25,2018-07-17 16:41:35,"9,612s",FAILED
+Statement - com.system.RolesHelper.getCm_En().getUpper_bar()._search_by_first_description_word(),IE 11,find item by each of description word in the search dropdown list,2018-07-17 16:41:35,2018-07-17 16:42:07,"31,827s",PASSED
+Start listener action : afterTestCase,IE 11,,2018-07-17 16:42:07,2018-07-17 16:42:07,"0,325s",PASSED

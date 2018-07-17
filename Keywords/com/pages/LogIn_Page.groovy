@@ -109,7 +109,7 @@ public  class LogIn_Page {
 		def LOGIN=LanguageHelper.getText("LOGIN")
 		try {
 			auth_Login_button.click(LOGIN)
-			WebHelper.wait_for_Edge_ie()
+			WebHelper.wait_for_Edge()
 		}catch (Exception e) {
 			fail=true
 			my_exeption=e

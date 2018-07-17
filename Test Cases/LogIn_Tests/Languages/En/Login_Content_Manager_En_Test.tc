@@ -3,6 +3,7 @@
    <description></description>
    <name>Login_Content_Manager_En_Test</name>
    <tag></tag>
-   <comment></comment>
+   <comment>verify visual login form
+verify visual chosing role form</comment>
    <testCaseGuid>62d3cf98-3315-4fa1-8c83-399ac4f88248</testCaseGuid>
 </TestCaseEntity>

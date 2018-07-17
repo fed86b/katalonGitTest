@@ -1,14 +1,8 @@
 package com.system
-import java.awt.image.BufferedImage
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import javax.imageio.ImageIO
-
-import org.apache.commons.io.FileUtils
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.OutputType
 import org.openqa.selenium.Point
-import org.openqa.selenium.TakesScreenshot
-import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.model.FailureHandling
@@ -19,9 +13,7 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.enums.Enum_Position
 import com.system.enums.Enum_Role
-import com.system.roles.SCR
 
 import internal.GlobalVariable
 
@@ -36,19 +28,31 @@ public  class Login_Element extends MyElement {
 	}
 }
 
+public  class Iframe_Element extends MyElement {
+
+	public Iframe_Element(String element_name,String xpath,boolean isLogin=false,
+	TestObject iframe=findTestObject('Kms_Page_OR/Roles/Content_Manager/iframe_itemscope')){
+		super(element_name,xpath,isLogin,iframe)
+	}
+}
 
 public  class MyElement extends TestObject {
 
 	boolean isLogin
 	TestObject element
-	Enum_Position position=Enum_Position.NONE
+	def isIframe=false
 	def fail=false
 	Exception my_exception
-	public MyElement (String element_name,String xpath,boolean isLogin=false){
+
+	public MyElement (String element_name,String xpath,boolean isLogin=false,TestObject iframe=null){
 		super(element_name)
 		element=this
 		element.addProperty("xpath", ConditionType.EQUALS, xpath,true)
 		this.isLogin=isLogin
+		if(iframe!=null){
+			this.setParentObject(iframe)
+			isIframe=true
+		}
 	}
 
 	public MyElement (TestObject element,boolean isLogin=false){
@@ -57,7 +61,7 @@ public  class MyElement extends TestObject {
 		this.isLogin=isLogin
 	}
 
-	public boolean verifyText(String text,boolean full_compare=true) {
+	public boolean verifyText(String text="",boolean full_compare=true) {
 		//return true
 		def flag=false
 		if(!text.isEmpty()){
@@ -110,38 +114,35 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-
 	public MyElement  select_by_index(int index){
 		try{
 			isVisible()
 			WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
 		}
 		return this
 	}
-
 
 	public MyElement  click_with_hover(String text=""){
 		try{
 			MouseOver(text)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 
 		}
 		return this
 	}
 
-
 	public MyElement  click(def text=""){
 		try{
 			isVisible(true,text)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 
 		}
@@ -156,7 +157,7 @@ public  class MyElement extends TestObject {
 		}catch(Exception e){
 			fail=true
 			my_exception=e
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			if(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
 			WebHelper.screenShoot(e.getMessage())
@@ -177,7 +178,7 @@ public  class MyElement extends TestObject {
 		}catch(Exception e){
 			fail=true
 			my_exception=e
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			if(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
 				WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
 			fail=false
@@ -190,18 +191,17 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public MyElement modify(def xpath){
-		WebUI.modifyObjectProperty(element, 'xpath', 'equals', xpath, true)
+	public MyElement modify(def from_text, def to_text){
+		String xpath=element.findProperty("xpath").getValue()
+		def newXpath=xpath.replaceAll(from_text, to_text)
+		WebUI.modifyObjectProperty(element, 'xpath', 'equals', newXpath, true)
 		return this
 	}
-
 
 	public MyElement compareImages(def name="download.jpg",Enum_Role role=Enum_Role.CONTENT_MANAGER){
 		Compare_Images.compare_webElement_pic(element,role, name)
 		return this
 	}
-
-
 
 	public MyElement  click_with_delay(def text=""){
 		try{
@@ -210,7 +210,7 @@ public  class MyElement extends TestObject {
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 			delay()
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		}
 		return this
@@ -223,7 +223,7 @@ public  class MyElement extends TestObject {
 			delay()
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 			delay()
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
@@ -235,7 +235,7 @@ public  class MyElement extends TestObject {
 		try{
 			isVisible()
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		}
 		return WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
@@ -247,7 +247,7 @@ public  class MyElement extends TestObject {
 			WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
 			WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
 			WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
 		}
@@ -259,10 +259,9 @@ public  class MyElement extends TestObject {
 		CharSequence cs = str
 		try{
 			isVisible()
-			WebUI.clearText(element)
 			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
-			findElement()
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		}
 		return this
@@ -281,8 +280,8 @@ public  class MyElement extends TestObject {
 	}
 
 	public  MyElement  write_slowly(String str){
-		if(!DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER ||
-		!DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER){
+		if(!(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER )||
+		!(DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER)){
 			isVisible(true)
 			WebUI.clearText(element)
 			for(def chr in str){
@@ -295,13 +294,20 @@ public  class MyElement extends TestObject {
 	}
 
 	public MyElement MouseOver(def text=""){
-		isVisible(true,text)
-		WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+		try{
+			isVisible(true,text)
+			WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+		}catch(Exception e){
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
+			WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+
+		}
 		return this
 	}
 
 	public boolean isVisible(boolean fail=true,def text=""){
 		WebHelper.verify_process_wait(isLogin)
+		findElement()
 		FailureHandling failure
 		if(fail)
 			failure=FailureHandling.STOP_ON_FAILURE
@@ -312,10 +318,24 @@ public  class MyElement extends TestObject {
 
 	}
 
-
 	public MyElement findElement() {
-		WebUI.scrollToElement(element, GlobalVariable.G_Small_Wait,FailureHandling.STOP_ON_FAILURE)
-		WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, FailureHandling.STOP_ON_FAILURE)
+		try{
+			if(isIframe){
+				WebUiCommonHelper.switchToParentFrame(element)
+				WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+				Point point = ele.getLocation()
+				WebUI.switchToDefaultContent()
+				if(point.y<WebHelper.WINDOW_SIZE)
+					WebHelper.scroll()
+				else
+					WebHelper.scroll(point.y-WebHelper.HEADER)
+			}
+
+		}finally{
+			if(isIframe)
+				WebUI.switchToDefaultContent()
+		}
+
 		return this
 	}
 

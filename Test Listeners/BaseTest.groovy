@@ -34,6 +34,7 @@ class BaseTest {
 		//		RolesHelper.getCm_En().Login()
 		//		if(testCase.getTestCaseId().contains("Item_Creation"))
 		//			WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Running_After_Tests'), [:], FailureHandling.STOP_ON_FAILURE)
+		WebUI.switchToDefaultContent()
 
 	}
 

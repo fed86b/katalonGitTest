@@ -20,6 +20,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.sun.image.codec.jpeg.*;
 import com.system.enums.Enum_Role
@@ -41,47 +42,49 @@ public class Compare_Images {
 		KeywordUtil.markWarning(String.format("Comparing  %s image : %s",imgOriginal,flag))
 	}
 
-	public static compare_webElement_pic(TestObject element,Enum_Role role,def name="download.jpg",def pic_center=true) {
-		WebUiCommonHelper.switchToParentFrame(element)
-		WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+	public static compare_webElement_pic(TestObject element,Enum_Role role,def name="download.jpg",def inIframe=true,def pic_center=true) {
+		if(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER ){
+			WebUiCommonHelper.switchToParentFrame(element)
+			WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
 
-		WebDriver  driver =DriverFactory.getWebDriver()
-		def desired=String.format("%s\\img\\%s", System.getProperty("user.dir"),name)
-		def actual=String.format("%s\\img\\actual\\%s", System.getProperty("user.dir"),name)
+			WebDriver  driver =DriverFactory.getWebDriver()
+			def desired=String.format("%s\\img\\%s", System.getProperty("user.dir"),name)
+			def actual=String.format("%s\\img\\actual\\%s", System.getProperty("user.dir"),name)
 
-		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		BufferedImage  fullImg = ImageIO.read(screenshot);
+			File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			BufferedImage  fullImg = ImageIO.read(screenshot);
 
-		// Get the location of element on the page
-		Point point = ele.getLocation();
+			// Get the location of element on the page
+			Point point = ele.getLocation();
+			// Get width and height of the element
+			int eleWidth = ele.getSize().getWidth();
+			int eleHeight = ele.getSize().getHeight();
+			def y=point.getY()
+			def x=point.getX()
 
-		// Get width and height of the element
+			//		if(DriverFactory.getExecutedBrowser() == WebUIDriverType.CHROME_DRIVER ){
+			//			//if login than not need to pass
+			//			if(role==Enum_Role.CONTENT_MANAGER&&!pic_center&&inIframe){
+			//				x+=301
+			//				y+=140
+			//			}
+			//			if(point.getY()>WebHelper.WINDOW_SIZE){
+			//				y%=WebHelper.WINDOW_SIZE
+			//			}
+			//		}
 
-		int eleWidth = ele.getSize().getWidth();
-		int eleHeight = ele.getSize().getHeight();
-		def y=point.getY()
-		def x=point.getX()
-		//if login than not need to pass
-		if(role==Enum_Role.CONTENT_MANAGER&&!pic_center){
-			x+=301
-			y+=140
+			// Crop the entire page screenshot to get only element screenshot
+			BufferedImage eleScreenshot= fullImg.getSubimage(x, y,
+					eleWidth, eleHeight);
+			ImageIO.write(eleScreenshot, "png", screenshot);
+
+			// Copy the element screenshot to disk
+			File screenshotLocation = new File(actual);
+			FileUtils.copyFile(screenshot, screenshotLocation);
+
+			Compare_Images.img_compare(desired, actual,WebHelper.getLocation("difference"))
+			WebUI.switchToDefaultContent()
 		}
-
-		if(point.getY()>800){
-			y-=546
-		}
-
-		// Crop the entire page screenshot to get only element screenshot
-		BufferedImage eleScreenshot= fullImg.getSubimage(x, y,
-				eleWidth, eleHeight);
-		ImageIO.write(eleScreenshot, "png", screenshot);
-
-		// Copy the element screenshot to disk
-		File screenshotLocation = new File(actual);
-		FileUtils.copyFile(screenshot, screenshotLocation);
-
-		Compare_Images.img_compare(desired, actual,WebHelper.getLocation("difference"))
-		WebUI.switchToDefaultContent()
 	}
 
 
