@@ -59,7 +59,7 @@ public  class WebHelper {
 
 	public static screenShoot(String error_Destination){
 		def error = clean_path(error_Destination)
-		WebUI.takeScreenshot(getLocation(error));
+		WebUI.takeScreenshot(getLocation(error))
 		throw new Exception(error)
 	}
 

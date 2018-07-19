@@ -4,7 +4,7 @@
    <name>general</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-16T15:16:28</lastRun>
+   <lastRun>2018-07-19T09:31:17</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>5</pageLoadTimeout>
@@ -12,9 +12,9 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>8da39367-a285-40d1-be96-050a106ca49a</testSuiteGuid>
    <testCaseLink>
-      <guid>ed6ef447-cde6-40b5-b409-427749d49f08</guid>
+      <guid>183a64fa-af41-4ecb-863b-ae64e043ef25</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En</testCaseId>
+      <testCaseId>Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_Test_En</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

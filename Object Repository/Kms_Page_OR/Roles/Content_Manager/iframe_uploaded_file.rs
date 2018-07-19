@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>iframe_uploaded_file</name>
+   <tag></tag>
+   <elementGuidId>ea754bc6-f787-408b-a28d-c77415eec3d2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//div[@id=&quot;advanced-external-file-picker-dialog&quot;]/iframe)[last()]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>iframe</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>frameborder</name>
+      <type>Main</type>
+      <value>0</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>src</name>
+      <type>Main</type>
+      <value>http://kmsqa3:501/kms/CM/FILE_SYSTEM/MANAGER?alias=/FILE_SYSTEM/MANAGER&amp;action=GETLIST&amp;dest_directory=externalFiles&amp;isArchiveDir=Y&amp;pageTitle=Choose%20file&amp;filter=gif,jpg,jpeg,wmf,bmp,pcx,tiff,jfif,jpe,png&amp;viewMode=list</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//div[@id=&quot;advanced-external-file-picker-dialog&quot;]/iframe)[last()]</value>
+   </webElementProperties>
+</WebElementEntity>

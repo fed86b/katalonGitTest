@@ -30,9 +30,9 @@ public  class Login_Element extends MyElement {
 
 public  class Iframe_Element extends MyElement {
 
-	public Iframe_Element(String element_name,String xpath,boolean isLogin=false,
+	public Iframe_Element(String element_name,String xpath,
 	TestObject iframe=findTestObject('Kms_Page_OR/Roles/Content_Manager/iframe_itemscope')){
-		super(element_name,xpath,isLogin,iframe)
+		super(element_name,xpath,false,iframe)
 	}
 }
 
@@ -76,10 +76,32 @@ public  class MyElement extends TestObject {
 		return flag
 	}
 
-	public MyElement click_until_not_appear(MyElement item){
+	public MyElement click_until_not_appear(MyElement item,def text=""){
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			if(!item.isVisible(false))
-				click_with_delay()
+			isVisible(false,text)
+			WebUI.click(element,FailureHandling.OPTIONAL)
+			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+				return this
+		}
+		return this
+	}
+	
+	public MyElement right_click_until_not_appear(MyElement item,def text=""){
+		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
+			isVisible(false,text)
+			WebUI.rightClick(element,FailureHandling.OPTIONAL)
+			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+				return this
+		}
+		return this
+	}
+
+	public MyElement click_until_not_disappear(MyElement item,def text=""){
+		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
+			isVisible(false,text)
+			WebUI.click(element,FailureHandling.OPTIONAL)
+			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+				return this
 		}
 		return this
 	}
@@ -129,6 +151,18 @@ public  class MyElement extends TestObject {
 		try{
 			MouseOver(text)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		}catch(Exception e){
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
+			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+
+		}
+		return this
+	}
+
+	public MyElement  right_click(def text=""){
+		try{
+			isVisible(true,text)
+			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
 			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
@@ -198,6 +232,11 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
+	public MyElement modify(def xpath){
+		WebUI.modifyObjectProperty(element, 'xpath', 'equals', xpath, true)
+		return this
+	}
+
 	public MyElement compareImages(def name="download.jpg",Enum_Role role=Enum_Role.CONTENT_MANAGER){
 		Compare_Images.compare_webElement_pic(element,role, name)
 		return this
@@ -216,7 +255,7 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public MyElement   double_click(def text=""){
+	public MyElement double_click(def text=""){
 		try{
 			isVisible(true,text)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
@@ -231,14 +270,27 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public String generate_Name(){
+	public MyElement quick_double_click(def text=""){
 		try{
-			isVisible()
+			isVisible(true,text)
+			WebUI.doubleClick(element)
 		}catch(Exception e){
 			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
+			WebUI.doubleClick(element)
 		}
-		return WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
+
+	public String generate_Name(){
+		def text=""
+		try{
+			isVisible()
+			text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
+		}catch(Exception e){
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
+			text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
+		}
+		return text
 	}
 
 	public MyElement  write_text(String str){
@@ -292,6 +344,7 @@ public  class MyElement extends TestObject {
 		}
 		return this
 	}
+
 
 	public MyElement MouseOver(def text=""){
 		try{

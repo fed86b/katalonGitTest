@@ -5,10 +5,10 @@ import com.pages.My_Item
 import com.system.enums.Enum_Language
 import com.system.enums.Enum_Role
 
-public class User extends My_Item {
-	
-	
-	
+public abstract class User extends My_Item {
+
+
+
 
 	static LogIn_Page loginPage
 	static Enum_Role role
@@ -22,10 +22,4 @@ public class User extends My_Item {
 	protected static LogIn_Page getLoginPage() {
 		return loginPage=new LogIn_Page(role, lang);
 	}
-
-
-	
-
-
-	
 }

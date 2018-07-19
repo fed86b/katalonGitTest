@@ -35,56 +35,58 @@ public class Compare_Images {
 	}
 	static ImageComparison  imageComparison
 
-	public static boolean img_compare(def imgOriginal,def imgToCompareWithOriginal,String imgOutputDifferences="", int size=20, int threshhold=0.05) {
+	public static boolean img_compare(def imgOriginal,def imgToCompareWithOriginal,String imgOutputDifferences="", int size=70, int threshhold=0.5) {
 		imageComparison = new ImageComparison(size,size,threshhold)
 		def flag= imageComparison.fuzzyEqual(imgOriginal,imgToCompareWithOriginal,imgOutputDifferences)
-		WebUI.verifyEqual(flag, true, FailureHandling.CONTINUE_ON_FAILURE)
-		KeywordUtil.markWarning(String.format("Comparing  %s image : %s",imgOriginal,flag))
+		if(flag)
+			KeywordUtil.markWarning(String.format("Comparing  %s image : %s",imgOriginal,flag))
 	}
 
 	public static compare_webElement_pic(TestObject element,Enum_Role role,def name="download.jpg",def inIframe=true,def pic_center=true) {
-		if(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER ){
-			WebUiCommonHelper.switchToParentFrame(element)
-			WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+		WebUiCommonHelper.switchToParentFrame(element)
+		WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+		def driver_folder= DriverFactory.getExecutedBrowser().toString()
+		WebDriver  driver =DriverFactory.getWebDriver()
+		def desired=String.format("%s\\img\\%s\\%s", System.getProperty("user.dir"),driver_folder,name)
+		def actual=String.format("%s\\img\\actual\\%s\\%s", System.getProperty("user.dir"),driver_folder,name)
 
-			WebDriver  driver =DriverFactory.getWebDriver()
-			def desired=String.format("%s\\img\\%s", System.getProperty("user.dir"),name)
-			def actual=String.format("%s\\img\\actual\\%s", System.getProperty("user.dir"),name)
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		BufferedImage  fullImg = ImageIO.read(screenshot);
 
-			File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			BufferedImage  fullImg = ImageIO.read(screenshot);
-
-			// Get the location of element on the page
-			Point point = ele.getLocation();
-			// Get width and height of the element
-			int eleWidth = ele.getSize().getWidth();
-			int eleHeight = ele.getSize().getHeight();
-			def y=point.getY()
-			def x=point.getX()
-
-			//		if(DriverFactory.getExecutedBrowser() == WebUIDriverType.CHROME_DRIVER ){
-			//			//if login than not need to pass
-			//			if(role==Enum_Role.CONTENT_MANAGER&&!pic_center&&inIframe){
-			//				x+=301
-			//				y+=140
-			//			}
-			//			if(point.getY()>WebHelper.WINDOW_SIZE){
-			//				y%=WebHelper.WINDOW_SIZE
-			//			}
-			//		}
-
-			// Crop the entire page screenshot to get only element screenshot
-			BufferedImage eleScreenshot= fullImg.getSubimage(x, y,
-					eleWidth, eleHeight);
-			ImageIO.write(eleScreenshot, "png", screenshot);
-
-			// Copy the element screenshot to disk
-			File screenshotLocation = new File(actual);
-			FileUtils.copyFile(screenshot, screenshotLocation);
-
-			Compare_Images.img_compare(desired, actual,WebHelper.getLocation("difference"))
-			WebUI.switchToDefaultContent()
+		// Get the location of element on the page
+		Point point = ele.getLocation();
+		// Get width and height of the element
+		int eleWidth = ele.getSize().getWidth();
+		int eleHeight = ele.getSize().getHeight();
+		def y=point.getY()
+		def x=point.getX()
+		if(pic_center){
+			switch(DriverFactory.getExecutedBrowser()){
+				case WebUIDriverType.CHROME_DRIVER:y=340; break
+				case WebUIDriverType.FIREFOX_DRIVER:y=368; break
+				case WebUIDriverType.IE_DRIVER:y=365; break
+				case WebUIDriverType.EDGE_DRIVER:y=350; break
+				case WebUIDriverType.FIREFOX_HEADLESS_DRIVER:y=368; break
+				default:y=340;
+			}
+		}else if(y<WebHelper.WINDOW_SIZE+WebHelper.HEADER){
+			if(role==Enum_Role.CONTENT_MANAGER&&inIframe){
+				x+=301
+				y+=140
+			}
 		}
+
+		// Crop the entire page screenshot to get only element screenshot
+		BufferedImage eleScreenshot= fullImg.getSubimage(x, y,
+				eleWidth, eleHeight);
+		ImageIO.write(eleScreenshot, "png", screenshot);
+
+		// Copy the element screenshot to disk
+		File screenshotLocation = new File(actual);
+		FileUtils.copyFile(screenshot, screenshotLocation);
+
+		Compare_Images.img_compare(desired, actual,WebHelper.getLocation("difference"))
+		WebUI.switchToDefaultContent()
 	}
 
 

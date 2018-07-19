@@ -1,4 +1,4 @@
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import org.apache.commons.io.FileUtils
 
 import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
@@ -6,12 +6,9 @@ import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
-import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.system.AppManager
-import com.system.RolesHelper
-
 class BaseTest {
 
 
@@ -25,6 +22,7 @@ class BaseTest {
 	def beforeTestCase(TestCaseContext testCase) {
 		KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId())
 		AppManager.instance
+		
 	}
 
 
@@ -36,14 +34,27 @@ class BaseTest {
 		//			WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Running_After_Tests'), [:], FailureHandling.STOP_ON_FAILURE)
 		WebUI.switchToDefaultContent()
 
+		def dir="C:\\Users\\fed86\\AppData\\Local\\Temp"
+		File f=new File(dir)
+		File[] files = f.listFiles()
+		String lowercaseName=""
+		for (File file : files) {
+			try{
+				lowercaseName= file.name.toLowerCase()
+				if (lowercaseName.startsWith("katalon")||lowercaseName.startsWith("anonymous")||lowercaseName.startsWith("scoped"))
+					FileUtils.deleteDirectory(new File(dir+"\\"+file.name))
+				else if(lowercaseName.endsWith(".tmp")||lowercaseName.endsWith(".png")||lowercaseName.startsWith("aria-debug"))
+					file.delete()
+			}catch(Exception e){}
+		}
 	}
 
 
 	@AfterTestSuite
 	def closeBrowser(TestSuiteContext testSuite) {
 		//WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Delete_Items_Test_En'), [:], FailureHandling.STOP_ON_FAILURE)
-//		if("FAILED".equalsIgnoreCase(testSuite.getStatus()))
-//			WebUI.takeScreenshot()
+		//		if("FAILED".equalsIgnoreCase(testSuite.getStatus()))
+		//			WebUI.takeScreenshot()
 		AppManager.getInstance().dismiss()
 		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
 	}

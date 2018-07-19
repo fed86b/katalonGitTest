@@ -31,7 +31,7 @@ public class Edit_Tab extends My_Item {
 		}
 	}
 
-	private static choose_date_edit_tab(String today) {
+	static choose_date_edit_tab(String today) {
 		txt_DATE_Edit_item.click_with_hover()
 		btn_Today.click_with_hover(today)
 	}

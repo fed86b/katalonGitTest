@@ -8,6 +8,7 @@ import com.system.enums.Enum_Language
 import com.system.enums.Enum_Template
 
 
+
 public  class General_Page extends My_Template {
 
 	static MyElement a_General_tab=new Iframe_Element("a_General_tab","//a[@data-template-caption='General']")
@@ -18,46 +19,50 @@ public  class General_Page extends My_Template {
 		super(Enum_Template.General,lang)
 	}
 
-	protected static _click_general_tab() {
+	static click_general_tab() {
 
 		WebHelper.delay()
 		def general=LanguageHelper.getText('General')
-		a_General_tab.double_click(general)
+		a_General_tab.quick_double_click(general)
 	}
 
 	protected static General_tab getGeneral_tab() {
 		try{
-			_click_general_tab()
+			if(general_tab==null){
+				general_tab=new General_tab(lang)
+				click_general_tab()
+			}
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
 			WebHelper.delay()
-			_click_general_tab()
+			click_general_tab()
 			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
 		}
-		return general_tab= new General_tab(lang)
+		return general_tab
 	}
 
 	public static ItemProperty_General getItem_property_tab_general() {
 		try{
-			_click_item_Properties()
+			if(item_property_tab_general==null){
+				item_property_tab_general=new ItemProperty_General(lang)
+				click_item_Properties()
+			}
 		} catch (Exception e) {
 			my_exeption=e
 			fail=true
 			WebHelper.delay()
-			_click_item_Properties()
+			click_item_Properties()
 			fail=false
 		}
 		finally{
 			if(fail)
 				WebHelper.screenShoot(my_exeption.getMessage())
 		}
-		if(item_property_tab_general==null)
-			item_property_tab_general=new ItemProperty_General(lang)
 		return item_property_tab_general
 	}
 }

@@ -18,7 +18,6 @@ public class ItemProperty_Briefing extends ItemProperty_Tab {
 	protected _fill_property_tab(Enum_Status status_from=Enum_Status.ONLINE,
 			Enum_Status status_after=Enum_Status.ARCHIVE, def set_checkBx=true){
 		_fillProperty_tab()
-
 		'set signature'
 		_click_signature_yes()
 	}

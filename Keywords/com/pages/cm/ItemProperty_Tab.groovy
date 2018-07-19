@@ -10,6 +10,7 @@ import com.system.enums.Enum_Create_Item
 import com.system.enums.Enum_Language
 import com.system.enums.Enum_Status
 import com.system.enums.Enum_Template
+import com.system.roles.CM
 
 import internal.GlobalVariable
 
@@ -376,8 +377,7 @@ public class ItemProperty_Tab extends My_Item{
 	}
 
 	private static set_item_name() {
-		String id=lbl_itemId.generate_Name()
-		String title="item_"+template+"_"+id
+		String title=CM.getSide_Bar().generate_Name()
 		div_itemTitleForEdit.double_click().click_until_not_appear(txt_itemTitleForEdit)
 		txt_itemTitleForEdit.write_key_chord( title)
 	}

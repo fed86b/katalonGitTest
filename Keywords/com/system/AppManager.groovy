@@ -37,6 +37,7 @@ class AppManager {
 
 	private static openBrowser() {
 
+
 		//RunConfiguration.setExecutionSettingFile(WebHelper.getLocation())
 		WebUI.openBrowser(GlobalVariable.G_Url)
 		WebUI.setViewPortSize(1400,1000)
