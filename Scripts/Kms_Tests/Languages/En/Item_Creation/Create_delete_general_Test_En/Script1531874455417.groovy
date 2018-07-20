@@ -19,98 +19,98 @@ import internal.GlobalVariable as GlobalVariable
 RolesHelper.getCm_En()._Login_En()
 
 'create new item by clicking on CREATE NEW ITEM button'
-not_run: RolesHelper.getCm_En().side_Bar._click_upper_button_create_item()
+RolesHelper.getCm_En().side_Bar._click_upper_button_create_item()
 
 'choose template  '
-not_run: RolesHelper.getCm_En().general._choose_Template_By_Typing()
+RolesHelper.getCm_En().general._choose_Template_By_Typing()
 
 'verify template and updated time'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._verify_template_updateDate()
+RolesHelper.getCm_En().general.item_property_tab_general._verify_template_updateDate()
 
 'set name for Item  '
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._set_Item_Name()
+RolesHelper.getCm_En().general.item_property_tab_general._set_Item_Name()
 
 'write short description'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._write_short_description()
+RolesHelper.getCm_En().general.item_property_tab_general._write_short_description()
 
 'choose status  '
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._choose_Status(Enum_Status.ONLINE)
+RolesHelper.getCm_En().general.item_property_tab_general._choose_Status(Enum_Status.ONLINE)
 
 'set date from when item status will be valid'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._set_date_valid_from_status()
+RolesHelper.getCm_En().general.item_property_tab_general._set_date_valid_from_status()
 
 'choose status after'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._choose_status_after(Enum_Status.ARCHIVE)
+RolesHelper.getCm_En().general.item_property_tab_general._choose_status_after(Enum_Status.ARCHIVE)
 
 'set date when item status will be valid to status after'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._set_date_valid_to_status()
+RolesHelper.getCm_En().general.item_property_tab_general._set_date_valid_to_status()
 
 'check active version'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_active_version()
+RolesHelper.getCm_En().general.item_property_tab_general._check_active_version()
 
 'set active version date from'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._set_date_active_version()
+RolesHelper.getCm_En().general.item_property_tab_general._set_date_active_version()
 
 'check print'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_print(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_print(true)
 
 'check email'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_email(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_email(true)
 
 'check feedback'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_feedback(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_feedback(true)
 
 'check bookmarks'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_bookmarks(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_bookmarks(true)
 
 'check fax'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_fax(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_fax(true)
 
 'check show in search results'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_search(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_search(true)
 
 'check hit list'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_hit(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_hit(true)
 
 'check likes'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_likes(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_likes(true)
 
 'check follow'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_follow(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_follow(true)
 
 'check comments'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_comment(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_comment(true)
 
 'check add home page'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._check_add_home_page(true)
+RolesHelper.getCm_En().general.item_property_tab_general._check_add_home_page(true)
 
 'write sms description'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._write_sms_description()
+RolesHelper.getCm_En().general.item_property_tab_general._write_sms_description()
 
 'browse image'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._browse_file()
+RolesHelper.getCm_En().general.item_property_tab_general._browse_file()
 
 'click on image and verify'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._click_on_image()
+RolesHelper.getCm_En().general.item_property_tab_general._click_on_image()
 
 'write promoted item keywords'
-not_run: RolesHelper.getCm_En().general.item_property_tab_general._write_promoted_key_words()
+RolesHelper.getCm_En().general.item_property_tab_general._write_promoted_key_words()
 
 'save to last folder'
-not_run: RolesHelper.getCm_En().bottom_Bar._click_save_and_relocate_to_lastFolder()
+RolesHelper.getCm_En().bottom_Bar._click_save_and_relocate_to_lastFolder()
 
 'find item by each of description word in the search dropdown list'
-not_run: RolesHelper.getCm_En().upper_bar._search_by_first_description_word()
+RolesHelper.getCm_En().upper_bar._search_by_first_description_word()
 
 'delete all items'
 RolesHelper.getCm_En()._delete_all_created_items()
 
 'click home page'
-not_run: RolesHelper.getCm_En().upper_bar._click_Home_Button()
+RolesHelper.getCm_En().upper_bar._click_Home_Button()
 
 'logout from system'
-not_run: RolesHelper.getCm_En().upper_bar._logout()
+RolesHelper.getCm_En().upper_bar._logout()
 
 'close browser'
-not_run: WebUI.closeBrowser()
+WebUI.closeBrowser()
 

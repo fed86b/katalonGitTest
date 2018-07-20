@@ -1,0 +1,39 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Chrome 67.0.3396.99,,2018-07-19 17:22:02,2018-07-19 17:23:43,"1m - 40,602s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_Test_En,Chrome 67.0.3396.99,,2018-07-19 17:22:02,2018-07-19 17:23:43,"1m - 40,357s",PASSED
+Start listener action : beforeTestCase,Chrome 67.0.3396.99,,2018-07-19 17:22:02,2018-07-19 17:22:11,"8,413s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._Login_En(),Chrome 67.0.3396.99,login as content manager,2018-07-19 17:22:11,2018-07-19 17:22:24,"13,252s",PASSED
+Statement - side_Bar._click_upper_button_create_item(),Chrome 67.0.3396.99,create new item by clicking on CREATE NEW ITEM button,2018-07-19 17:22:24,2018-07-19 17:22:25,"1,222s",PASSED
+Statement - general._choose_Template_By_Typing(),Chrome 67.0.3396.99,choose template  ,2018-07-19 17:22:25,2018-07-19 17:22:28,"2,376s",PASSED
+Statement - item_property_tab_general._verify_template_updateDate(),Chrome 67.0.3396.99,verify template and updated time,2018-07-19 17:22:28,2018-07-19 17:22:36,"8,349s",PASSED
+Statement - item_property_tab_general._set_Item_Name(),Chrome 67.0.3396.99,set name for Item  ,2018-07-19 17:22:36,2018-07-19 17:22:38,"1,922s",PASSED
+Statement - item_property_tab_general._write_short_description(),Chrome 67.0.3396.99,write short description,2018-07-19 17:22:38,2018-07-19 17:22:40,"1,766s",PASSED
+Statement - item_property_tab_general._choose_Status(ONLINE),Chrome 67.0.3396.99,choose status  ,2018-07-19 17:22:40,2018-07-19 17:22:40,"0,263s",PASSED
+Statement - item_property_tab_general._set_date_valid_from_status(),Chrome 67.0.3396.99,set date from when item status will be valid,2018-07-19 17:22:40,2018-07-19 17:22:41,"0,756s",PASSED
+Statement - item_property_tab_general._choose_status_after(ARCHIVE),Chrome 67.0.3396.99,choose status after,2018-07-19 17:22:41,2018-07-19 17:22:41,"0,236s",PASSED
+Statement - item_property_tab_general._set_date_valid_to_status(),Chrome 67.0.3396.99,set date when item status will be valid to status after,2018-07-19 17:22:41,2018-07-19 17:22:42,"0,710s",PASSED
+Statement - item_property_tab_general._check_active_version(),Chrome 67.0.3396.99,check active version,2018-07-19 17:22:42,2018-07-19 17:22:42,"0,263s",PASSED
+Statement - item_property_tab_general._set_date_active_version(),Chrome 67.0.3396.99,set active version date from,2018-07-19 17:22:42,2018-07-19 17:22:42,"0,696s",PASSED
+Statement - item_property_tab_general._check_print(true),Chrome 67.0.3396.99,check print,2018-07-19 17:22:42,2018-07-19 17:22:43,"0,231s",PASSED
+Statement - item_property_tab_general._check_email(true),Chrome 67.0.3396.99,check email,2018-07-19 17:22:43,2018-07-19 17:22:43,"0,225s",PASSED
+Statement - item_property_tab_general._check_feedback(true),Chrome 67.0.3396.99,check feedback,2018-07-19 17:22:43,2018-07-19 17:22:43,"0,224s",PASSED
+Statement - item_property_tab_general._check_bookmarks(true),Chrome 67.0.3396.99,check bookmarks,2018-07-19 17:22:43,2018-07-19 17:22:43,"0,236s",PASSED
+Statement - item_property_tab_general._check_fax(true),Chrome 67.0.3396.99,check fax,2018-07-19 17:22:43,2018-07-19 17:22:44,"0,214s",PASSED
+Statement - item_property_tab_general._check_search(true),Chrome 67.0.3396.99,check show in search results,2018-07-19 17:22:44,2018-07-19 17:22:44,"0,224s",PASSED
+Statement - item_property_tab_general._check_hit(true),Chrome 67.0.3396.99,check hit list,2018-07-19 17:22:44,2018-07-19 17:22:44,"0,212s",PASSED
+Statement - item_property_tab_general._check_likes(true),Chrome 67.0.3396.99,check likes,2018-07-19 17:22:44,2018-07-19 17:22:44,"0,218s",PASSED
+Statement - item_property_tab_general._check_follow(true),Chrome 67.0.3396.99,check follow,2018-07-19 17:22:44,2018-07-19 17:22:45,"0,251s",PASSED
+Statement - item_property_tab_general._check_comment(true),Chrome 67.0.3396.99,check comments,2018-07-19 17:22:45,2018-07-19 17:22:45,"0,219s",PASSED
+Statement - item_property_tab_general._check_add_home_page(true),Chrome 67.0.3396.99,check add home page,2018-07-19 17:22:45,2018-07-19 17:22:45,"0,333s",PASSED
+Statement - item_property_tab_general._write_sms_description(),Chrome 67.0.3396.99,write sms description,2018-07-19 17:22:45,2018-07-19 17:22:45,"0,207s",PASSED
+Statement - item_property_tab_general._browse_file(),Chrome 67.0.3396.99,browse image,2018-07-19 17:22:45,2018-07-19 17:23:01,"15,896s",PASSED
+Statement - item_property_tab_general._click_on_image(),Chrome 67.0.3396.99,click on image and verify,2018-07-19 17:23:01,2018-07-19 17:23:03,"1,894s",PASSED
+Statement - item_property_tab_general._write_promoted_key_words(),Chrome 67.0.3396.99,write promoted item keywords,2018-07-19 17:23:03,2018-07-19 17:23:04,"1,151s",PASSED
+Statement - bottom_Bar._click_save_and_relocate_to_lastFolder(),Chrome 67.0.3396.99,save to last folder,2018-07-19 17:23:04,2018-07-19 17:23:09,"4,467s",PASSED
+Statement - upper_bar._search_by_first_description_word(),Chrome 67.0.3396.99,find item by each of description word in the search dropdown list,2018-07-19 17:23:09,2018-07-19 17:23:22,"13,072s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._delete_all_created_items(),Chrome 67.0.3396.99,delete all items,2018-07-19 17:23:22,2018-07-19 17:23:35,"13,165s",PASSED
+Statement - upper_bar._click_Home_Button(),Chrome 67.0.3396.99,click home page,2018-07-19 17:23:35,2018-07-19 17:23:35,"0,086s",PASSED
+Statement - upper_bar._logout(),Chrome 67.0.3396.99,logout from system,2018-07-19 17:23:35,2018-07-19 17:23:42,"6,798s",PASSED
+closeBrowser,Chrome 67.0.3396.99,close browser,2018-07-19 17:23:42,2018-07-19 17:23:42,"0,674s",PASSED
+Start listener action : afterTestCase,Chrome 67.0.3396.99,,2018-07-19 17:23:42,2018-07-19 17:23:43,"0,030s",PASSED

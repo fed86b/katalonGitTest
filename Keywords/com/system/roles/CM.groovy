@@ -10,6 +10,7 @@ import com.pages.cm.General_Page
 import com.pages.My_Template
 import com.pages.cm.Side_Bar
 import com.pages.cm.Upper_Bar_CM
+import com.system.CMHelper
 import com.system.LanguageHelper
 import com.system.MyElement
 import com.system.WebHelper
@@ -26,20 +27,19 @@ public  class CM extends  User{
 	static Upper_Bar_CM upper_bar_CM
 	static Bottom_Bar_CM bottom_Bar
 	static Side_Bar side_Bar
-
 	protected CM(Enum_Language lang ){
 		super(Enum_Role.CONTENT_MANAGER,lang)
 	}
 
 	protected static _delete_all_created_items(){
 		try{
-			getSide_Bar().delete_items()
+			CMHelper.delete_items()
 		}
 		catch (Exception e) {
 			WebHelper.delay_medium()
 			my_exeption=e
 			fail=true
-			getSide_Bar().delete_items()
+			CMHelper.delete_items()
 			fail=false
 		}
 		finally{

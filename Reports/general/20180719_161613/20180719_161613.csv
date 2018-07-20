@@ -1,0 +1,36 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Edge 17,,2018-07-19 17:18:42,2018-07-19 17:19:39,"57,329s",ERROR
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_Test_En,Edge 17,,2018-07-19 17:18:42,2018-07-19 17:19:38,"56,187s",ERROR
+Start listener action : beforeTestCase,Edge 17,,2018-07-19 17:18:42,2018-07-19 17:18:46,"4,614s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._Login_En(),Edge 17,login as content manager,2018-07-19 17:18:47,2018-07-19 17:18:51,"4,139s",PASSED
+Statement - side_Bar._click_upper_button_create_item(),Edge 17,create new item by clicking on CREATE NEW ITEM button,2018-07-19 17:18:51,2018-07-19 17:18:53,"2,629s",PASSED
+Statement - general._choose_Template_By_Typing(),Edge 17,choose template  ,2018-07-19 17:18:53,2018-07-19 17:18:55,"2,216s",PASSED
+Statement - item_property_tab_general._verify_template_updateDate(),Edge 17,verify template and updated time,2018-07-19 17:18:55,2018-07-19 17:19:01,"5,627s",PASSED
+Statement - item_property_tab_general._set_Item_Name(),Edge 17,set name for Item  ,2018-07-19 17:19:01,2018-07-19 17:19:03,"1,416s",PASSED
+Statement - item_property_tab_general._write_short_description(),Edge 17,write short description,2018-07-19 17:19:03,2018-07-19 17:19:04,"1,363s",PASSED
+Statement - item_property_tab_general._choose_Status(ONLINE),Edge 17,choose status  ,2018-07-19 17:19:04,2018-07-19 17:19:04,"0,156s",PASSED
+Statement - item_property_tab_general._set_date_valid_from_status(),Edge 17,set date from when item status will be valid,2018-07-19 17:19:04,2018-07-19 17:19:05,"0,546s",PASSED
+Statement - item_property_tab_general._choose_status_after(ARCHIVE),Edge 17,choose status after,2018-07-19 17:19:05,2018-07-19 17:19:05,"0,117s",PASSED
+Statement - item_property_tab_general._set_date_valid_to_status(),Edge 17,set date when item status will be valid to status after,2018-07-19 17:19:05,2018-07-19 17:19:05,"0,558s",PASSED
+Statement - item_property_tab_general._check_active_version(),Edge 17,check active version,2018-07-19 17:19:05,2018-07-19 17:19:05,"0,123s",PASSED
+Statement - item_property_tab_general._set_date_active_version(),Edge 17,set active version date from,2018-07-19 17:19:05,2018-07-19 17:19:06,"0,468s",PASSED
+Statement - item_property_tab_general._check_print(true),Edge 17,check print,2018-07-19 17:19:06,2018-07-19 17:19:06,"0,101s",PASSED
+Statement - item_property_tab_general._check_email(true),Edge 17,check email,2018-07-19 17:19:06,2018-07-19 17:19:06,"0,105s",PASSED
+Statement - item_property_tab_general._check_feedback(true),Edge 17,check feedback,2018-07-19 17:19:06,2018-07-19 17:19:06,"0,112s",PASSED
+Statement - item_property_tab_general._check_bookmarks(true),Edge 17,check bookmarks,2018-07-19 17:19:06,2018-07-19 17:19:06,"0,119s",PASSED
+Statement - item_property_tab_general._check_fax(true),Edge 17,check fax,2018-07-19 17:19:06,2018-07-19 17:19:06,"0,111s",PASSED
+Statement - item_property_tab_general._check_search(true),Edge 17,check show in search results,2018-07-19 17:19:06,2018-07-19 17:19:07,"0,100s",PASSED
+Statement - item_property_tab_general._check_hit(true),Edge 17,check hit list,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,100s",PASSED
+Statement - item_property_tab_general._check_likes(true),Edge 17,check likes,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,093s",PASSED
+Statement - item_property_tab_general._check_follow(true),Edge 17,check follow,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,092s",PASSED
+Statement - item_property_tab_general._check_comment(true),Edge 17,check comments,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,102s",PASSED
+Statement - item_property_tab_general._check_add_home_page(true),Edge 17,check add home page,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,134s",PASSED
+Statement - item_property_tab_general._write_sms_description(),Edge 17,write sms description,2018-07-19 17:19:07,2018-07-19 17:19:07,"0,101s",PASSED
+Statement - item_property_tab_general._browse_file(),Edge 17,browse image,2018-07-19 17:19:07,2018-07-19 17:19:11,"4,310s",PASSED
+Statement - item_property_tab_general._click_on_image(),Edge 17,click on image and verify,2018-07-19 17:19:11,2018-07-19 17:19:13,"1,458s",PASSED
+Statement - item_property_tab_general._write_promoted_key_words(),Edge 17,write promoted item keywords,2018-07-19 17:19:13,2018-07-19 17:19:14,"0,831s",PASSED
+Statement - bottom_Bar._click_save_and_relocate_to_lastFolder(),Edge 17,save to last folder,2018-07-19 17:19:14,2018-07-19 17:19:18,"4,087s",PASSED
+Statement - upper_bar._search_by_first_description_word(),Edge 17,find item by each of description word in the search dropdown list,2018-07-19 17:19:18,2018-07-19 17:19:31,"12,736s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._delete_all_created_items(),Edge 17,delete all items,2018-07-19 17:19:31,2018-07-19 17:19:38,"7,375s",PASSED
+Start listener action : afterTestCase,Edge 17,,2018-07-19 17:19:38,2018-07-19 17:19:38,"0,042s",PASSED

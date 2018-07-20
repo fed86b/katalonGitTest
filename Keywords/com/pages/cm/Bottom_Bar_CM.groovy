@@ -4,10 +4,12 @@ import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.pages.Bottom_Bar
+import com.system.CMHelper
 import com.system.LanguageHelper
 import com.system.MyElement
 import com.system.WebHelper
 import com.system.enums.Enum_Language
+import com.system.enums.Enum_Operation
 import com.system.roles.CM
 public class Bottom_Bar_CM extends Bottom_Bar {
 
@@ -58,34 +60,36 @@ public class Bottom_Bar_CM extends Bottom_Bar {
 	}
 
 	private static  save_check_if_number_of_items_incremented_in_lastFolder(){
+		def name=CMHelper.generate_Name()
 		def save=LanguageHelper.getText('Save')
-		int before_creating=CM.getSide_Bar()._items_in_lastFolder()
+		int before_creating=CMHelper.items_in_lastFolder()
 		before_creating++
 		a_choose_lastFolder_in_modal.click_with_hover()
 		btn_save_in_last_folder=new MyElement("btn_save_in_last_folder",String.format("//span[(. = '%s')]",save))
 		btn_save_in_last_folder.click_with_hover()
-		CM.getSide_Bar().verify_lastFolder(before_creating)
+		CMHelper.verify_lastFolder(before_creating,Enum_Operation.SAVE,name)
 	}
 
 	private static verify_delete_by_btn_remove_bar() {
 		def yes=LanguageHelper.getText('Yes')
-		int before_deleting=CM.getSide_Bar()._items_in_lastFolder()
+		int before_deleting=CMHelper.items_in_lastFolder()
 		def xpath="//*[@id = 'recycle-view-linked-items']//following::button[ ( . = '%s')]"
 		def yes_remove_button=new MyElement("yes_remove_button",String.format(xpath, yes))
 		before_deleting--
-		def name=CM.getSide_Bar().generate_Name()
+		def name=CMHelper.generate_Name()
 		if(btn_remove_bar.isVisible(false))
 			btn_remove_bar.click_until_not_appear(yes_remove_button)
 		else if(WebHelper.check_three_dots())
 			btn_remove_in_three_dots.click_with_delay()
 
-		yes_remove_button.click_with_hover()
-		CM.getSide_Bar().verify_lastFolder(before_deleting,name)
+		yes_remove_button.click_until_not_disappear(yes_remove_button)
+		CMHelper.verify_lastFolder(before_deleting,Enum_Operation.DELETE,name)
 	}
 
 	static save() {
 		btn_save.double_click()
-		MyElement item=CM.getSide_Bar().find_item()
+		def name=CMHelper.generate_Name()
+		MyElement item=CMHelper.find_item(name)
 		WebUI.verifyEqual(item.isVisible(), true, FailureHandling.STOP_ON_FAILURE)
 		KeywordUtil.markWarning(String.format("item %s is in the knowledge tree ", item.generate_Name()))
 	}

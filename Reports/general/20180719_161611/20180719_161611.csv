@@ -1,0 +1,39 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Firefox 61.0,,2018-07-19 16:16:17,2018-07-19 16:17:38,"1m - 20,946s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_Test_En,Firefox 61.0,,2018-07-19 16:16:18,2018-07-19 16:17:38,"1m - 20,701s",PASSED
+Start listener action : beforeTestCase,Firefox 61.0,,2018-07-19 16:16:18,2018-07-19 16:16:24,"6,814s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._Login_En(),Firefox 61.0,login as content manager,2018-07-19 16:16:24,2018-07-19 16:16:27,"2,484s",PASSED
+Statement - side_Bar._click_upper_button_create_item(),Firefox 61.0,create new item by clicking on CREATE NEW ITEM button,2018-07-19 16:16:27,2018-07-19 16:16:46,"18,665s",PASSED
+Statement - general._choose_Template_By_Typing(),Firefox 61.0,choose template  ,2018-07-19 16:16:46,2018-07-19 16:16:48,"2,480s",PASSED
+Statement - item_property_tab_general._verify_template_updateDate(),Firefox 61.0,verify template and updated time,2018-07-19 16:16:48,2018-07-19 16:16:58,"9,753s",PASSED
+Statement - item_property_tab_general._set_Item_Name(),Firefox 61.0,set name for Item  ,2018-07-19 16:16:58,2018-07-19 16:17:00,"2,148s",PASSED
+Statement - item_property_tab_general._write_short_description(),Firefox 61.0,write short description,2018-07-19 16:17:00,2018-07-19 16:17:02,"2,053s",PASSED
+Statement - item_property_tab_general._choose_Status(ONLINE),Firefox 61.0,choose status  ,2018-07-19 16:17:02,2018-07-19 16:17:02,"0,403s",PASSED
+Statement - item_property_tab_general._set_date_valid_from_status(),Firefox 61.0,set date from when item status will be valid,2018-07-19 16:17:02,2018-07-19 16:17:03,"0,671s",PASSED
+Statement - item_property_tab_general._choose_status_after(ARCHIVE),Firefox 61.0,choose status after,2018-07-19 16:17:03,2018-07-19 16:17:03,"0,363s",PASSED
+Statement - item_property_tab_general._set_date_valid_to_status(),Firefox 61.0,set date when item status will be valid to status after,2018-07-19 16:17:03,2018-07-19 16:17:04,"0,419s",PASSED
+Statement - item_property_tab_general._check_active_version(),Firefox 61.0,check active version,2018-07-19 16:17:04,2018-07-19 16:17:04,"0,241s",PASSED
+Statement - item_property_tab_general._set_date_active_version(),Firefox 61.0,set active version date from,2018-07-19 16:17:04,2018-07-19 16:17:05,"0,397s",PASSED
+Statement - item_property_tab_general._check_print(true),Firefox 61.0,check print,2018-07-19 16:17:05,2018-07-19 16:17:05,"0,225s",PASSED
+Statement - item_property_tab_general._check_email(true),Firefox 61.0,check email,2018-07-19 16:17:05,2018-07-19 16:17:05,"0,215s",PASSED
+Statement - item_property_tab_general._check_feedback(true),Firefox 61.0,check feedback,2018-07-19 16:17:05,2018-07-19 16:17:05,"0,216s",PASSED
+Statement - item_property_tab_general._check_bookmarks(true),Firefox 61.0,check bookmarks,2018-07-19 16:17:05,2018-07-19 16:17:05,"0,237s",PASSED
+Statement - item_property_tab_general._check_fax(true),Firefox 61.0,check fax,2018-07-19 16:17:05,2018-07-19 16:17:06,"0,224s",PASSED
+Statement - item_property_tab_general._check_search(true),Firefox 61.0,check show in search results,2018-07-19 16:17:06,2018-07-19 16:17:06,"0,219s",PASSED
+Statement - item_property_tab_general._check_hit(true),Firefox 61.0,check hit list,2018-07-19 16:17:06,2018-07-19 16:17:06,"0,231s",PASSED
+Statement - item_property_tab_general._check_likes(true),Firefox 61.0,check likes,2018-07-19 16:17:06,2018-07-19 16:17:06,"0,219s",PASSED
+Statement - item_property_tab_general._check_follow(true),Firefox 61.0,check follow,2018-07-19 16:17:06,2018-07-19 16:17:07,"0,224s",PASSED
+Statement - item_property_tab_general._check_comment(true),Firefox 61.0,check comments,2018-07-19 16:17:07,2018-07-19 16:17:07,"0,217s",PASSED
+Statement - item_property_tab_general._check_add_home_page(true),Firefox 61.0,check add home page,2018-07-19 16:17:07,2018-07-19 16:17:07,"0,454s",PASSED
+Statement - item_property_tab_general._write_sms_description(),Firefox 61.0,write sms description,2018-07-19 16:17:07,2018-07-19 16:17:07,"0,113s",PASSED
+Statement - item_property_tab_general._browse_file(),Firefox 61.0,browse image,2018-07-19 16:17:07,2018-07-19 16:17:10,"3,104s",PASSED
+Statement - item_property_tab_general._click_on_image(),Firefox 61.0,click on image and verify,2018-07-19 16:17:10,2018-07-19 16:17:12,"1,897s",PASSED
+Statement - item_property_tab_general._write_promoted_key_words(),Firefox 61.0,write promoted item keywords,2018-07-19 16:17:12,2018-07-19 16:17:13,"0,841s",PASSED
+Statement - bottom_Bar._click_save_and_relocate_to_lastFolder(),Firefox 61.0,save to last folder,2018-07-19 16:17:13,2018-07-19 16:17:20,"7,327s",PASSED
+Statement - upper_bar._search_by_first_description_word(),Firefox 61.0,find item by each of description word in the search dropdown list,2018-07-19 16:17:20,2018-07-19 16:17:20,"0,003s",PASSED
+Statement - com.system.RolesHelper.getCm_En()._delete_all_created_items(),Firefox 61.0,delete all items,2018-07-19 16:17:20,2018-07-19 16:17:34,"13,809s",PASSED
+Statement - upper_bar._click_Home_Button(),Firefox 61.0,click home page,2018-07-19 16:17:34,2018-07-19 16:17:35,"0,275s",PASSED
+Statement - upper_bar._logout(),Firefox 61.0,logout from system,2018-07-19 16:17:35,2018-07-19 16:17:38,"3,305s",PASSED
+closeBrowser,Firefox 61.0,close browser,2018-07-19 16:17:38,2018-07-19 16:17:38,"0,264s",PASSED
+Start listener action : afterTestCase,Firefox 61.0,,2018-07-19 16:17:38,2018-07-19 16:17:38,"0,071s",PASSED

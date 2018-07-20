@@ -4,6 +4,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.pages.My_Item
 import com.system.LanguageHelper
+import com.system.CMHelper
 import com.system.Iframe_Element
 import com.system.WebHelper
 import com.system.enums.Enum_Create_Item
@@ -377,7 +378,7 @@ public class ItemProperty_Tab extends My_Item{
 	}
 
 	private static set_item_name() {
-		String title=CM.getSide_Bar().generate_Name()
+		String title=CMHelper.generate_Name()
 		div_itemTitleForEdit.double_click().click_until_not_appear(txt_itemTitleForEdit)
 		txt_itemTitleForEdit.write_key_chord( title)
 	}

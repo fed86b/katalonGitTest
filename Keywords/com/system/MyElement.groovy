@@ -78,17 +78,17 @@ public  class MyElement extends TestObject {
 
 	public MyElement click_until_not_appear(MyElement item,def text=""){
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			isVisible(false,text)
+			MouseOver()
 			WebUI.click(element,FailureHandling.OPTIONAL)
 			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
 				return this
 		}
 		return this
 	}
-	
+
 	public MyElement right_click_until_not_appear(MyElement item,def text=""){
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			isVisible(false,text)
+			MouseOver()
 			WebUI.rightClick(element,FailureHandling.OPTIONAL)
 			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
 				return this
