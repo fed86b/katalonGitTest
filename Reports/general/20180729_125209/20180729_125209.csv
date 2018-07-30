@@ -1,0 +1,9 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Chrome 67.0.3396.99,,2018-07-29 12:52:38,2018-07-29 12:53:49,"1m - 10,861s",ERROR
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En,Chrome 67.0.3396.99,,2018-07-29 12:52:39,2018-07-29 12:53:48,"1m - 8,941s",ERROR
+Start listener action : beforeTestCase,Chrome 67.0.3396.99,,2018-07-29 12:52:39,2018-07-29 12:52:48,"9,444s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),Chrome 67.0.3396.99,login as content manager,2018-07-29 12:52:49,2018-07-29 12:53:06,"17,622s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(),Chrome 67.0.3396.99,"Right click the last folder and choose ""New Item"" ",2018-07-29 12:53:06,2018-07-29 12:53:08,"1,440s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true),Chrome 67.0.3396.99,choose template  ,2018-07-29 12:53:08,2018-07-29 12:53:48,"40,255s",PASSED
+Start listener action : afterTestCase,Chrome 67.0.3396.99,,2018-07-29 12:53:48,2018-07-29 12:53:48,"0,015s",PASSED

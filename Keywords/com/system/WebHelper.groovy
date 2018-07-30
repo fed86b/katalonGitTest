@@ -11,9 +11,9 @@ import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.enums.Enum_Create_Item
-import com.system.enums.Enum_Login_Data
-import com.system.enums.Enum_Tables
+import com.system.enums.EnumCreateItem
+import com.system.enums.EnumLoginData
+import com.system.enums.EnumTables
 
 import internal.GlobalVariable
 
@@ -125,12 +125,12 @@ public  class WebHelper {
 		return dateFormat_h_m_s.format(now)
 	}
 
-	public static String get_auth(Enum_Login_Data col_name, int row){
-		return findTestData(Enum_Tables.Login_Data.toString()).getValue(col_name.toString(), row)
+	public static String get_auth(EnumLoginData col_name, int row){
+		return findTestData(EnumTables.Login_Data.toString()).getValue(col_name.toString(), row)
 	}
 
-	public static String get_item_data(Enum_Create_Item col_name, int row=1){
+	public static String get_item_data(EnumCreateItem col_name, int row=1){
 
-		return findTestData(Enum_Tables.Create_Item.toString()).getValue(col_name.toString(), row)
+		return findTestData(EnumTables.Create_Item.toString()).getValue(col_name.toString(), row)
 	}
 }

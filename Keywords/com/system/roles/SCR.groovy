@@ -1,10 +1,10 @@
 package com.system.roles
 
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
 
 public class SCR extends User{
-	public SCR(Enum_Language lang){
-		super(Enum_Role.SCR,lang)
+	public SCR(EnumLanguage lang){
+		super(EnumRole.SCR,lang)
 	}
 }

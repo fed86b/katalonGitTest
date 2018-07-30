@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="general" time="70" tests="1" failures="0" errors="1">
+   <testsuite name="general" tests="1" failures="0" errors="1" time="70" timestamp="2018-07-29 12:28:52" hostname="fed86 - DESKTOP-UNNJGJG" id="Test Suites/general">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_122848"/>
+         <property name="logFiles" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_122848\\execution0.log"/>
+         <property name="attachments" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Firefox (headless)\\login form\\actual.png, D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Firefox (headless)\\chosing role form\\actual.png"/>
+         <property name="hostName" value="fed86 - DESKTOP-UNNJGJG"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.5.0.1"/>
+         <property name="browser" value="Firefox 61.0"/>
+         <property name="hostAddress" value="10.44.1.145"/>
+         <property name="sessionId" value="26f1a0aa-8882-457e-90d5-b0a32b59f789"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En" classname="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En" status="PASSED">
+         <system-out><![CDATA[2018-07-29 12:28:53 - [TEST_CASE][PASSED] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En
+
+2018-07-29 12:28:53 - [TEST_STEP][PASSED] - Start listener action : beforeTestCase: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:28:53 - [TEST_STEP][PASSED] - Statement - com.kms.katalon.core.util.KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId()): Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En
+
+2018-07-29 12:28:53 - [MESSAGE][WARNING] - Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En
+
+2018-07-29 12:28:53 - [TEST_STEP][PASSED] - Statement - instance: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:28:54 - [MESSAGE][WARNING] - Unable to get the url of the current window (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Browser is opened with url: 'http://kmsqa3:501/kms/lh/login'
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:29:02 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().Login_En(): Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 12:29:02 - [TEST_CASE][PASSED] - Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test: Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test
+
+2018-07-29 12:29:02 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().fillUserNamePassword(): Text 'admin' is set on object 'password_txt'
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/pass_Logo' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/userName_Logo' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'span_userName' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'span_password' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'userName_txt' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Text of object 'userName_txt' is cleared
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Text 'admin' is set on object 'userName_txt'
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'password_txt' is visible
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Text of object 'password_txt' is cleared
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Text 'admin' is set on object 'password_txt'
+
+2018-07-29 12:29:02 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickСhooseLanguage(): Object: 'link_lang' is clicked on
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Text of object 'link_change_lang' is: 'Change Language'
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:02 - [MESSAGE][WARNING] - Comparing Change Language texts : true
+
+2018-07-29 12:29:02 - [MESSAGE][PASSED] - Object 'link_change_lang' is visible
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Object: 'link_change_lang' is clicked on
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Object 'caret_lang' is visible
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Object: 'caret_lang' is clicked on
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Text of object 'link_lang' is: 'English'
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:03 - [MESSAGE][WARNING] - Comparing English texts : true
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Object 'link_lang' is visible
+
+2018-07-29 12:29:03 - [MESSAGE][PASSED] - Object: 'link_lang' is clicked on
+
+2018-07-29 12:29:03 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("login form", true): Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Firefox (headless)\login form\desired.png image : true
+
+2018-07-29 12:29:04 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Firefox (headless)\\login form\\actual.png]]
+
+2018-07-29 12:29:05 - [MESSAGE][WARNING] - Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Firefox (headless)\login form\desired.png image : true
+
+2018-07-29 12:29:05 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickLogInWithUserNameAndPassword(): Object: 'auth_Login_button' is clicked on
+
+2018-07-29 12:29:05 - [MESSAGE][PASSED] - Text of object 'auth_Login_button' is: 'LOGIN'
+
+2018-07-29 12:29:05 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:05 - [MESSAGE][WARNING] - Comparing LOGIN texts : true
+
+2018-07-29 12:29:05 - [MESSAGE][PASSED] - Object 'auth_Login_button' is visible
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Object: 'auth_Login_button' is clicked on
+
+2018-07-29 12:29:06 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().selectView(): Object: 'link_role' is clicked on
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Text of object 'title_layout' is: 'CHOOSE A LAYOUT'
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:06 - [MESSAGE][WARNING] - Comparing CHOOSE A LAYOUT texts : true
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Object 'dropDown_roles' is visible
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Object: 'dropDown_roles' is clicked on
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Text of object 'link_role' is: 'Content Manager'
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:06 - [MESSAGE][WARNING] - Comparing Content Manager texts : true
+
+2018-07-29 12:29:06 - [MESSAGE][PASSED] - Object 'link_role' is visible
+
+2018-07-29 12:29:07 - [MESSAGE][PASSED] - Object: 'link_role' is clicked on
+
+2018-07-29 12:29:07 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("chosing role form", true): Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Firefox (headless)\chosing role form\desired.png image : true
+
+2018-07-29 12:29:07 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Firefox (headless)\\chosing role form\\actual.png]]
+
+2018-07-29 12:29:09 - [MESSAGE][WARNING] - Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Firefox (headless)\chosing role form\desired.png image : true
+
+2018-07-29 12:29:09 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().enterToKms(): Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 12:29:09 - [MESSAGE][PASSED] - Text of object 'login_Kms_button' is: 'LOGIN'
+
+2018-07-29 12:29:09 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:09 - [MESSAGE][WARNING] - Comparing LOGIN texts : true
+
+2018-07-29 12:29:09 - [MESSAGE][PASSED] - Object 'login_Kms_button' is visible
+
+2018-07-29 12:29:09 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 12:29:09 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 12:29:09 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(): Object 'btn_create_new_item' is visible
+
+2018-07-29 12:29:14 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:15 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:16 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:17 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:18 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:19 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:20 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:22 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:23 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:24 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:25 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:26 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is right clicked on
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'li_new_item' is visible
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'li_new_item' is visible
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object: 'li_new_item' is hovered
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object: 'li_new_item' is clicked on
+
+2018-07-29 12:29:27 - [MESSAGE][PASSED] - Object 'btn_create_new_item' is visible
+
+2018-07-29 12:29:27 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true): Actual object '15' and expected object '15' are equal
+
+2018-07-29 12:29:28 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:28 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:28 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:28 - [MESSAGE][PASSED] - Object 'txt_create_item_template' is visible
+
+2018-07-29 12:29:29 - [MESSAGE][PASSED] - Object: 'txt_create_item_template' is clicked on
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'txt_create_item_template' is visible
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Text of object 'txt_create_item_template' is cleared
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Text 'General' is set on object 'txt_create_item_template'
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[14]Folder 15'
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Text of object 'btn_ok_create_template' is: 'Ok'
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:30 - [MESSAGE][WARNING] - Comparing Ok texts : true
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Object 'btn_ok_create_template' is visible
+
+2018-07-29 12:29:30 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'btn_ok_create_template'
+
+2018-07-29 12:29:33 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:29:33 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[15]Folder 15
+test2
+eeee
+doron 27-02-17
+michal
+Lev Item
+Lev Item 2
+testing widget
+email-test
+word test
+Briefing requires signature
+fedbrief
+fedtemplat
+fed scenario
+fed
+New Item
+New Item'
+
+2018-07-29 12:29:33 - [MESSAGE][PASSED] - Actual object '15' and expected object '15' are equal
+
+2018-07-29 12:29:33 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName(): Keys 'item_General_4047' sent to object: 'txt_itemTitleForEdit'
+
+2018-07-29 12:29:34 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:34 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:35 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Text of object 'a_Item_Properties' is: 'Item Properties'
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:36 - [MESSAGE][WARNING] - Comparing Item Properties texts : true
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Object 'a_Item_Properties' is visible
+
+2018-07-29 12:29:36 - [MESSAGE][PASSED] - Object: 'a_Item_Properties' is hovered
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object: 'a_Item_Properties' is clicked on
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object 'lbl_itemId' is visible
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4047'
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object 'div_itemTitleForEdit' is visible
+
+2018-07-29 12:29:37 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:29:38 - [MESSAGE][PASSED] - Object 'div_itemTitleForEdit' is visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is hovered
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'txt_itemTitleForEdit' is visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'txt_itemTitleForEdit' is visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Keys 'item_General_4047' sent to object: 'txt_itemTitleForEdit'
+
+2018-07-29 12:29:39 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTaskBar().clickSave(): item New Itemitem_General_4047 is in the knowledge tree 
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object 'btn_save' is visible
+
+2018-07-29 12:29:39 - [MESSAGE][PASSED] - Object: 'btn_save' is clicked on
+
+2018-07-29 12:29:40 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:40 - [MESSAGE][PASSED] - Object: 'btn_save' is clicked on
+
+2018-07-29 12:29:40 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4047'
+
+2018-07-29 12:29:41 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:42 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'item_General_4047' is visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Text of object 'item_General_4047' is: 'New Itemitem_General_4047'
+
+2018-07-29 12:29:43 - [MESSAGE][WARNING] - item New Itemitem_General_4047 is in the knowledge tree 
+
+2018-07-29 12:29:43 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getItemsTree().deleteById(): item item_General_4047 not in the knowledge tree 
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[15]Folder 15
+test2
+eeee
+doron 27-02-17
+michal
+Lev Item
+Lev Item 2
+testing widget
+email-test
+word test
+Briefing requires signature
+fedbrief
+fedtemplat
+fed scenario
+fed
+New Itemitem_General_4047
+New Item'
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4047'
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:29:43 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'a_item_in_last_folder' is visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object: 'a_item_in_last_folder' is hovered
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object: 'a_item_in_last_folder' is right clicked on
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'li_delete' is visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'li_delete' is visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object: 'li_delete' is hovered
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object: 'li_delete' is clicked on
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'yes_remove_button' is visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:44 - [MESSAGE][PASSED] - Object 'yes_remove_button' is visible
+
+2018-07-29 12:29:45 - [MESSAGE][PASSED] - Object: 'yes_remove_button' is clicked on
+
+2018-07-29 12:29:48 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[14]Folder 15
+test2
+eeee
+doron 27-02-17
+michal
+Lev Item
+Lev Item 2
+testing widget
+email-test
+word test
+Briefing requires signature
+fedbrief
+fedtemplat
+fed scenario
+fed
+New Item'
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Actual object '14' and expected object '14' are equal
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:29:51 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:29:52 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:29:52 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:29:52 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:52 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:55 - [MESSAGE][WARNING] - Web element with id: 'item_General_4047' located by 'By.xpath: //a[contains(., 'item_General_4047')]' not found
+
+2018-07-29 12:29:55 - [MESSAGE][WARNING] - item item_General_4047 not in the knowledge tree 
+
+2018-07-29 12:29:55 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTopToolBar().clickHomeButton(): Object: 'a_kms_home_icon' is clicked on
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'a_kms_home_icon' is visible
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object: 'a_kms_home_icon' is clicked on
+
+2018-07-29 12:29:55 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTopToolBar().logout(): Delayed 1 second(s)
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object 'profile-avatar' is visible
+
+2018-07-29 12:29:55 - [MESSAGE][PASSED] - Object: 'profile-avatar' is hovered
+
+2018-07-29 12:29:56 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:56 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:29:57 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:29:57 - [MESSAGE][PASSED] - Text of object 'a_logout' is: ''
+
+2018-07-29 12:29:57 - [MESSAGE][WARNING] - Unable to verify equal between actual object 'false' and expected object 'true' (Root cause: Actual object 'false' and expected object 'true' are not equal)
+
+2018-07-29 12:29:57 - [MESSAGE][WARNING] - Comparing Logout texts : false
+
+2018-07-29 12:29:57 - [MESSAGE][PASSED] - Object 'a_logout' is visible
+
+2018-07-29 12:29:58 - [MESSAGE][PASSED] - Object: 'a_logout' is clicked on
+
+2018-07-29 12:29:59 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-07-29 12:29:59 - [MESSAGE][PASSED] - Browser is closed
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Start listener action : afterTestCase: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - switchToDefaultContent: Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - dir = "C:\Users\fed86\AppData\Local\Temp": null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - f = new java.io.File(dir): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - files = f.listFiles(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = "": null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - For (File file : files): Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - Try: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En" classname="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En" status="ERROR">
+         <error type="ERROR" message="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_"/>
+         <system-out><![CDATA[2018-07-29 12:29:59 - [TEST_CASE][ERROR] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Start listener action : beforeTestCase: Invoke 'com.kms.katalon.core.annotation.BeforeTestCase' method: 'BaseTest.beforeTestCase(...)' completed.
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - com.kms.katalon.core.util.KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId()): Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En
+
+2018-07-29 12:29:59 - [TEST_STEP][PASSED] - Statement - instance: Invoke 'com.kms.katalon.core.annotation.BeforeTestCase' method: 'BaseTest.beforeTestCase(...)' completed.
+
+2018-07-29 12:29:59 - [TEST_STEP][FAILED] - Statement - com.system.RolesHelper.getCm_En().Login_En(): Unable to call Test Case with id 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' (Root cause: Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' failed because of error(s))
+
+2018-07-29 12:29:59 - [TEST_CASE][ERROR] - Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test: Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_
+
+2018-07-29 12:29:59 - [TEST_STEP][FAILED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().fillUserNamePassword(): Cannot take screenshot (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Unable to wait for object 'Object Repository/Login_Page_OR/Visual/pass_Logo' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Unable to wait for object 'Object Repository/Login_Page_OR/Visual/userName_Logo' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Unable to wait for object 'span_userName' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Unable to wait for object 'span_password' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][FAILED] - Unable to wait for object 'userName_txt' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][WARNING] - Unable to scroll to object 'userName_txt' (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:29:59 - [MESSAGE][FAILED] - Unable to clear text of object 'userName_txt' (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:30:02 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:30:02 - [MESSAGE][FAILED] - Unable to wait for object 'userName_txt' to be visible (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:30:02 - [MESSAGE][WARNING] - Unable to scroll to object 'userName_txt' (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:30:02 - [MESSAGE][FAILED] - Unable to clear text of object 'userName_txt' (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:30:02 - [MESSAGE][WARNING] - Cannot take screenshot (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:30:02 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' (Root cause: Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' failed because of error(s))
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Start listener action : afterTestCase: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - switchToDefaultContent: Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:30:02 - [MESSAGE][WARNING] - Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - dir = "C:\Users\fed86\AppData\Local\Temp": null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - f = new java.io.File(dir): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - files = f.listFiles(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = "": null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - For (File file : files): Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - Try: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - lowercaseName = name.toLowerCase(): null
+
+2018-07-29 12:30:02 - [TEST_STEP][PASSED] - Statement - If (lowercaseName.startsWith("katalon") || lowercaseName.startsWith("anonymous") || lowercaseName.startsWith("scoped")): Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.]]></system-out>
+         <system-err><![CDATA[2018-07-29 12:29:59 - [TEST_CASE][ERROR] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-07-29 12:28:52 - [TEST_SUITE][ERROR] - general: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_]]></system-out>
+      <system-err><![CDATA[2018-07-29 12:28:52 - [TEST_SUITE][ERROR] - general: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En FAILED because (of) java.lang.Exception: Unable_to_clear_text_of_object_'userName_txt'_(Root_cause__com.kms.katalon.core.webui.exception.BrowserNotOpenedException__Browser_is_not_opened Build_info__version__'3.7.1',_revision__'8a0099a',_time__'2017-11-06T21_07_]]></system-err>
+   </testsuite>
+</testsuites>

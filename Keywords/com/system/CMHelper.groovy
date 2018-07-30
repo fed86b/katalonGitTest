@@ -2,95 +2,100 @@ package com.system
 
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.enums.Enum_Operation
+import com.system.enums.EnumOperation
 import com.system.roles.CM
+
+import internal.GlobalVariable
 
 public class CMHelper {
 
 	static final int ALL=0
-	static final BYPATH="//a[contains(., 'item_')]"//"(//a[starts-with(text(), '/item_'/)])[last()]"
+	static final BYPATH="(//a[contains(., 'item_')])[last()]"
 
-	static items_in_lastFolder() {
-		String num_with_left_bracket= WebUI.getText(CM.getSide_Bar().a_last_folder_in_cm_tree).split("]")[0]
+	static itemsInLastFolder() {
+		String num_with_left_bracket= WebUI.getText(CM.getItemsTree().a_last_folder_in_cm_tree).split("]")[0]
 		String pure_num=num_with_left_bracket.substring(1)
 		return Integer.parseInt(pure_num)
 	}
 
 
 
-	static find_item(String name){
-		CM.getSide_Bar()._open_lastFolder()
+	static findItem(String name){
+		CM.getItemsTree().openLastFolder()
 		def xpath=String.format("//a[contains(., '%s')]",name)
-		CM.getSide_Bar().a_item_in_last_folder.modify(xpath)
-		return CM.getSide_Bar().a_item_in_last_folder
+		return new MyElement(name, xpath)
 	}
 
-	private static generate_Name(String id="") {
+	private static generateName(String id="") {
 		if(id.isEmpty())
-			id=CM.getTemplate().getItem_property_tab().lbl_itemId.generate_Name()
+			id=CM.getTemplate().getItemPropertyTab().itemId.generate_Name(true)
 		return "item_"+CM.template.template+"_"+id
 	}
 
-	private static delete_by_id() {
-		int before_deleting=items_in_lastFolder()
+	private static deleteById() {
+		int before_deleting=itemsInLastFolder()
 		before_deleting--
 		def yes=LanguageHelper.getText('Yes')
 		def delete=LanguageHelper.getText('Delete')
-		def name=generate_Name()
-		find_item(name)
-		CM.getSide_Bar().a_item_in_last_folder.right_click_until_not_appear(CM.getSide_Bar().li_delete)
+		def name=generateName()
+		findItem(name)
+		CM.getItemsTree().a_item_in_last_folder.right_click_until_not_appear(CM.getItemsTree().li_delete)
 		def xpath="//*[@id = 'recycle-view-linked-items']//following::button[ ( . = '%s')]"
 		def yes_remove_button=new MyElement("yes_remove_button",String.format(xpath, yes))
-		CM.getSide_Bar().li_delete.click_until_not_appear(yes_remove_button)
+		CM.getItemsTree().li_delete.click_until_not_appear(yes_remove_button)
 		yes_remove_button.click()
 		WebHelper.delay_medium()
-		verify_lastFolder(before_deleting,Enum_Operation.DELETE,name)
+		verifyLastFolder(before_deleting,EnumOperation.DELETE,name)
 	}
 
 
 
-	static delete_first_item_(){
-		CM.getSide_Bar().a_item_in_last_folder.click_with_delay()
-		CM.getBottom_Bar().verify_delete_by_btn_remove_bar()
-		CM.getSide_Bar().a_item_in_last_folder.modify(BYPATH)
+	static deleteFirstItem_(){
+		try{
+			CM.getItemsTree().a_item_in_last_folder.click_with_delay()
+			CM.getTaskBar().verifyDeleteByBtnRemoveBar()
+		}catch(Exception e){
+			println(e.getMessage())
+		}
 	}
 
-	protected static delete_items(int count=ALL){
-		CM.getSide_Bar()._open_lastFolder()
-		CM.getSide_Bar().a_item_in_last_folder.modify(BYPATH)
+	protected static deleteItems(int count=ALL){
+
+		CM.getItemsTree().openLastFolder()
 		if(count==ALL){
-			while (CM.getSide_Bar().a_item_in_last_folder.isVisible(false)) {
-				delete_first_item_()
+			while (CM.getItemsTree().a_item_in_last_folder.isVisible()) {
+				deleteFirstItem_()
 			}
 		}
 		else {
 			for(int i=0;i<count;i++){
-				delete_first_item_()
+				deleteFirstItem_()
 			}
 		}
 	}
 
-	static verify_lastFolder(int before_creating,Enum_Operation operation,String name) {
-		verify_lastFolder_number(before_creating)
-		CM.getSide_Bar()._open_lastFolder()
-		MyElement item=find_item(name)
-		if(operation==Enum_Operation.DELETE){
+
+	static verifyLastFolder(int before_creating,EnumOperation operation,String name) {
+		verifyLastFolderNumber(before_creating)
+		CM.getItemsTree().openLastFolder()
+		MyElement item=findItem(name)
+		if(operation==EnumOperation.DELETE){
 			if(!item.isVisible(false))
 				KeywordUtil.markWarning(String.format("item %s not in the knowledge tree ", name))
 			else
 				KeywordUtil.markWarning(String.format("item %s still in the knowledge tree ", name))
-		}else if(operation==Enum_Operation.SAVE) {
+		}else if(operation==EnumOperation.SAVE) {
 			item.click_with_hover()
 			KeywordUtil.markWarning(String.format("item %s  in the knowledge tree ", item.generate_Name()))
 		}
 	}
 
-	private static verify_lastFolder_number(int before_creating) {
+	private static verifyLastFolderNumber(int before_creating) {
 		WebHelper.delay_medium()
-		int after_creating=items_in_lastFolder()
+		int after_creating=itemsInLastFolder()
 		if(!WebHelper.verify_ints(after_creating,before_creating)){
 			WebHelper.delay_medium()
-			after_creating=items_in_lastFolder()
+			after_creating=itemsInLastFolder()
 			WebHelper.verify_ints(after_creating,before_creating)
 		}
 	}

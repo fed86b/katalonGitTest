@@ -34,6 +34,10 @@ class BaseTest {
 		//			WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Running_After_Tests'), [:], FailureHandling.STOP_ON_FAILURE)
 		WebUI.switchToDefaultContent()
 
+		
+	}
+
+	private clearData() {
 		def dir="C:\\Users\\fed86\\AppData\\Local\\Temp"
 		File f=new File(dir)
 		File[] files = f.listFiles()
@@ -57,6 +61,7 @@ class BaseTest {
 		//			WebUI.takeScreenshot()
 		AppManager.getInstance().dismiss()
 		KeywordUtil.markWarning("After Test Suite Listener : " + testSuite.getTestSuiteId())
+		clearData()
 	}
 }
 

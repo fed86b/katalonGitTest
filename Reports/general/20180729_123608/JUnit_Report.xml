@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="general" time="66" tests="1" failures="0" errors="0">
+   <testsuite name="general" tests="1" failures="0" errors="0" time="66" timestamp="2018-07-29 12:36:10" hostname="fed86 - DESKTOP-UNNJGJG" id="Test Suites/general">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_123608"/>
+         <property name="logFiles" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_123608\\execution0.log"/>
+         <property name="attachments" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Chrome\\login form\\actual.png, D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Chrome\\chosing role form\\actual.png"/>
+         <property name="hostName" value="fed86 - DESKTOP-UNNJGJG"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.5.0.1"/>
+         <property name="browser" value="Chrome 67.0.3396.99"/>
+         <property name="hostAddress" value="10.44.1.145"/>
+         <property name="sessionId" value="56806a5aece3a369370580d39b29b79d"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En" classname="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En" status="PASSED">
+         <system-out><![CDATA[2018-07-29 12:36:11 - [TEST_CASE][PASSED] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En
+
+2018-07-29 12:36:11 - [TEST_STEP][PASSED] - Start listener action : beforeTestCase: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:36:11 - [TEST_STEP][PASSED] - Statement - com.kms.katalon.core.util.KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId()): Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En
+
+2018-07-29 12:36:11 - [MESSAGE][WARNING] - Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En
+
+2018-07-29 12:36:11 - [TEST_STEP][PASSED] - Statement - instance: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:36:12 - [MESSAGE][WARNING] - Unable to get the url of the current window (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 12:36:18 - [MESSAGE][PASSED] - Browser is opened with url: 'http://kmsqa3:501/kms/lh/login'
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 12:36:20 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().Login_En(): Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 12:36:20 - [TEST_CASE][PASSED] - Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test: Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test
+
+2018-07-29 12:36:20 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().fillUserNamePassword(): Text 'admin' is set on object 'password_txt'
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/pass_Logo' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/userName_Logo' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'span_userName' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'span_password' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'userName_txt' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Text of object 'userName_txt' is cleared
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Text 'admin' is set on object 'userName_txt'
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Object 'password_txt' is visible
+
+2018-07-29 12:36:20 - [MESSAGE][PASSED] - Text of object 'password_txt' is cleared
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Text 'admin' is set on object 'password_txt'
+
+2018-07-29 12:36:21 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickСhooseLanguage(): Object: 'link_lang' is clicked on
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Text of object 'link_change_lang' is: 'Change Language'
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:21 - [MESSAGE][WARNING] - Comparing Change Language texts : true
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object 'link_change_lang' is visible
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object: 'link_change_lang' is clicked on
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object 'caret_lang' is visible
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object: 'caret_lang' is clicked on
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Text of object 'link_lang' is: 'English'
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:21 - [MESSAGE][WARNING] - Comparing English texts : true
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object 'link_lang' is visible
+
+2018-07-29 12:36:21 - [MESSAGE][PASSED] - Object: 'link_lang' is clicked on
+
+2018-07-29 12:36:21 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("login form", true): Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Chrome\login form\desired.png image : true
+
+2018-07-29 12:36:22 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Chrome\\login form\\actual.png]]
+
+2018-07-29 12:36:23 - [MESSAGE][WARNING] - Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Chrome\login form\desired.png image : true
+
+2018-07-29 12:36:23 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickLogInWithUserNameAndPassword(): Object: 'auth_Login_button' is clicked on
+
+2018-07-29 12:36:23 - [MESSAGE][PASSED] - Text of object 'auth_Login_button' is: 'LOGIN'
+
+2018-07-29 12:36:23 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:23 - [MESSAGE][WARNING] - Comparing LOGIN texts : true
+
+2018-07-29 12:36:23 - [MESSAGE][PASSED] - Object 'auth_Login_button' is visible
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Object: 'auth_Login_button' is clicked on
+
+2018-07-29 12:36:24 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().selectView(): Object: 'link_role' is clicked on
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Text of object 'title_layout' is: 'CHOOSE A LAYOUT'
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:24 - [MESSAGE][WARNING] - Comparing CHOOSE A LAYOUT texts : true
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Object 'dropDown_roles' is visible
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Object: 'dropDown_roles' is clicked on
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Text of object 'link_role' is: 'Content Manager'
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:24 - [MESSAGE][WARNING] - Comparing Content Manager texts : true
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Object 'link_role' is visible
+
+2018-07-29 12:36:24 - [MESSAGE][PASSED] - Object: 'link_role' is clicked on
+
+2018-07-29 12:36:24 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("chosing role form", true): Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Chrome\chosing role form\desired.png image : true
+
+2018-07-29 12:36:25 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Chrome\\chosing role form\\actual.png]]
+
+2018-07-29 12:36:26 - [MESSAGE][WARNING] - Comparing  D:\kms_katalon\kms_katalon_tests\katalonGitTest\img\Chrome\chosing role form\desired.png image : true
+
+2018-07-29 12:36:26 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().enterToKms(): Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 12:36:26 - [MESSAGE][PASSED] - Text of object 'login_Kms_button' is: 'LOGIN'
+
+2018-07-29 12:36:26 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:26 - [MESSAGE][WARNING] - Comparing LOGIN texts : true
+
+2018-07-29 12:36:26 - [MESSAGE][PASSED] - Object 'login_Kms_button' is visible
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 12:36:37 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().clickUpperButtonCreateItem(): Object: 'btn_create_new_item' is clicked on
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Text of object 'btn_create_new_item' is: 'Create New Item'
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:37 - [MESSAGE][WARNING] - Comparing Create New Item texts : true
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Object 'btn_create_new_item' is visible
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Object: 'btn_create_new_item' is hovered
+
+2018-07-29 12:36:37 - [MESSAGE][PASSED] - Object: 'btn_create_new_item' is clicked on
+
+2018-07-29 12:36:37 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(): Keys 'ENTER + ' sent to object: 'btn_ok_create_template'
+
+2018-07-29 12:36:38 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:38 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:38 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:38 - [MESSAGE][PASSED] - Object 'txt_create_item_template' is visible
+
+2018-07-29 12:36:39 - [MESSAGE][PASSED] - Object: 'txt_create_item_template' is clicked on
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'txt_create_item_template' is visible
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Text of object 'txt_create_item_template' is cleared
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Text 'General' is set on object 'txt_create_item_template'
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Text of object 'btn_ok_create_template' is: 'Ok'
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:40 - [MESSAGE][WARNING] - Comparing Ok texts : true
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Object 'btn_ok_create_template' is visible
+
+2018-07-29 12:36:40 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'btn_ok_create_template'
+
+2018-07-29 12:36:40 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName(): Keys 'item_General_4051' sent to object: 'txt_itemTitleForEdit'
+
+2018-07-29 12:36:41 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:41 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:42 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:36:43 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:44 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Text of object 'a_Item_Properties' is: 'Item Properties'
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:45 - [MESSAGE][WARNING] - Comparing Item Properties texts : true
+
+2018-07-29 12:36:45 - [MESSAGE][PASSED] - Object 'a_Item_Properties' is visible
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object: 'a_Item_Properties' is hovered
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object: 'a_Item_Properties' is clicked on
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object 'lbl_itemId' is visible
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4051'
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object 'div_itemTitleForEdit' is visible
+
+2018-07-29 12:36:46 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object 'div_itemTitleForEdit' is visible
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is hovered
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object: 'div_itemTitleForEdit' is clicked on
+
+2018-07-29 12:36:47 - [MESSAGE][PASSED] - Object 'txt_itemTitleForEdit' is visible
+
+2018-07-29 12:36:48 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:48 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:48 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:48 - [MESSAGE][PASSED] - Object 'txt_itemTitleForEdit' is visible
+
+2018-07-29 12:36:48 - [MESSAGE][PASSED] - Keys 'item_General_4051' sent to object: 'txt_itemTitleForEdit'
+
+2018-07-29 12:36:48 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().getGeneralTab().getHtmlEditor().clickEditHTML(): Object: 'btn_Edit_html' is clicked on
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Text of object 'a_GeneralTab' is: 'General'
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 12:36:49 - [MESSAGE][WARNING] - Comparing General texts : true
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Object 'a_GeneralTab' is visible
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Object: 'a_GeneralTab' is hovered
+
+2018-07-29 12:36:49 - [MESSAGE][PASSED] - Object: 'a_GeneralTab' is clicked on
+
+2018-07-29 12:36:52 - [MESSAGE][WARNING] - Object 'btn_Edit_html' is not visible after 3 second(s)
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Object: 'a_GeneralTab' is clicked on
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Object 'btn_Edit_html' is visible
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Modify property of object successfully
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:52 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 0
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'btn_Edit_html' is visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'btn_Edit_html' is hovered
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'btn_Edit_html' is clicked on
+
+2018-07-29 12:36:53 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTaskBar().clickSaveAndRelocateToLastFolder(): item New Itemitem_General_4051  in the knowledge tree 
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'btn_saveAndRelocate' is visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'btn_saveAndRelocate' is hovered
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'btn_saveAndRelocate' is clicked on
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'a_choose_lastFolder_in_modal' is visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4051'
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[14]Folder 15'
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object 'a_choose_lastFolder_in_modal' is visible
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'a_choose_lastFolder_in_modal' is hovered
+
+2018-07-29 12:36:53 - [MESSAGE][PASSED] - Object: 'a_choose_lastFolder_in_modal' is clicked on
+
+2018-07-29 12:36:54 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:54 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:54 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:54 - [MESSAGE][PASSED] - Object 'a_choose_lastFolder_in_modal' is visible
+
+2018-07-29 12:36:54 - [MESSAGE][PASSED] - Object: 'a_choose_lastFolder_in_modal' is clicked on
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Object 'btn_save_in_last_folder' is visible
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Object: 'btn_save_in_last_folder' is clicked on
+
+2018-07-29 12:36:55 - [MESSAGE][PASSED] - Object 'btn_save_in_last_folder' is NOT visible
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[15]Folder 15'
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Actual object '15' and expected object '15' are equal
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:36:58 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'item_General_4051' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'item_General_4051' is hovered
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'item_General_4051' is clicked on
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Text of object 'item_General_4051' is: 'New Itemitem_General_4051'
+
+2018-07-29 12:36:59 - [MESSAGE][WARNING] - item New Itemitem_General_4051  in the knowledge tree 
+
+2018-07-29 12:36:59 - [TEST_STEP][NOT_RUN] - Statement - com.system.RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord(): NOT_RUN: Statement - com.system.RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord()
+
+2018-07-29 12:36:59 - [MESSAGE][NOT_RUN] - NOT_RUN: Statement - com.system.RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord()
+
+2018-07-29 12:36:59 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().deleteAllCreatedItems(): Web element with id: 'a_item_in_last_folder' located by 'By.xpath: (//a[contains(., 'item_')])[last()]' not found
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:36:59 - [MESSAGE][PASSED] - Object 'a_item_in_last_folder' is visible
+
+2018-07-29 12:37:00 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:37:00 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:01 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:01 - [MESSAGE][PASSED] - Object 'a_item_in_last_folder' is visible
+
+2018-07-29 12:37:01 - [MESSAGE][PASSED] - Object: 'a_item_in_last_folder' is clicked on
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[15]Folder 15
+test2
+eeee
+doron 27-02-17
+michal
+Lev Item
+Lev Item 2
+testing widget
+email-test
+word test
+Briefing requires signature
+fedbrief
+fedtemplat
+fed scenario
+fed
+New Itemitem_General_4051'
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Attribute 'value' of object 'hidden_itemId' is: '4051'
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'btn_remove_bar' is visible
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object 'btn_remove_bar' is visible
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object: 'btn_remove_bar' is hovered
+
+2018-07-29 12:37:02 - [MESSAGE][PASSED] - Object: 'btn_remove_bar' is clicked on
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object 'yes_remove_button' is visible
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object 'yes_remove_button' is visible
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object: 'yes_remove_button' is clicked on
+
+2018-07-29 12:37:03 - [MESSAGE][PASSED] - Object 'yes_remove_button' is NOT visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Text of object 'a_last_folder_in_cm_tree' is: '[14]Folder 15
+test2
+eeee
+doron 27-02-17
+michal
+Lev Item
+Lev Item 2
+testing widget
+email-test
+word test
+Briefing requires signature
+fedbrief
+fedtemplat
+fed scenario
+fed'
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Actual object '14' and expected object '14' are equal
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is clicked on
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'last_folder_content' is visible
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:06 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:09 - [MESSAGE][WARNING] - Web element with id: 'item_General_4051' located by 'By.xpath: //a[contains(., 'item_General_4051')]' not found
+
+2018-07-29 12:37:09 - [MESSAGE][WARNING] - item item_General_4051 not in the knowledge tree 
+
+2018-07-29 12:37:09 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:09 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:12 - [MESSAGE][WARNING] - Web element with id: 'a_item_in_last_folder' located by 'By.xpath: (//a[contains(., 'item_')])[last()]' not found
+
+2018-07-29 12:37:12 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTopToolBar().clickHomeButton(): Object: 'a_kms_home_icon' is clicked on
+
+2018-07-29 12:37:12 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:12 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:12 - [MESSAGE][PASSED] - Object 'a_kms_home_icon' is visible
+
+2018-07-29 12:37:12 - [MESSAGE][PASSED] - Object: 'a_kms_home_icon' is clicked on
+
+2018-07-29 12:37:12 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getTopToolBar().logout(): Delayed 1 second(s)
+
+2018-07-29 12:37:13 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:13 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:13 - [MESSAGE][PASSED] - Object 'profile-avatar' is visible
+
+2018-07-29 12:37:13 - [MESSAGE][PASSED] - Object: 'profile-avatar' is hovered
+
+2018-07-29 12:37:14 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:37:14 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 12:37:14 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 12:37:14 - [MESSAGE][PASSED] - Text of object 'a_logout' is: ''
+
+2018-07-29 12:37:14 - [MESSAGE][WARNING] - Unable to verify equal between actual object 'false' and expected object 'true' (Root cause: Actual object 'false' and expected object 'true' are not equal)
+
+2018-07-29 12:37:14 - [MESSAGE][WARNING] - Comparing Logout texts : false
+
+2018-07-29 12:37:15 - [MESSAGE][PASSED] - Object 'a_logout' is visible
+
+2018-07-29 12:37:15 - [MESSAGE][PASSED] - Object: 'a_logout' is clicked on
+
+2018-07-29 12:37:16 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 12:37:16 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-07-29 12:37:17 - [MESSAGE][PASSED] - Browser is closed
+
+2018-07-29 12:37:17 - [TEST_STEP][PASSED] - Start listener action : afterTestCase: Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:37:17 - [TEST_STEP][PASSED] - switchToDefaultContent: Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown
+
+2018-07-29 12:37:17 - [MESSAGE][WARNING] - Switching to default content failed because of: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-07-29 12:36:10 - [TEST_SUITE][PASSED] - general: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

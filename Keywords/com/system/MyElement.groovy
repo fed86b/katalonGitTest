@@ -13,24 +13,24 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.enums.Enum_Role
+import com.system.enums.EnumRole
 
 import internal.GlobalVariable
 
 
-public  class Login_Element extends MyElement {
-	public Login_Element(String element_name,String xpath,boolean isLogin=true){
+public  class LoginElement extends MyElement {
+	public LoginElement(String element_name,String xpath,boolean isLogin=true){
 		super(element_name,xpath,isLogin)
 	}
 
-	public Login_Element(TestObject element, boolean isLogin=true){
+	public LoginElement(TestObject element, boolean isLogin=true){
 		super(element,isLogin)
 	}
 }
 
-public  class Iframe_Element extends MyElement {
+public  class IframeElement extends MyElement {
 
-	public Iframe_Element(String element_name,String xpath,
+	public IframeElement(String element_name,String xpath,
 	TestObject iframe=findTestObject('Kms_Page_OR/Roles/Content_Manager/iframe_itemscope')){
 		super(element_name,xpath,false,iframe)
 	}
@@ -77,31 +77,46 @@ public  class MyElement extends TestObject {
 	}
 
 	public MyElement click_until_not_appear(MyElement item,def text=""){
+		MouseOver(text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			MouseOver()
-			WebUI.click(element,FailureHandling.OPTIONAL)
-			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
-				return this
+			try{
+				def driver=DriverFactory.getExecutedBrowser()
+				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER )
+					click_with_delay(text)
+				else
+					WebUI.click(element,FailureHandling.OPTIONAL)
+				if(WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+					return this
+			}catch(Exception e){}
 		}
 		return this
 	}
 
 	public MyElement right_click_until_not_appear(MyElement item,def text=""){
+		MouseOver(text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			MouseOver()
-			WebUI.rightClick(element,FailureHandling.OPTIONAL)
-			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
-				return this
+			try{
+				def driver=DriverFactory.getExecutedBrowser()
+				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER ){
+					right_click_with_delay(text)
+					right_click_with_delay()
+				}
+				else
+					WebUI.rightClick(element,FailureHandling.OPTIONAL)
+				if(WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+					return this
+			}catch(Exception e){}
 		}
 		return this
 	}
 
-	public MyElement click_until_not_disappear(MyElement item,def text=""){
+	public MyElement click_until_not_disappear(MyElement item=this,def text=""){
+		isVisible(false,text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
-			isVisible(false,text)
-			WebUI.click(element,FailureHandling.OPTIONAL)
-			if(WebUI.waitForElementPresent(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
-				return this
+			try{
+				WebUI.click(element,FailureHandling.OPTIONAL)
+				if(WebUI.waitForElementNotVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL)){return this}
+			}catch(Exception e){}
 		}
 		return this
 	}
@@ -165,7 +180,7 @@ public  class MyElement extends TestObject {
 			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
 			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
 
 		}
 		return this
@@ -237,8 +252,8 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public MyElement compareImages(def name="download.jpg",Enum_Role role=Enum_Role.CONTENT_MANAGER){
-		Compare_Images.compare_webElement_pic(element,role, name)
+	public MyElement compareImages(def name="download.jpg",EnumRole role=EnumRole.CONTENT_MANAGER){
+		CompareImages.compareWebElementPic(element,role, name)
 		return this
 	}
 
@@ -251,6 +266,19 @@ public  class MyElement extends TestObject {
 		}catch(Exception e){
 			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		}
+		return this
+	}
+
+	public MyElement  right_click_with_delay(def text=""){
+		try{
+			delay()
+			isVisible(true,text)
+			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
+			delay()
+		}catch(Exception e){
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
+			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
 		}
 		return this
 	}
@@ -281,11 +309,13 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public String generate_Name(){
+	public String generate_Name(def hidden=false){
 		def text=""
 		try{
-			isVisible()
-			text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
+			if(hidden)
+				text = WebUI.getAttribute(element, 'value')
+			else
+				text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
 		}catch(Exception e){
 			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
 			text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
@@ -331,17 +361,19 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public  MyElement  write_slowly(String str){
-		if(!(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER )||
-		!(DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER)){
-			isVisible(true)
-			WebUI.clearText(element)
-			for(def chr in str){
-				CharSequence cs = chr
-				WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
-				Thread.sleep(GlobalVariable.G_Millisec)
-			}
-		}
+	public  MyElement  write_slowly(def cs){
+		//		if(!(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER )||
+		//		!(DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER)){
+		isVisible(true)
+		WebUI.clearText(element)
+		//			for(def chr in str){
+		//				CharSequence cs = chr
+		//				WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
+		//				Thread.sleep(GlobalVariable.G_Millisec)
+		//			}
+		WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
+		Thread.sleep(GlobalVariable.G_Small_Wait)
+		//		}
 		return this
 	}
 
@@ -367,15 +399,26 @@ public  class MyElement extends TestObject {
 		else
 			failure=FailureHandling.OPTIONAL
 		verifyText(text)
-		return WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, failure )
+		def flag= WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, failure )
+		return flag
 
 	}
+	public boolean isPresent(){
+		WebHelper.verify_process_wait(isLogin)
+		def el=findElement()
+		return el!=null
+
+
+	}
+
 
 	public MyElement findElement() {
 		try{
 			if(isIframe){
 				WebUiCommonHelper.switchToParentFrame(element)
 				WebElement ele=WebUiCommonHelper.findWebElement(element,GlobalVariable.G_Wait)
+				if(ele==null)
+					return null
 				Point point = ele.getLocation()
 				WebUI.switchToDefaultContent()
 				if(point.y<WebHelper.WINDOW_SIZE)

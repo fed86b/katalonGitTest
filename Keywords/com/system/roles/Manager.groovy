@@ -1,11 +1,11 @@
 package com.system.roles
 
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
 
 public class Manager extends User{
 
-	public Manager(Enum_Language lang){
-		super(Enum_Role.MANAGER,lang)
+	public Manager(EnumLanguage lang){
+		super(EnumRole.MANAGER,lang)
 	}
 }

@@ -1,11 +1,11 @@
 package com.system.roles
 
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
 
 public class HD extends User{
 
-	public HD(Enum_Language lang ){
-		super(Enum_Role.HELP_DESK,lang)
+	public HD(EnumLanguage lang ){
+		super(EnumRole.HELP_DESK,lang)
 	}
 }

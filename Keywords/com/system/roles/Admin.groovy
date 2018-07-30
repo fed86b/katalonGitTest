@@ -1,11 +1,11 @@
 package com.system.roles
 
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
 
 public class Admin extends User{
 
-	public Admin(Enum_Language lang ){
-		super(Enum_Role.ADMINISTRATOR,lang)
+	public Admin(EnumLanguage lang ){
+		super(EnumRole.ADMINISTRATOR,lang)
 	}
 }

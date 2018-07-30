@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="general" time="57" tests="0" failures="0" errors="1">
+   <testsuite name="general" tests="0" failures="0" errors="1" time="57" timestamp="2018-07-29 13:01:54" hostname="fed86 - DESKTOP-UNNJGJG" id="Test Suites/general">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_130150"/>
+         <property name="logFiles" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_130150\\execution0.log"/>
+         <property name="attachments" value="D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Edge\\login form\\actual.png, D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Edge\\chosing role form\\actual.png, D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_130150\\Reports/EDGE_DRIVER/Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-.png"/>
+         <property name="hostName" value="fed86 - DESKTOP-UNNJGJG"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.5.0.1"/>
+         <property name="browser" value="Edge 17"/>
+         <property name="hostAddress" value="10.44.1.145"/>
+         <property name="sessionId" value="C020A1B4-2A7D-430B-9438-6296D288C362"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En" classname="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En" status="ERROR">
+         <error type="ERROR" message="Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En FAILED because (of) java.lang.Exception: Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-"/>
+         <system-out><![CDATA[2018-07-29 13:01:54 - [TEST_CASE][ERROR] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En FAILED because (of) java.lang.Exception: Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-
+
+2018-07-29 13:01:54 - [TEST_STEP][PASSED] - Start listener action : beforeTestCase: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 13:01:54 - [TEST_STEP][PASSED] - Statement - com.kms.katalon.core.util.KeywordUtil.markWarning("Before Test case : " + testCase.getTestCaseId()): Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En
+
+2018-07-29 13:01:54 - [MESSAGE][WARNING] - Before Test case : Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En
+
+2018-07-29 13:01:54 - [TEST_STEP][PASSED] - Statement - instance: Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 13:01:55 - [MESSAGE][WARNING] - Unable to get the url of the current window (Root cause: com.kms.katalon.core.webui.exception.BrowserNotOpenedException: Browser is not opened
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-UNNJGJG', ip: '10.44.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: driver.version: unknown)
+
+2018-07-29 13:01:59 - [MESSAGE][PASSED] - Browser is opened with url: 'http://kmsqa3:501/kms/lh/login'
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Viewport is set to new size with width = 1400 and height = 1000
+
+2018-07-29 13:02:01 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().Login_En(): Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 13:02:01 - [TEST_CASE][PASSED] - Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test: Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test
+
+2018-07-29 13:02:01 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().fillUserNamePassword(): Text 'admin' is set on object 'password_txt'
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/pass_Logo' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'Object Repository/Login_Page_OR/Visual/userName_Logo' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'span_userName' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'span_password' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'userName_txt' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Text of object 'userName_txt' is cleared
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Text 'admin' is set on object 'userName_txt'
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'password_txt' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Text of object 'password_txt' is cleared
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Text 'admin' is set on object 'password_txt'
+
+2018-07-29 13:02:01 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickСhooseLanguage(): Object: 'link_lang' is clicked on
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Text of object 'link_change_lang' is: 'Change Language'
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 13:02:01 - [MESSAGE][WARNING] - Comparing Change Language texts : true
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object 'link_change_lang' is visible
+
+2018-07-29 13:02:01 - [MESSAGE][PASSED] - Object: 'link_change_lang' is clicked on
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Object 'caret_lang' is visible
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Object: 'caret_lang' is clicked on
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Text of object 'link_lang' is: 'English'
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 13:02:02 - [MESSAGE][WARNING] - Comparing English texts : true
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Object 'link_lang' is visible
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Object: 'link_lang' is clicked on
+
+2018-07-29 13:02:02 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("login form", true): Taking screenshot successfully
+
+2018-07-29 13:02:02 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Edge\\login form\\actual.png]]
+
+2018-07-29 13:02:03 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().clickLogInWithUserNameAndPassword(): Delayed 3 second(s)
+
+2018-07-29 13:02:04 - [MESSAGE][PASSED] - Text of object 'auth_Login_button' is: 'Login
+'
+
+2018-07-29 13:02:04 - [MESSAGE][WARNING] - Unable to verify equal between actual object 'false' and expected object 'true' (Root cause: Actual object 'false' and expected object 'true' are not equal)
+
+2018-07-29 13:02:04 - [MESSAGE][WARNING] - Comparing LOGIN texts : false
+
+2018-07-29 13:02:04 - [MESSAGE][PASSED] - Object 'auth_Login_button' is visible
+
+2018-07-29 13:02:04 - [MESSAGE][PASSED] - Object: 'auth_Login_button' is clicked on
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-07-29 13:02:07 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().selectView(): Object: 'link_role' is clicked on
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Text of object 'title_layout' is: 'Choose a layout'
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 13:02:07 - [MESSAGE][WARNING] - Comparing CHOOSE A LAYOUT texts : true
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Object 'dropDown_roles' is visible
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Object: 'dropDown_roles' is clicked on
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Text of object 'link_role' is: 'Content Manager'
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Actual object 'true' and expected object 'true' are equal
+
+2018-07-29 13:02:07 - [MESSAGE][WARNING] - Comparing Content Manager texts : true
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Object 'link_role' is visible
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Object: 'link_role' is clicked on
+
+2018-07-29 13:02:07 - [TEST_STEP][PASSED] - Statement - com.system.CompareImages.detailedComparison("chosing role form", true): Taking screenshot successfully
+
+2018-07-29 13:02:07 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\img\\Edge\\chosing role form\\actual.png]]
+
+2018-07-29 13:02:08 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getLoginPage().enterToKms(): Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 13:02:08 - [MESSAGE][PASSED] - Text of object 'login_Kms_button' is: 'Login
+'
+
+2018-07-29 13:02:08 - [MESSAGE][WARNING] - Unable to verify equal between actual object 'false' and expected object 'true' (Root cause: Actual object 'false' and expected object 'true' are not equal)
+
+2018-07-29 13:02:08 - [MESSAGE][WARNING] - Comparing LOGIN texts : false
+
+2018-07-29 13:02:08 - [MESSAGE][PASSED] - Object 'login_Kms_button' is visible
+
+2018-07-29 13:02:08 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'login_Kms_button'
+
+2018-07-29 13:02:08 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/LogIn_Tests/Languages/En/Login_Content_Manager_En_Test' successfully
+
+2018-07-29 13:02:08 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(): Object 'btn_create_new_item' is visible
+
+2018-07-29 13:02:08 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 13:02:10 - [MESSAGE][WARNING] - Object 'progress' is visible after 1 second(s)
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'a_last_folder_in_cm_tree' is visible
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is hovered
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object: 'a_last_folder_in_cm_tree' is right clicked on
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'li_new_item' is visible
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'li_new_item' is visible
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object: 'li_new_item' is hovered
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object: 'li_new_item' is clicked on
+
+2018-07-29 13:02:11 - [MESSAGE][PASSED] - Object 'btn_create_new_item' is visible
+
+2018-07-29 13:02:11 - [TEST_STEP][PASSED] - Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true): Taking screenshot successfully
+
+2018-07-29 13:02:12 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 13:02:12 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 13:02:12 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 13:02:15 - [MESSAGE][WARNING] - Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found
+
+2018-07-29 13:02:20 - [MESSAGE][FAILED] - Unable to click on object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:25 - [MESSAGE][WARNING] - Unable to scroll to object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:30 - [MESSAGE][FAILED] - Unable to click on object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:31 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 13:02:32 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+2018-07-29 13:02:32 - [MESSAGE][PASSED] - Object 'progress' is present
+
+2018-07-29 13:02:32 - [MESSAGE][PASSED] - Object 'progress' is NOT visible
+
+2018-07-29 13:02:35 - [MESSAGE][WARNING] - Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found
+
+2018-07-29 13:02:40 - [MESSAGE][FAILED] - Unable to click on object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:45 - [MESSAGE][WARNING] - Unable to scroll to object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:50 - [MESSAGE][FAILED] - Unable to click on object 'txt_create_item_template' (Root cause: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'txt_create_item_template' located by 'By.xpath: //input[@id = 'cm-tree-item-create-dialog-dtd-filter' and @type = 'text']' not found)
+
+2018-07-29 13:02:50 - [MESSAGE][PASSED] - Taking screenshot successfully
+[[ATTACHMENT|D:\\kms_katalon\\kms_katalon_tests\\katalonGitTest\\Reports\\general\\20180729_130150\\Reports/EDGE_DRIVER/Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-.png]]
+
+2018-07-29 13:02:50 - [TEST_STEP][PASSED] - Start listener action : afterTestCase: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.
+
+2018-07-29 13:02:50 - [TEST_STEP][PASSED] - switchToDefaultContent: Invoke 'com.kms.katalon.core.annotation.AfterTestCase' method: 'BaseTest.afterTestCase(...)' completed.]]></system-out>
+         <system-err><![CDATA[2018-07-29 13:01:54 - [TEST_CASE][ERROR] - Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En FAILED because (of) java.lang.Exception: Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-07-29 13:01:54 - [TEST_SUITE][ERROR] - general: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En FAILED because (of) java.lang.Exception: Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-]]></system-out>
+      <system-err><![CDATA[2018-07-29 13:01:54 - [TEST_SUITE][ERROR] - general: Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En FAILED because (of) java.lang.Exception: Unable_to_click_on_object_'txt_create_item_template'_(Root_cause__com.kms.katalon.core.webui.exception.WebElementNotFoundException__Web_element_with_id__'txt_create_item_template'_located_by_'By.xpath____input[@id_=_'cm-]]></system-err>
+   </testsuite>
+</testsuites>

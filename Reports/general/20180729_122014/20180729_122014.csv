@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,IE 11,,2018-07-29 12:20:21,2018-07-29 12:23:30,"3m - 9,321s",ERROR
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En,IE 11,,2018-07-29 12:20:22,2018-07-29 12:22:09,"1m - 46,642s",ERROR
+Start listener action : beforeTestCase,IE 11,,2018-07-29 12:20:22,2018-07-29 12:20:32,"9,538s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),IE 11,login as content manager,2018-07-29 12:20:32,2018-07-29 12:20:49,"17,595s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(),IE 11,"Right click the last folder and choose ""New Item"" ",2018-07-29 12:20:49,2018-07-29 12:21:07,"17,504s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true),IE 11,choose template  ,2018-07-29 12:21:07,2018-07-29 12:22:08,"1m - 1,399s",PASSED
+Start listener action : afterTestCase,IE 11,,2018-07-29 12:22:08,2018-07-29 12:22:09,"0,402s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En,IE 11,,2018-07-29 12:22:09,2018-07-29 12:23:29,"1m - 20,823s",ERROR
+Start listener action : beforeTestCase,IE 11,,2018-07-29 12:22:09,2018-07-29 12:22:09,"0,001s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),IE 11,login as content manager,2018-07-29 12:22:09,2018-07-29 12:23:29,"1m - 20,389s",FAILED
+Start listener action : afterTestCase,IE 11,,2018-07-29 12:23:29,2018-07-29 12:23:29,"0,349s",PASSED

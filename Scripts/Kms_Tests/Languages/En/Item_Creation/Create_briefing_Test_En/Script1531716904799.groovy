@@ -1,7 +1,7 @@
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.Compare_Images as Compare_Images
+import com.system.CompareImages as CompareImages
 import com.system.RolesHelper as RolesHelper
-import com.system.enums.Enum_Status as Enum_Status
+import com.system.enums.EnumStatus as EnumStatus
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -16,38 +16,35 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import internal.GlobalVariable as GlobalVariable
 
 'login as content manager'
-RolesHelper.getCm_En()._Login_En()
+RolesHelper.getCm_En().Login_En()
 
 'create new item by clicking on CREATE NEW ITEM button'
-RolesHelper.getCm_En().getSide_Bar()._click_upper_button_create_item()
+RolesHelper.getCm_En().getBriefing().clickUpperButtonCreateItem()
 
 'choose template  '
-RolesHelper.getCm_En().getBriefing()._choose_Template_By_Typing()
+RolesHelper.getCm_En().getBriefing().chooseTemplateByTyping()
 
 'fill property tab'
-RolesHelper.getCm_En().getBriefing().getItem_property_tab_Briefing()._fill_property_tab()
+RolesHelper.getCm_En().getBriefing().getItemPropertyBriefing().fill()
 
 'sed updated date'
-RolesHelper.getCm_En().getBriefing().getEdit_Tab()._choose_Date_Edit_Item()
+RolesHelper.getCm_En().getBriefing().getEditTab().chooseDateEditItem()
 
 'save to last folder'
-RolesHelper.getCm_En().getBottom_Bar()._click_save_and_relocate_to_lastFolder()
-
-'verify if number of items was incremented in last folder'
-RolesHelper.getCm_En()._click_save_and_check_if_number_of_items_incremented_in_lastFolder()
+RolesHelper.getCm_En().getTaskBar().clickSaveAndRelocateToLastFolder()
 
 'find item by each of description word in the search dropdown list'
-RolesHelper.getCm_En().getUpper_bar()._search_by_first_description_word()
+RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord()
 
 'delete all items'
-RolesHelper.getCm_En()._delete_all_created_items()
+RolesHelper.getCm_En().deleteAllCreatedItems()
 
 'click home page'
-RolesHelper.getCm_En().getUpper_bar()._click_Home_Button()
+RolesHelper.getCm_En().getTopToolBar().clickHomeButton()
 
 'logout from system'
-RolesHelper.getCm_En().getUpper_bar()._logout()
+RolesHelper.getCm_En().getTopToolBar().logout()
 
 'close browser'
-not_run: WebUI.closeBrowser()
+WebUI.closeBrowser()
 

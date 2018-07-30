@@ -2,44 +2,45 @@ package com.system.roles
 
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import org.jsoup.select.Evaluator.Id
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.pages.cm.Bottom_Bar_CM
-import com.pages.cm.Briefing_Page
-import com.pages.cm.General_Page
-import com.pages.My_Template
-import com.pages.cm.Side_Bar
-import com.pages.cm.Upper_Bar_CM
+import com.pages.cm.TaskBarCM
+import com.pages.cm.BriefingPage
+import com.pages.cm.GeneralPage
+import com.pages.cm.ContentArea
+import com.pages.cm.ItemsTree
+import com.pages.cm.TopToolBarCM
 import com.system.CMHelper
 import com.system.LanguageHelper
 import com.system.MyElement
 import com.system.WebHelper
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
+
+
 
 public  class CM extends  User{
 
 	static MyElement iframe_item_scope=new MyElement(findTestObject('Kms_Page_OR/Roles/Content_Manager/iframe_itemscope'))
 	static def isIframe=false
-	static Briefing_Page briefing
-	static General_Page general
-	static My_Template template
-	static Upper_Bar_CM upper_bar_CM
-	static Bottom_Bar_CM bottom_Bar
-	static Side_Bar side_Bar
-	protected CM(Enum_Language lang ){
-		super(Enum_Role.CONTENT_MANAGER,lang)
+	static BriefingPage briefing
+	static GeneralPage general
+	static ContentArea template
+	static TopToolBarCM topToolBar
+	static TaskBarCM taskBar
+	static ItemsTree itemsTree
+	protected CM(EnumLanguage lang ){
+		super(EnumRole.CONTENT_MANAGER,lang)
 	}
 
-	protected static _delete_all_created_items(){
+	protected static deleteAllCreatedItems(){
 		try{
-			CMHelper.delete_items()
+			CMHelper.deleteItems()
 		}
 		catch (Exception e) {
 			WebHelper.delay_medium()
 			my_exeption=e
 			fail=true
-			CMHelper.delete_items()
+			CMHelper.deleteItems()
 			fail=false
 		}
 		finally{
@@ -49,43 +50,43 @@ public  class CM extends  User{
 		}
 	}
 
-	public static My_Template getTemplate() {
+	public static ContentArea getTemplate() {
 		if(template==null)
-			template=new General_Page(lang)
+			template=new GeneralPage(lang)
 		return template;
 	}
 
-	protected static Bottom_Bar_CM getBottom_Bar() {
-		if(bottom_Bar==null)
-			bottom_Bar=new Bottom_Bar_CM(lang)
-		return bottom_Bar
+	protected static TaskBarCM getTaskBar() {
+		if(taskBar==null)
+			taskBar=new TaskBarCM(lang)
+		return taskBar
 	}
 
-	protected static Briefing_Page getBriefing() {
+	protected static BriefingPage getBriefing() {
 		if(briefing==null){
-			briefing=new Briefing_Page(lang)
-			template=briefing;
+			briefing=new BriefingPage(lang)
+			template=briefing
 		}
 		return briefing
 	}
 
-	protected static Upper_Bar_CM getUpper_bar() {
-		if(upper_bar_CM==null)
-			upper_bar_CM=new Upper_Bar_CM(lang)
-		return upper_bar_CM
+	protected static TopToolBarCM getTopToolBar() {
+		if(topToolBar==null)
+			topToolBar=new TopToolBarCM(lang)
+		return topToolBar
 	}
 
-	protected static General_Page getGeneral() {
+	protected static GeneralPage getGeneral() {
 		if(general==null){
-			general=new General_Page(lang)
-			template=general;
+			general=new GeneralPage(lang)
+			template=general
 		}
 		return general
 	}
 
-	public static Side_Bar getSide_Bar() {
-		if(side_Bar==null)
-			side_Bar=new Side_Bar(lang)
-		return side_Bar
+	public static ItemsTree getItemsTree() {
+		if(itemsTree==null)
+			itemsTree=new ItemsTree(lang)
+		return itemsTree
 	}
 }

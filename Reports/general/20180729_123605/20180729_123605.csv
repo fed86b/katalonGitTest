@@ -1,0 +1,17 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Firefox 61.0,,2018-07-29 12:36:09,2018-07-29 12:37:31,"1m - 21,154s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En,Firefox 61.0,,2018-07-29 12:36:10,2018-07-29 12:37:31,"1m - 20,801s",PASSED
+Start listener action : beforeTestCase,Firefox 61.0,,2018-07-29 12:36:10,2018-07-29 12:36:19,"9,281s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),Firefox 61.0,login as content manager,2018-07-29 12:36:19,2018-07-29 12:36:25,"5,428s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().clickUpperButtonCreateItem(),Firefox 61.0,create new item by clicking on CREATE NEW ITEM button,2018-07-29 12:36:25,2018-07-29 12:36:43,"18,456s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(),Firefox 61.0,choose template  ,2018-07-29 12:36:43,2018-07-29 12:36:46,"2,541s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName(),Firefox 61.0,set item name,2018-07-29 12:36:46,2018-07-29 12:36:55,"9,120s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().getGeneralTab().getHtmlEditor().clickEditHTML(),Firefox 61.0,set updated date,2018-07-29 12:36:55,2018-07-29 12:37:00,"5,257s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTaskBar().clickSaveAndRelocateToLastFolder(),Firefox 61.0,save to last folder,2018-07-29 12:37:00,2018-07-29 12:37:09,"8,714s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord(),Firefox 61.0,find item by each of description word in the search dropdown list,2018-07-29 12:37:09,2018-07-29 12:37:09,"0,001s",NOT_RUN
+Statement - com.system.RolesHelper.getCm_En().deleteAllCreatedItems(),Firefox 61.0,delete all items,2018-07-29 12:37:09,2018-07-29 12:37:26,"17,563s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().clickHomeButton(),Firefox 61.0,click home page,2018-07-29 12:37:26,2018-07-29 12:37:26,"0,276s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().logout(),Firefox 61.0,logout from system,2018-07-29 12:37:26,2018-07-29 12:37:30,"3,802s",PASSED
+closeBrowser,Firefox 61.0,close browser,2018-07-29 12:37:30,2018-07-29 12:37:31,"0,236s",PASSED
+Start listener action : afterTestCase,Firefox 61.0,,2018-07-29 12:37:31,2018-07-29 12:37:31,"0,001s",PASSED

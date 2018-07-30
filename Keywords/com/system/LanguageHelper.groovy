@@ -2,11 +2,11 @@ package com.system
 import java.util.HashMap;
 import java.util.Map;
 
-import com.system.enums.Enum_Language
+import com.system.enums.EnumLanguage
 public  class LanguageHelper {
 	static HashMap<String, String> hmap = new HashMap<String, String>()
-	static Enum_Language lang
-	public LanguageHelper(Enum_Language lang){
+	static EnumLanguage lang
+	public LanguageHelper(EnumLanguage lang){
 		this.lang=lang
 
 		hmap.put(lang.toString(),'')
@@ -27,7 +27,7 @@ public  class LanguageHelper {
 	}
 
 	static public getText(def key){
-		if(lang==Enum_Language.English)
+		if(lang==EnumLanguage.English)
 			return key
 		return hmap.get(key)
 	}

@@ -1,0 +1,15 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Edge 17,,2018-07-29 13:47:52,2018-07-29 13:48:51,"59,078s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En,Edge 17,,2018-07-29 13:47:52,2018-07-29 13:48:51,"58,441s",PASSED
+Start listener action : beforeTestCase,Edge 17,,2018-07-29 13:47:52,2018-07-29 13:47:58,"5,949s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),Edge 17,login as content manager,2018-07-29 13:47:59,2018-07-29 13:48:05,"6,939s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(),Edge 17,"Right click the last folder and choose ""New Item"" ",2018-07-29 13:48:05,2018-07-29 13:48:15,"9,193s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true),Edge 17,choose template  ,2018-07-29 13:48:15,2018-07-29 13:48:20,"5,296s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName(),Edge 17,fill property tab ,2018-07-29 13:48:20,2018-07-29 13:48:27,"6,913s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTaskBar().clickSave(),Edge 17,Click Save and verify if saved in last folder,2018-07-29 13:48:27,2018-07-29 13:48:31,"3,717s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().deleteById(),Edge 17,Click Delete by id and verify if deleted from last folder,2018-07-29 13:48:31,2018-07-29 13:48:46,"15,500s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().clickHomeButton(),Edge 17,click home page,2018-07-29 13:48:46,2018-07-29 13:48:46,"0,040s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().logout(),Edge 17,logout from system,2018-07-29 13:48:46,2018-07-29 13:48:50,"4,144s",PASSED
+closeBrowser,Edge 17,close browser,2018-07-29 13:48:50,2018-07-29 13:48:51,"0,640s",PASSED
+Start listener action : afterTestCase,Edge 17,,2018-07-29 13:48:51,2018-07-29 13:48:51,"0,002s",PASSED

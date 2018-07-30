@@ -1,0 +1,20 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+general,Firefox 61.0,,2018-07-29 12:20:20,2018-07-29 12:21:42,"1m - 21,632s",ERROR
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_delete_general_by_rightclick_Test_En,Firefox 61.0,,2018-07-29 12:20:22,2018-07-29 12:21:39,"1m - 16,744s",PASSED
+Start listener action : beforeTestCase,Firefox 61.0,,2018-07-29 12:20:22,2018-07-29 12:20:31,"9,384s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),Firefox 61.0,login as content manager,2018-07-29 12:20:31,2018-07-29 12:20:39,"7,612s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().newItemAction(),Firefox 61.0,"Right click the last folder and choose ""New Item"" ",2018-07-29 12:20:39,2018-07-29 12:21:06,"27,359s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true),Firefox 61.0,choose template  ,2018-07-29 12:21:06,2018-07-29 12:21:12,"5,593s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName(),Firefox 61.0,fill property tab ,2018-07-29 12:21:12,2018-07-29 12:21:18,"5,924s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTaskBar().clickSave(),Firefox 61.0,Click Save and verify if saved in last folder,2018-07-29 12:21:18,2018-07-29 12:21:22,"4,109s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getItemsTree().deleteById(),Firefox 61.0,Click Delete by id and verify if deleted from last folder,2018-07-29 12:21:22,2018-07-29 12:21:34,"12,034s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().clickHomeButton(),Firefox 61.0,click home page,2018-07-29 12:21:34,2018-07-29 12:21:34,"0,265s",PASSED
+Statement - com.system.RolesHelper.getCm_En().getTopToolBar().logout(),Firefox 61.0,logout from system,2018-07-29 12:21:34,2018-07-29 12:21:38,"3,810s",PASSED
+closeBrowser,Firefox 61.0,close browser,2018-07-29 12:21:38,2018-07-29 12:21:39,"0,344s",PASSED
+Start listener action : afterTestCase,Firefox 61.0,,2018-07-29 12:21:39,2018-07-29 12:21:39,"0,083s",PASSED
+,,,,,,
+Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En,Firefox 61.0,,2018-07-29 12:21:39,2018-07-29 12:21:42,"3,268s",ERROR
+Start listener action : beforeTestCase,Firefox 61.0,,2018-07-29 12:21:39,2018-07-29 12:21:39,"0,001s",PASSED
+Statement - com.system.RolesHelper.getCm_En().Login_En(),Firefox 61.0,login as content manager,2018-07-29 12:21:39,2018-07-29 12:21:42,"3,099s",FAILED
+Start listener action : afterTestCase,Firefox 61.0,,2018-07-29 12:21:42,2018-07-29 12:21:42,"0,062s",PASSED

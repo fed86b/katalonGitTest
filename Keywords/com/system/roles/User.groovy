@@ -1,25 +1,25 @@
 package com.system.roles
 
-import com.pages.LogIn_Page
-import com.pages.My_Item
-import com.system.enums.Enum_Language
-import com.system.enums.Enum_Role
+import com.pages.ItemAbstract
+import com.pages.LogInPage
+import com.system.enums.EnumLanguage
+import com.system.enums.EnumRole
 
-public abstract class User extends My_Item {
-
-
+public abstract class User extends ItemAbstract {
 
 
-	static LogIn_Page loginPage
-	static Enum_Role role
-	static Enum_Language lang
-	protected User(Enum_Role role, Enum_Language lang){
+
+
+	static LogInPage loginPage
+	static EnumRole role
+	static EnumLanguage lang
+	protected User(EnumRole role, EnumLanguage lang){
 		super(lang)
 		this.role=role
 		this.lang=lang
 	}
 
-	protected static LogIn_Page getLoginPage() {
-		return loginPage=new LogIn_Page(role, lang);
+	protected static LogInPage getLoginPage() {
+		return loginPage=new LogInPage(role, lang);
 	}
 }
