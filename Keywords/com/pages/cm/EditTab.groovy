@@ -8,8 +8,8 @@ import com.system.WebHelper
 import com.system.enums.EnumLanguage
 public class EditTab extends ItemAbstract {
 
-	static IframeElement	txt_DATE_Edit_item= new IframeElement("txt_DATE_Edit_item","//input[@name = 'DATE' and @type = 'text']" )
-	static	IframeElement btn_Today=new IframeElement("btn_Today","//button[@type = 'button' and @data-handler = 'today']")
+	static IframeElement	txtDateEditItem= new IframeElement("txtDateEditItem","//input[@name = 'DATE' and @type = 'text']" )
+	static	IframeElement btnToday=new IframeElement("btnToday","//button[@type = 'button' and @data-handler = 'today']")
 
 	protected EditTab(EnumLanguage lang){
 		super(lang)
@@ -18,21 +18,10 @@ public class EditTab extends ItemAbstract {
 	protected static chooseDateEditItem() {
 		String Today=LanguageHelper.getText('Today')
 		try {
-			choose_date_edit_tab(Today)
+			txtDateEditItem.clickUntilNotAppear(btnToday)
+			btnToday.clickUntilNotDisappear(btnToday,Today)
 		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			choose_date_edit_tab(Today)
-			fail=false
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-	}
-
-	static choose_date_edit_tab(String today) {
-		txt_DATE_Edit_item.click_with_hover()
-		btn_Today.click_with_hover(today)
 	}
 }

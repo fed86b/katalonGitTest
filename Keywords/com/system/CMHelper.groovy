@@ -13,7 +13,7 @@ public class CMHelper {
 	static final BYPATH="(//a[contains(., 'item_')])[last()]"
 
 	static itemsInLastFolder() {
-		String num_with_left_bracket= WebUI.getText(CM.getItemsTree().a_last_folder_in_cm_tree).split("]")[0]
+		String num_with_left_bracket= WebUI.getText(CM.getItemsTree().aLastFolderInCmTree).split("]")[0]
 		String pure_num=num_with_left_bracket.substring(1)
 		return Integer.parseInt(pure_num)
 	}
@@ -28,7 +28,7 @@ public class CMHelper {
 
 	private static generateName(String id="") {
 		if(id.isEmpty())
-			id=CM.getTemplate().getItemPropertyTab().itemId.generate_Name(true)
+			id=CM.getTemplate().getItemPropertyTab().itemId.generateName(true)
 		return "item_"+CM.template.template+"_"+id
 	}
 
@@ -39,20 +39,20 @@ public class CMHelper {
 		def delete=LanguageHelper.getText('Delete')
 		def name=generateName()
 		findItem(name)
-		CM.getItemsTree().a_item_in_last_folder.right_click_until_not_appear(CM.getItemsTree().li_delete)
+		CM.getItemsTree().aItemInLastFolder.rightClickUntilNotAppear(CM.getItemsTree().liDelete)
 		def xpath="//*[@id = 'recycle-view-linked-items']//following::button[ ( . = '%s')]"
-		def yes_remove_button=new MyElement("yes_remove_button",String.format(xpath, yes))
-		CM.getItemsTree().li_delete.click_until_not_appear(yes_remove_button)
-		yes_remove_button.click()
+		def yesRemoveButton=new MyElement("yesRemoveButton",String.format(xpath, yes))
+		CM.getItemsTree().liDelete.clickUntilNotAppear(yesRemoveButton)
+		yesRemoveButton.click()
 		WebHelper.delay_medium()
 		verifyLastFolder(before_deleting,EnumOperation.DELETE,name)
 	}
 
 
 
-	static deleteFirstItem_(){
+	static deleteFirstItem(){
 		try{
-			CM.getItemsTree().a_item_in_last_folder.click_with_delay()
+			CM.getItemsTree().aItemInLastFolder.quickDoubleClick()
 			CM.getTaskBar().verifyDeleteByBtnRemoveBar()
 		}catch(Exception e){
 			println(e.getMessage())
@@ -63,13 +63,13 @@ public class CMHelper {
 
 		CM.getItemsTree().openLastFolder()
 		if(count==ALL){
-			while (CM.getItemsTree().a_item_in_last_folder.isVisible()) {
-				deleteFirstItem_()
+			while (CM.getItemsTree().aItemInLastFolder.isVisible(false)) {
+				deleteFirstItem()
 			}
 		}
 		else {
 			for(int i=0;i<count;i++){
-				deleteFirstItem_()
+				deleteFirstItem()
 			}
 		}
 	}
@@ -85,8 +85,8 @@ public class CMHelper {
 			else
 				KeywordUtil.markWarning(String.format("item %s still in the knowledge tree ", name))
 		}else if(operation==EnumOperation.SAVE) {
-			item.click_with_hover()
-			KeywordUtil.markWarning(String.format("item %s  in the knowledge tree ", item.generate_Name()))
+			item.clickWithHover()
+			KeywordUtil.markWarning(String.format("item %s  in the knowledge tree ", item.generateName()))
 		}
 	}
 

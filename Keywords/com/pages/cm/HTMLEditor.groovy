@@ -8,29 +8,23 @@ import com.system.WebHelper
 import com.system.enums.EnumLanguage
 public class HTMLEditor extends ItemAbstract {
 
-	static MyElement btn_Edit_html= new IframeElement("btn_Edit_html","//div[@data-element-name='CONTENT']/descendant::span[text()='Edit HTML']/parent::button")
-
-
+	static MyElement btnEditHtmlContent=new IframeElement("btn_Edit_html","//div[@data-element-name='CONTENT']/descendant::span[text()='Edit HTML']/parent::button")
+	static MyElement textAreaContent=new IframeElement("textAreaContent","//textarea[@name='CONTENT']")
+	static MyElement divTextAreaContent=new IframeElement("divTextAreaContent","//textarea[@name='CONTENT']/parent::div")
 
 	protected HTMLEditor(EnumLanguage lang){
 		super(lang)
 	}
 
-
-	protected static clickEditHTML() {
+	protected static clickEditHTMLContent() {
 		def edit_html=LanguageHelper.getText('Edit HTML')
 		try {
-			btn_Edit_html.modify('Edit HTML',edit_html)
-			btn_Edit_html.click_with_hover()
+			btnEditHtmlContent.modify('Edit HTML',edit_html)
+			while (!divTextAreaContent.getAtribute('style').contains('block')) {
+				btnEditHtmlContent.clickWithHover()
+			}
 		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			btn_Edit_html.click_with_hover()
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 }

@@ -6,6 +6,9 @@ import java.nio.file.Paths;
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
+import org.junit.After
+
+import com.kms.katalon.core.exception.StepFailedException
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -57,10 +60,23 @@ public  class WebHelper {
 		WebUI.verifyEqual(actual, expected,FailureHandling.CONTINUE_ON_FAILURE)
 	}
 
-	public static screenShoot(String error_Destination){
-		def error = clean_path(error_Destination)
+	public static catchException(Exception e,def fail=true){
+		def errorDesc=e.getMessage()
+		def error = clean_path(errorDesc)
 		WebUI.takeScreenshot(getLocation(error))
-		throw new Exception(error)
+		if(fail){
+			WebUI.closeBrowser(FailureHandling.OPTIONAL)
+			throw e
+		}
+		if(e instanceof NullPointerException ){
+			println("-----------------NullPointerException------------------")
+		}else
+		if(e instanceof StepFailedException ){
+			println("-----------------StepFailedException------------------")
+		}else{
+			println("-----------------Not recoginezed Exception: "+e.getClass().getName()+"------------------")
+		}
+		WebUI.closeBrowser(FailureHandling.OPTIONAL)
 	}
 
 	public static String clean_path(String error_Destination) {
@@ -86,14 +102,24 @@ public  class WebHelper {
 		return String.format('Reports/%s/%s.png', folder,img_name)
 	}
 
-	public static  verify_process_wait(boolean login=false){
+	public static def IsProcessWait(boolean login=false){
+		def wasProcess=false
 		if(!login){
+			def times=0
 			try {
+
 				if(WebUI.waitForElementPresent(progress, GlobalVariable.G_Wait, FailureHandling.OPTIONAL))
-					while(!WebUI.waitForElementNotVisible(progress, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
+					while(!WebUI.waitForElementNotVisible(progress, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL)&&times<GlobalVariable.G_Wait){
 						delay()
+						times+=1
+						wasProcess=true
+					}
 			} catch (Exception e) {	}
+			if(times>=GlobalVariable.G_Wait){
+				throw new Exception(String.format("Extremely long loading time : %d sec",times))
+			}
 		}
+		return wasProcess
 	}
 
 	public static  wait_for_Edge() {
@@ -106,20 +132,19 @@ public  class WebHelper {
 		return DriverFactory.getExecutedBrowser() == WebUIDriverType.IE_DRIVER
 	}
 
-	public static   verify_texts(String sourseText,String targetText){
-		delay()
+	public static   verifyTexts(String sourseText,String targetText){
 		WebUI.verifyEqual(sourseText.toLowerCase(), targetText.toLowerCase(), FailureHandling.CONTINUE_ON_FAILURE)
 	}
 
-	public static String get_date(Date d=new Date()){
+	public static String getDate(Date d=new Date()){
 		return dateFormat_simple.format(d)
 	}
 
-	public static String get_date(String d){
+	public static String getDate(String d){
 		return dateFormat_simple.format(dateFormat_simple.parse(d))
 	}
 
-	public static String add_to_dateNow_day(int days){
+	public static String addToDatenowDays(int days){
 		Date now=new Date()
 		now.setDate(now.getDay()+days)
 		return dateFormat_h_m_s.format(now)

@@ -42,7 +42,6 @@ public  class MyElement extends TestObject {
 	TestObject element
 	def isIframe=false
 	def fail=false
-	Exception my_exception
 
 	public MyElement (String element_name,String xpath,boolean isLogin=false,TestObject iframe=null){
 		super(element_name)
@@ -76,48 +75,62 @@ public  class MyElement extends TestObject {
 		return flag
 	}
 
-	public MyElement click_until_not_appear(MyElement item,def text=""){
+	public MyElement clickUntilNotAppear(MyElement item,def text=""){
 		MouseOver(text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
 			try{
-				def driver=DriverFactory.getExecutedBrowser()
-				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER )
-					click_with_delay(text)
-				else
-					WebUI.click(element,FailureHandling.OPTIONAL)
-				if(WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+				//				def driver=DriverFactory.getExecutedBrowser()
+				//				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER )
+				//					clickWithDelay(text)
+				//				else
+				//
+				WebUI.click(element,FailureHandling.OPTIONAL)
+				if(item.isVisible(false))
 					return this
-			}catch(Exception e){}
+			}catch(Exception e){
+				println("---------------------"+e.getClass().getName()+"-------------------")
+			}
+			if(i>=GlobalVariable.G_Middle_Wait)
+				throw new Exception(String.format("The %d is not clickable",element.getObjectId()))
 		}
 		return this
 	}
 
-	public MyElement right_click_until_not_appear(MyElement item,def text=""){
+	public MyElement rightClickUntilNotAppear(MyElement item,def text=""){
 		MouseOver(text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
 			try{
-				def driver=DriverFactory.getExecutedBrowser()
-				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER ){
-					right_click_with_delay(text)
-					right_click_with_delay()
-				}
-				else
-					WebUI.rightClick(element,FailureHandling.OPTIONAL)
-				if(WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL))
+				//				def driver=DriverFactory.getExecutedBrowser()
+				//				if(driver== WebUIDriverType.IE_DRIVER||driver== WebUIDriverType.EDGE_DRIVER ){
+				//					rightClickWithDelay(text)
+				//					rightClickWithDelay()
+				//				}
+				//				else
+				WebUI.rightClick(element,FailureHandling.OPTIONAL)
+				//				def visible=WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL)
+				if(item.isVisible(false))
 					return this
-			}catch(Exception e){}
+			}catch(Exception e){
+				println("---------------------"+e.getClass().getName()+"-------------------")}
+			if(i>=GlobalVariable.G_Middle_Wait)
+				throw new Exception(String.format("The %d is not clickable",element.getObjectId()))
 		}
 		return this
 	}
 
-	public MyElement click_until_not_disappear(MyElement item=this,def text=""){
+	public MyElement clickUntilNotDisappear(MyElement item=this,def text=""){
 		isVisible(false,text)
 		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
 			try{
 				WebUI.click(element,FailureHandling.OPTIONAL)
-				if(WebUI.waitForElementNotVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL)){return this}
-			}catch(Exception e){}
+				def notVisible=WebUI.waitForElementNotVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL)||!item.isVisible(false)
+				if(notVisible){return this}
+			}catch(Exception e){
+				println("---------------------"+e.getClass().getName()+"-------------------")}
+			if(i>=GlobalVariable.G_Middle_Wait)
+				throw new Exception(String.format("The %d is not clickable",element.getObjectId()))
 		}
+
 		return this
 	}
 
@@ -139,7 +152,7 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public MyElement  press_Esc(def text=""){
+	public MyElement  pressEsc(def text=""){
 		isVisible(true,text)
 		WebUI.sendKeys(element,Keys.chord(Keys.ESCAPE),FailureHandling.STOP_ON_FAILURE)
 		return this
@@ -151,92 +164,54 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public MyElement  select_by_index(int index){
-		try{
-			isVisible()
-			WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
-		}
+	public MyElement  selectByIndex(int index){
+		isVisible()
+		WebUI.selectOptionByIndex(element, index, FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
-	public MyElement  click_with_hover(String text=""){
-		try{
-			MouseOver(text)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-
-		}
+	public MyElement  clickWithHover(String text=""){
+		MouseOver(text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
 	public MyElement  right_click(def text=""){
-		try{
-			isVisible(true,text)
-			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
-
-		}
+		isVisible(true,text)
+		WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
 	public MyElement  click(def text=""){
-		try{
-			isVisible(true,text)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-
-		}
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
 	public MyElement  check(){
-		try{
-			MouseOver()
-			if(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
-				WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			fail=true
-			my_exception=e
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			if(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
-				WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
-			WebHelper.screenShoot(e.getMessage())
-			fail=false
+		MouseOver()
+		def times=0
+		while(!WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL)
+		&&times<GlobalVariable.G_Middle_Wait){
+			WebUI.check(element,FailureHandling.STOP_ON_FAILURE)
+			times+=1
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exception.getMessage())
-		}
+		if(times>=GlobalVariable.G_Middle_Wait)
+			throw new Exception(String.format("Unable check %s element", element.getObjectId()))
 		return this
 	}
 
-	public MyElement  uncheck(){
-		try{
-			MouseOver()
-			if(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
-				WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			fail=true
-			my_exception=e
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			if(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL))
-				WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
-			fail=false
 
+	public MyElement  uncheck(){
+		MouseOver()
+		def times=0
+		while(WebUI.verifyElementChecked(element, GlobalVariable.G_Small_Wait, FailureHandling.OPTIONAL)
+		&&times<GlobalVariable.G_Middle_Wait){
+			WebUI.uncheck(element,FailureHandling.STOP_ON_FAILURE)
+			times+=1
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exception.getMessage())
-		}
+		if(times>=GlobalVariable.G_Middle_Wait)
+			throw new Exception(String.format("Unable uncheck %s element", element.getObjectId()))
 		return this
 	}
 
@@ -253,104 +228,74 @@ public  class MyElement extends TestObject {
 	}
 
 	public MyElement compareImages(def name="download.jpg",EnumRole role=EnumRole.CONTENT_MANAGER){
+		isVisible(false)
 		CompareImages.compareWebElementPic(element,role, name)
 		return this
 	}
 
-	public MyElement  click_with_delay(def text=""){
-		try{
-			delay()
-			isVisible(true,text)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-			delay()
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-		}
+	public MyElement  clickWithDelay(def text=""){
+		delay()
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		delay()
 		return this
 	}
 
-	public MyElement  right_click_with_delay(def text=""){
-		try{
-			delay()
-			isVisible(true,text)
-			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
-			delay()
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
-		}
+	public MyElement  rightClickWithDelay(def text=""){
+		delay()
+		isVisible(true,text)
+		WebUI.rightClick(element,FailureHandling.STOP_ON_FAILURE)
+		delay()
 		return this
 	}
 
-	public MyElement double_click(def text=""){
-		try{
-			isVisible(true,text)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-			delay()
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-			delay()
-			WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
-		}
+	public MyElement doubleClick(def text=""){
+		isVisible(true,text)
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
+		delay()
+		WebUI.click(element,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
-	public MyElement quick_double_click(def text=""){
-		try{
-			isVisible(true,text)
-			WebUI.doubleClick(element)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.doubleClick(element)
-		}
+	public MyElement quickDoubleClick(def text=""){
+		isVisible(true,text)
+		WebUI.doubleClick(element)
 		return this
 	}
 
-	public String generate_Name(def hidden=false){
+	public String generateName(def hidden=false){
 		def text=""
-		try{
-			if(hidden)
-				text = WebUI.getAttribute(element, 'value')
-			else
-				text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
+		if(hidden)
+			text = getAtribute('value')
+		else
 			text=WebUI.getText(element,FailureHandling.STOP_ON_FAILURE)
-		}
 		return text
 	}
 
-	public MyElement  write_text(String str){
-		try{
-			isVisible()
-			WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
-			WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
-			WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
-		}
+	public String getAtribute(def value){
+		isVisible()
+		return WebUI.getAttribute(element, value)
+	}
+
+	//WebUI.getAttribute(findTestObject('Page_CuraHomepage/btn_MakeAppointment'), 'class')
+
+	public MyElement  writeText(String str){
+		isVisible()
+		WebUI.clearText(element,FailureHandling.STOP_ON_FAILURE)
+		WebUI.setText(element, str,FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
 	//for ie and firefox
-	public MyElement write_key_chord(String str){
+	public MyElement writeKeyChord(String str){
 		CharSequence cs = str
-		try{
-			isVisible()
-			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
-		}
+		isVisible()
+		WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		return this
 	}
 
-	public  MyElement  write_key_chord_promote(String str){
-		isVisible(true)
+	public  MyElement  writeKeyChordPromote(String str){
+		isVisible()
 		String[] words=str.split(" ")
 		for(def word in words){
 			CharSequence cs = word
@@ -361,56 +306,56 @@ public  class MyElement extends TestObject {
 		return this
 	}
 
-	public  MyElement  write_slowly(def cs){
-		//		if(!(DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER )||
-		//		!(DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER)){
-		isVisible(true)
+	public  MyElement  writeSlowly(def cs){
+		isVisible()
 		WebUI.clearText(element)
-		//			for(def chr in str){
-		//				CharSequence cs = chr
-		//				WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
-		//				Thread.sleep(GlobalVariable.G_Millisec)
-		//			}
 		WebUI.sendKeys(element,Keys.chord(cs),FailureHandling.STOP_ON_FAILURE)
 		Thread.sleep(GlobalVariable.G_Small_Wait)
-		//		}
 		return this
 	}
 
 
 	public MyElement MouseOver(def text=""){
-		try{
-			isVisible(true,text)
-			WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
-		}catch(Exception e){
-			WebUI.scrollToElement(element,GlobalVariable.G_Wait)
-			WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+		isVisible(true,text)
+		WebUI.mouseOver(element,FailureHandling.STOP_ON_FAILURE)
+		return this
+	}
 
+	public MyElement MouseOverUntilNotVisible(MyElement item,def text=""){
+
+		for(def i=0;i<GlobalVariable.G_Middle_Wait;i++){
+			try{
+				MouseOver()
+				def visible=WebUI.waitForElementVisible(item, GlobalVariable.G_Middle_Wait, FailureHandling.OPTIONAL)
+				if(visible)
+					return this
+			}catch(Exception e){
+				println("---------------------"+e.getClass().getName()+"-------------------")
+			}
+			if(i>=GlobalVariable.G_Middle_Wait)
+				throw new Exception(String.format("The %d is not hoverable",element.getObjectId()))
 		}
 		return this
 	}
 
+
 	public boolean isVisible(boolean fail=true,def text=""){
-		WebHelper.verify_process_wait(isLogin)
-		findElement()
-		FailureHandling failure
-		if(fail)
-			failure=FailureHandling.STOP_ON_FAILURE
-		else
-			failure=FailureHandling.OPTIONAL
-		verifyText(text)
-		def flag= WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, failure )
-		return flag
+		try{
+			WebHelper.IsProcessWait(isLogin)
+			findElement()
+			FailureHandling failure
+			if(fail)
+				failure=FailureHandling.STOP_ON_FAILURE
+			else
+				failure=FailureHandling.OPTIONAL
+			verifyText(text)
+			def flag= WebUI.waitForElementVisible(element, GlobalVariable.G_Middle_Wait, failure )
+			return flag
+		}catch(Exception e){
+			WebUI.scrollToElement(element,GlobalVariable.G_Wait,FailureHandling.STOP_ON_FAILURE)
+		}
 
 	}
-	public boolean isPresent(){
-		WebHelper.verify_process_wait(isLogin)
-		def el=findElement()
-		return el!=null
-
-
-	}
-
 
 	public MyElement findElement() {
 		try{
@@ -426,12 +371,11 @@ public  class MyElement extends TestObject {
 				else
 					WebHelper.scroll(point.y-WebHelper.HEADER)
 			}
-
-		}finally{
+		}
+		finally{
 			if(isIframe)
 				WebUI.switchToDefaultContent()
 		}
-
 		return this
 	}
 

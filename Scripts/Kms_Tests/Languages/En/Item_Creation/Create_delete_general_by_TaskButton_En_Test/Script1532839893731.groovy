@@ -27,20 +27,17 @@ RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping()
 'fill property tab'
 RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().fill()
 
-'set item name'
-RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName()
-
 'set updated date'
-RolesHelper.getCm_En().getGeneral().getGeneralTab().getHtmlEditor().clickEditHTML()
+RolesHelper.getCm_En().getGeneral().getGeneralTab().getHtmlEditor().clickEditHTMLContent()
 
 'save to last folder'
 RolesHelper.getCm_En().getTaskBar().clickSaveAndRelocateToLastFolder()
 
 'find item by each of description word in the search dropdown list'
-not_run: RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord()
+RolesHelper.getCm_En().getTopToolBar().searchByFirstDescriptionWord()
 
 'delete all items'
-not_run: RolesHelper.getCm_En().deleteAllCreatedItems()
+RolesHelper.getCm_En().deleteAllCreatedItems()
 
 'click home page'
 RolesHelper.getCm_En().getTopToolBar().clickHomeButton()

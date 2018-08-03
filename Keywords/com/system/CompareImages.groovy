@@ -92,7 +92,7 @@ public class CompareImages {
 
 
 	public static detailedComparison(def stage="",def isLogin=false){
-		WebHelper.verify_process_wait(isLogin)
+		WebHelper.IsProcessWait(isLogin)
 		def curDir=WebHelper.getCurDir()
 		def driver_folder= DriverFactory.getExecutedBrowser().toString()
 		def testId=RunConfiguration.getExecutionSourceId()

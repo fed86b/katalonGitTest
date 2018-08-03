@@ -3,6 +3,7 @@ package com.system
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
+import com.kms.katalon.core.webui.exception.BrowserNotOpenedException
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
@@ -23,7 +24,7 @@ class AppManager {
 							goToNewTab()
 						else
 							return app
-					} catch (Exception e) {
+					}catch (Exception e) {
 						openBrowser()
 					}
 				}

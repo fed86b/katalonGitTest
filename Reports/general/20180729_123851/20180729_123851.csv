@@ -1,7 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-general,IE 11,,2018-07-29 12:38:55,2018-07-29 12:40:08,"1m - 12,874s",ERROR
-,,,,,,
-Test Cases/Kms_Tests/Languages/En/Item_Creation/Create_general_Test_En,IE 11,,2018-07-29 12:38:56,2018-07-29 12:40:07,"1m - 11,574s",ERROR
-Start listener action : beforeTestCase,IE 11,,2018-07-29 12:38:56,2018-07-29 12:39:00,"4,003s",PASSED
-Statement - com.system.RolesHelper.getCm_En().Login_En(),IE 11,login as content manager,2018-07-29 12:39:00,2018-07-29 12:40:07,"1m - 7,132s",FAILED
-Start listener action : afterTestCase,IE 11,,2018-07-29 12:40:07,2018-07-29 12:40:07,"0,334s",PASSED

@@ -3,16 +3,19 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.system.LanguageHelper
 import com.system.MyElement
+import com.system.RolesHelper
 import com.system.WebHelper
 import com.system.enums.EnumCreateItem
 import com.system.enums.EnumLanguage
 
-public class TopToolBar extends ItemAbstract{
-	static MyElement a_logout=new MyElement("a_logout","//a[@href = 'http://kmsqa3:501/kms/lh/logout']")
-	static MyElement a_profile_avatar=new MyElement("profile-avatar","//*[@class = 'top-toolbar__section top-toolbar__profile']")
-	static MyElement a_kms_home_icon=new MyElement("a_kms_home_icon","//*[@class = 'kms-icon kms-icon--home']")
+import internal.GlobalVariable
 
-	static MyElement txt_search=new MyElement("txt_search","//input[@id='search-input']")
+public class TopToolBar extends ItemAbstract{
+	static MyElement aLogout=new MyElement("aLogout","//a[contains(@href,'logout')]")
+	static MyElement aProfileAvatar=new MyElement("profile-avatar","//*[@class = 'top-toolbar__section top-toolbar__profile']")
+	static MyElement aKmsHomeIcon=new MyElement("aKmsHomeIcon","//*[@class = 'kms-icon kms-icon--home']")
+
+	static MyElement searchBar=new MyElement("searchBar","//input[@id='search-input']")
 
 	protected TopToolBar(EnumLanguage lang){
 		super(lang)
@@ -21,71 +24,42 @@ public class TopToolBar extends ItemAbstract{
 	protected static  logout(){
 		def Logout=LanguageHelper.getText('Logout')
 		try {
-			a_profile_avatar.MouseOver()
-			a_logout.click_with_delay(Logout)
+			aProfileAvatar.MouseOverUntilNotVisible(aLogout)
+
+			aLogout.clickWithHover(Logout)
 		}
 		catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay_medium()
-			a_profile_avatar.MouseOver()
-			a_logout.click_with_delay(Logout)
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
 
 	protected static  clickHomeButton(){
 		try {
-			a_kms_home_icon.click()
+			aKmsHomeIcon.click()
 		}
 		catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay_medium()
-			a_kms_home_icon.click_with_delay()
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
 	protected static  searchByFirstDescriptionWord(def template=""){
 		try {
-			search_by_desc(template)
+			String text=WebHelper.get_item_data(EnumCreateItem.short_description)
+			String[] words=text.split(" ")
+			for(def word in words){
+				CharSequence cs = word
+				searchBar.writeSlowly(cs)
+				def item_text="item_"+template
+				def searched_word=String.format("//a[contains(.,'%s')]",item_text)
+				MyElement itemSERP=new MyElement("aSearchedWord",searched_word)
+				def times=0
+				while(!itemSERP.isVisible(false)&&times<GlobalVariable.G_Wait){}
+				if(times>=GlobalVariable.G_Wait||!itemSERP.verifyText(item_text,false))
+					throw new Exception(String.format("Cannot find element %s by promoted Word %S in SERP"),item_text,word)
+			}
 		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay_medium()
-			search_by_desc(template)
-			fail=false
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-	}
-
-	private static search_by_desc(template) {
-		//		if(!((DriverFactory.getExecutedBrowser() == WebUIDriverType.FIREFOX_DRIVER) ||
-		//		(DriverFactory.getExecutedBrowser() ==WebUIDriverType.FIREFOX_HEADLESS_DRIVER))){
-		String text=WebHelper.get_item_data(EnumCreateItem.short_description)
-		String[] words=text.split(" ")
-		for(def word in words){
-			CharSequence cs = word
-			txt_search.write_slowly(cs)
-			WebHelper.delay_medium()
-			def item_text="item_"+template
-			def searched_word=String.format("//a[contains(.,'%s')]",item_text)
-			if(!(new MyElement("a_serched_word",searched_word)).verifyText(item_text,false))
-				assert false==true
-		}
-		//		}
 	}
 }

@@ -8,7 +8,7 @@
    <dataFileGUID>2fb921f3-58a8-4e27-8ac2-5c260fcaa943</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>admin admin</data>
+   <data>admin null</data>
    <data>csr csr</data>
    <data>null null</data>
    <internalDataColumns>

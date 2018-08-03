@@ -25,18 +25,10 @@ public  class GeneralPage extends ContentArea {
 			if(generalTab==null){
 				generalTab=new GeneralTab(lang)
 			}
-		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay()
 			generalTab.clickGeneralTab()
-			fail=false
+		} catch (Exception e) {
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-		generalTab.clickGeneralTab()
 		return generalTab
 	}
 
@@ -45,18 +37,10 @@ public  class GeneralPage extends ContentArea {
 			if(itemPropertyTabGeneral==null){
 				itemPropertyTabGeneral=new ItemPropertyGeneral(lang)
 			}
-		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay()
 			clickItemProperties()
-			fail=false
+		} catch (Exception e) {
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-		clickItemProperties()
 		return itemPropertyTabGeneral
 	}
 }

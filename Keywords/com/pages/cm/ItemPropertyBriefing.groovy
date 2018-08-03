@@ -8,27 +8,27 @@ import com.system.enums.EnumTemplate
 
 public class ItemPropertyBriefing extends ItemPropertyTab {
 
-	static MyElement rbtn_signature_yes
-	static MyElement rbtn_signature_no
+	static MyElement rbtnSignatureYes
+	static MyElement rbtnSignatureNo
 
 	protected ItemPropertyBriefing(EnumLanguage lang){
 		super(lang,EnumTemplate.Briefing)
 	}
 
-	protected fill(EnumStatus status_from=EnumStatus.ONLINE,
-			EnumStatus status_after=EnumStatus.ARCHIVE, def set_checkBx=true){
-		fillPropertyTab()
-		clickSignature()
+	protected fill(def statusFrom=EnumStatus.ONLINE,
+			def statusAfter=EnumStatus.ARCHIVE, def setCheckBx=true){
+		fillPropertyTab(statusFrom,statusAfter,setCheckBx)
+		clickSignature(setCheckBx)
 	}
 
 
 
 	protected static  clickSignature(boolean check=true){
-		rbtn_signature_yes=new IframeElement("rbtn_signature_yes","//input[@id='signatureRadioY']")
-		rbtn_signature_no=new IframeElement("rbtn_signature_no","//input[@id='signatureRadioN']")
+		rbtnSignatureYes=new IframeElement("rbtnSignatureYes","//input[@id='signatureRadioY']")
+		rbtnSignatureNo=new IframeElement("rbtnSignatureNo","//input[@id='signatureRadioN']")
 		if(check)
-			rbtn_signature_yes.click_with_hover()
+			rbtnSignatureYes.clickWithHover()
 		else
-			rbtn_signature_no.click_with_hover()
+			rbtnSignatureNo.clickWithHover()
 	}
 }

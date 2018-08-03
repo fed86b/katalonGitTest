@@ -7,7 +7,7 @@ import com.system.enums.EnumLanguage
 import com.system.enums.EnumTemplate
 public  class BriefingPage extends ContentArea {
 
-	static MyElement a_EditTab=new IframeElement("a_EditTab","//a[@href = '#item-update-tab-edit' and @class = 'ui-tabs-anchor']")
+	static MyElement aEditTab=new IframeElement("aEditTab","//a[@href = '#item-update-tab-edit' and @class = 'ui-tabs-anchor']")
 
 	static EditTab editTab
 	static ItemPropertyBriefing itemPropertyBriefing
@@ -16,29 +16,19 @@ public  class BriefingPage extends ContentArea {
 	}
 
 	protected static EditTab getEditTab() {
-
 		try{
-			if(editTab==null){
-			}
-		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay()
+			if(editTab==null)
+				editTab=new EditTab(lang)
 			clickEditTab()
-			fail=false
+		} catch (Exception e) {
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-		clickEditTab()
 		return editTab
 	}
 
 	static clickEditTab(){
 		def edit=LanguageHelper.getText('Edit Item')
-		editTab=new EditTab(lang)
-		a_EditTab.double_click(edit)
+		aEditTab.clickUntilNotDisappear(itemPropertyBriefing.lblItemId,edit)
 	}
 
 
@@ -47,18 +37,10 @@ public  class BriefingPage extends ContentArea {
 			if(itemPropertyBriefing==null){
 				itemPropertyBriefing=new ItemPropertyBriefing(lang)
 			}
-		} catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay()
 			clickItemProperties()
-			fail=false
+		} catch (Exception e) {
+			WebHelper.catchException(e)
 		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
-		}
-		clickItemProperties()
 		return itemPropertyBriefing
 	}
 }

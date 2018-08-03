@@ -7,12 +7,8 @@ import com.system.enums.EnumRole
 
 public abstract class User extends ItemAbstract {
 
-
-
-
 	static LogInPage loginPage
 	static EnumRole role
-	static EnumLanguage lang
 	protected User(EnumRole role, EnumLanguage lang){
 		super(lang)
 		this.role=role

@@ -33,12 +33,13 @@ class BaseTest {
 		//		if(testCase.getTestCaseId().contains("Item_Creation"))
 		//			WebUI.callTestCase(findTestCase( 'Test Cases/Kms_Tests/Item_Delete/Running_After_Tests'), [:], FailureHandling.STOP_ON_FAILURE)
 		WebUI.switchToDefaultContent()
-
+		clearData()
 		
 	}
 
 	private clearData() {
-		def dir="C:\\Users\\fed86\\AppData\\Local\\Temp"
+		def userFolder=System.getProperty("user.home") + File.separator
+		def dir=userFolder+"AppData\\Local\\Temp"
 		File f=new File(dir)
 		File[] files = f.listFiles()
 		String lowercaseName=""
@@ -47,7 +48,8 @@ class BaseTest {
 				lowercaseName= file.name.toLowerCase()
 				if (lowercaseName.startsWith("katalon")||lowercaseName.startsWith("anonymous")||lowercaseName.startsWith("scoped"))
 					FileUtils.deleteDirectory(new File(dir+"\\"+file.name))
-				else if(lowercaseName.endsWith(".tmp")||lowercaseName.endsWith(".png")||lowercaseName.startsWith("aria-debug"))
+				else if(lowercaseName.contains("tmp")||lowercaseName.endsWith(".png")||lowercaseName.contains("db")
+					||lowercaseName.contains("debug")||lowercaseName.contains("log")||lowercaseName.contains("dat"))
 					file.delete()
 			}catch(Exception e){}
 		}

@@ -3,7 +3,6 @@ package com.pages
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.system.CompareImages
 import com.system.LanguageHelper
 import com.system.LoginElement
 import com.system.WebHelper
@@ -20,6 +19,8 @@ public  class LogInPage {
 	 def forgot_password=new LoginElement("forgot_password","//a[@data-target = '#forgot-password-modal']")
 	 def loginForm=new LoginElement("loginForm","//form[@name = 'loginForm']")
 	 */
+	static LoginElement passwordTxt=new LoginElement("passwordTxt","//input[@id = 'login-password']")
+	static LoginElement userNameTxt=new LoginElement("userNameTxt","//input[@id = 'login-username']")
 	static isBacked=false
 	static protected EnumLanguage lang
 	static protected EnumRole role
@@ -60,7 +61,7 @@ public  class LogInPage {
 			(new LoginElement(findTestObject('Login_Page_OR/Visual/kms_ltd'))).verifyText('© 2017 KMS lighthouse Ltd')
 		}
 		catch (Exception e) {
-			WebHelper.screenShoot(e.getMessage())
+			WebHelper.catchException(e,false)
 		}
 	}
 
@@ -72,54 +73,34 @@ public  class LogInPage {
 
 	protected static clickСhooseLanguage() {
 		def chooseLang="Change Language"
+		if(isBacked)
+			chooseLang=LanguageHelper.getText('Change Language')
 		def link_change_lang=new LoginElement("link_change_lang","//a[@href='#login-change-language']")
 		def caret_lang=new LoginElement("caret_lang","//span[@class='caret']")
-
+		def str_lang=LanguageHelper.getText(lang.toString())
+		def language=LanguageHelper.getText('Language')
+		def xpath=String.format("//span[(contains(., '%s'))]", str_lang)
+		def xpathLanguage=String.format("//span[(contains(., '%s'))]", language)
 		try {
-			if(isBacked)
-				chooseLang=LanguageHelper.getText('Change Language')
-			link_change_lang.click(chooseLang)
-			caret_lang.click()
-			select_language()
+			link_change_lang.clickUntilNotAppear(caret_lang, chooseLang)
+			def link_lang=new LoginElement("link_lang",xpath)
+			def linkLanguage=new LoginElement("link_lang",xpathLanguage)
+			caret_lang.clickUntilNotAppear(link_lang)
+			link_lang.clickUntilNotDisappear(linkLanguage,str_lang)
 		}
 		catch (Exception e) {
-			my_exeption=e
-			fail=true
-			WebHelper.delay_medium()
-			link_change_lang.click_with_delay(chooseLang)
-			caret_lang.click()
-			select_language()
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
-	private static select_language() {
-		def str_lang=LanguageHelper.getText(lang.toString())
-
-		def xpath=String.format("//span[(contains(., '%s'))]", str_lang)
-		(new LoginElement("link_lang",xpath)).click(str_lang)
-	}
 
 	protected static clickLogInWithUserNameAndPassword() {
 		def auth_Login_button=new LoginElement("auth_Login_button","//button[@type = 'submit']")
 		def LOGIN=LanguageHelper.getText("LOGIN")
 		try {
-			auth_Login_button.click(LOGIN)
-			WebHelper.wait_for_Edge()
+			auth_Login_button.clickUntilNotDisappear(userNameTxt,LOGIN)
 		}catch (Exception e) {
-			fail=true
-			my_exeption=e
-			WebHelper.delay_medium()
-			auth_Login_button.click_with_delay(LOGIN)
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
@@ -129,18 +110,10 @@ public  class LogInPage {
 		def login_Kms_button=new LoginElement("login_Kms_button","//button[@class = 'kms-login__form-submit ladda-button']")
 		def LOGIN=LanguageHelper.getText("LOGIN")
 		try {
-			login_Kms_button.press_Enter(LOGIN)
+			login_Kms_button.clickUntilNotDisappear()
 		}
 		catch (Exception e) {
-			fail=true
-			my_exeption=e
-			WebHelper.delay_medium()
-			login_Kms_button.click_with_delay(LOGIN)
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
@@ -148,12 +121,16 @@ public  class LogInPage {
 
 	protected static selectView() {
 		def dropDown_roles=new LoginElement("dropDown_roles","//button[@class = 'btn dropdown-toggle btn-default']")
+		def dropDownMenuContent=new LoginElement("dropDownMenuContent","//ul[@class='dropdown-menu inner']")
 		def link_role
 		def str_role=""
 		try {
 			check_Layout_Title()
-			dropDown_roles.click()
-
+			def times=0
+			while(dropDownMenuContent.getAtribute('aria-expanded')=='false'&&times<GlobalVariable.G_Wait){
+				dropDown_roles.click()
+				times+=1
+			}
 			switch(role){
 
 				case EnumRole.ADMINISTRATOR:str_role="Administrator"
@@ -171,20 +148,14 @@ public  class LogInPage {
 			}
 			def xpath=String.format("//span[ (contains(., '%s'))]", str_role)
 			link_role=new LoginElement("link_role",xpath)
-			link_role.click(str_role)
+			times=0
+			while(dropDownMenuContent.getAtribute('aria-expanded')=='true'&&times<GlobalVariable.G_Wait){
+				link_role.click(str_role)
+				times+=1
+			}
 		}
 		catch (Exception e) {
-			fail=true
-			my_exeption=e
-			WebHelper.delay_medium()
-			check_Layout_Title()
-			dropDown_roles.click(str_role)
-			link_role.click()
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
@@ -192,8 +163,6 @@ public  class LogInPage {
 	protected static fillUserNamePassword() {
 		def userName=""
 		def password=""
-		def password_txt=new LoginElement("password_txt","//input[@id = 'login-password']")
-		def userName_txt=new LoginElement("userName_txt","//input[@id = 'login-username']")
 		try {
 			visual_check_login_form()
 			int row=-1
@@ -217,20 +186,11 @@ public  class LogInPage {
 			userName=WebHelper.get_auth(EnumLoginData.userName, row)
 			password=WebHelper.get_auth(EnumLoginData.password, row)
 
-			userName_txt.write_text(userName)
-			password_txt.write_text(password)
+			userNameTxt.writeText(userName)
+			passwordTxt.writeText(password)
 		}
 		catch (Exception e) {
-			fail=true
-			my_exeption=e
-			WebHelper.delay_medium()
-			userName_txt.write_text(userName)
-			password_txt.write_text(password)
-			fail=false
-		}
-		finally{
-			if(fail)
-				WebHelper.screenShoot(my_exeption.getMessage())
+			WebHelper.catchException(e)
 		}
 	}
 
@@ -249,8 +209,7 @@ public  class LogInPage {
 			span_password.isVisible(false)
 		}
 		catch (Exception e) {
-
-			WebHelper.screenShoot(e.getMessage())
+			WebHelper.catchException(e,false)
 		}
 	}
 }

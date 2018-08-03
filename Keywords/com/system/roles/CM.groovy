@@ -37,18 +37,10 @@ public  class CM extends  User{
 			CMHelper.deleteItems()
 		}
 		catch (Exception e) {
-			WebHelper.delay_medium()
-			my_exeption=e
-			fail=true
-			CMHelper.deleteItems()
-			fail=false
-		}
-		finally{
-			if(fail){
-				WebHelper.screenShoot(my_exeption.getMessage())
-			}
+			WebHelper.catchException(e)
 		}
 	}
+
 
 	public static ContentArea getTemplate() {
 		if(template==null)

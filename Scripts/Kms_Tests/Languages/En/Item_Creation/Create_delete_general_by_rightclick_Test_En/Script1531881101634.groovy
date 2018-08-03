@@ -24,8 +24,11 @@ RolesHelper.getCm_En().getItemsTree().newItemAction()
 'choose template  '
 RolesHelper.getCm_En().getGeneral().chooseTemplateByTyping(true)
 
-'fill property tab '
+'set name'
 RolesHelper.getCm_En().getGeneral().getItemPropertyTabGeneral().setItemName()
+
+'set updated date'
+RolesHelper.getCm_En().getGeneral().getGeneralTab().getHtmlEditor().clickEditHTMLContent()
 
 'Click Save and verify if saved in last folder'
 RolesHelper.getCm_En().getTaskBar().clickSave()
